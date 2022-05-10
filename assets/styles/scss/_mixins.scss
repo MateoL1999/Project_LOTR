@@ -33,9 +33,10 @@ opérateur de comparaison
 }
 
 // mixin format de police
-@mixin font($family, $size, $align: initial, $spacing: initial) {
+@mixin font($family, $size,$color, $align: initial, $spacing: initial) {
   font-family: $family;
   font-size: #{$size}px;
+  color: $color;
   @if($align != initial) {
     text-align: $align;
   }
@@ -60,7 +61,7 @@ opérateur de comparaison
 // mixin responsive
 @mixin respond($breakpoint) {
   @if($breakpoint == 'phone') {
-    @media(max-width: 576px) {
+    @media(max-width: 580px) {
       @content;
     }
   }
