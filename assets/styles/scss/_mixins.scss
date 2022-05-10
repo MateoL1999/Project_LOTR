@@ -96,9 +96,8 @@ opérateur de comparaison
   @font-face {
     font-family: $font-family;
     font-weight: $weight;
-    font-styl: $style;
-    src: url('#{$filePath}#{$fileName}.eot');
-    src: url('#{$filePath}#{$fileName}.eot?#iefix') format('embedded-opentype'), url('#{$filePath}#{$fileName}.ttf') format('truetype');
+    font-style: $style;
+    src: url('#{$filePath}#{$fileName}.ttf') format('truetype');
   }
 
 }
