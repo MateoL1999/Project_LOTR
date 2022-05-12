@@ -6,7 +6,7 @@ console.log('kuruma')
 let lastScroll = 0;
 
 burger.addEventListener("click", () => {
-    menu.classList.toggle("menu");
+    menu.classList.toggle("display");
 });
 
 

@@ -1,0 +1,32 @@
+section{
+  div{
+    .Titre--CGU{
+      text-align: center;
+      padding-top: 50px;
+      @include font(Lat_Bold, 40, $Second);
+    }
+  }
+  .Politique{
+    h3{
+      @include font(Lat_Bold, 25, $Second);
+      padding-top: 30px;
+      margin-left: 40px;
+      margin-right: 40px;
+      background-color: gre;
+
+    }
+    p{
+      @include font(Lat_Li, 20, grey);
+      padding-top: 30px;
+      margin-left: 40px;
+      margin-right: 40px;
+
+      strong{
+        @include font(Lat_Bold, 18, $Second);
+      }
+    }
+
+
+  }
+
+}

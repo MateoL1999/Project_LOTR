@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<section class="Cont--Insc">
+    <div class="Titre--Insc">
+        <h1>S'inscrire</h1>
+    </div>
+    {{ form_start(registrationForm) }}
+    <div class="Form--Insc">
+        <div class="Civilite">
+        {{ form_row(registrationForm.firstName) }}
+        {{ form_row(registrationForm.lastName) }}
+        </div>
+
+        <div class="Insc--email">
+            {{ form_row(registrationForm.email) }}
+        </div>
+        <div class="Insc--Password">
+            {{ form_row(registrationForm.plainPassword, {
+            }) }}
+        </div>
+        <div class="Accepter--Terme">
+            {{ form_row(registrationForm.agreeTerms, {
+                label: 'Accepter les conditions'
+            }) }}
+        </div>
+    </div>
+        <div class="submit--Insc">
+            <button type="submit" class="button-Insc">S'inscrire</button>
+        </div>
+</section>
+    {{ form_end(registrationForm) }}
+{% endblock %}

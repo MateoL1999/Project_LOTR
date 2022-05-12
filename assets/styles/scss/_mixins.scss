@@ -61,12 +61,7 @@ opérateur de comparaison
 // mixin responsive
 @mixin respond($breakpoint) {
   @if($breakpoint == 'phone') {
-    @media(max-width: 580px) {
-      @content;
-    }
-  }
-  @else if($breakpoint == 'tab-port') {
-    @media(max-width: 767px) {
+    @media(max-width: 780px) {
       @content;
     }
   }

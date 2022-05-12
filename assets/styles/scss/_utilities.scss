@@ -1,0 +1,40 @@
+
+.display {
+  @include respond('phone') {
+    display: none;
+  }
+}
+
+.flex--spaceE{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex--center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-format{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 41%;
+    &::placeholder{
+      color: $Second;
+    }
+}
+
+.input-Civ{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 50%;
+  &::placeholder{
+    color: $Second;
+
+  }
+}

@@ -14,6 +14,7 @@ nav {
       display: none;
       color: $Primary;
       text-align: right;
+      margin-right: 40px;
       @include respond('phone'){
         display: block;
       }
@@ -27,9 +28,6 @@ nav {
       }
     }
     .menu {
-      @include respond('phone') {
-        display: none;
-      }
 
       ul {
         padding: 0;
@@ -43,7 +41,7 @@ nav {
           top: 130px;
           right: -150px;
           width: 100%;
-          height: 100vh;
+          height: 50vh;
           background-color: $Second;
 
         }
@@ -78,64 +76,3 @@ nav {
     }
   }
 }
-
-footer {
-  margin-top: 50px;
-
-  div {
-    .RGPD {
-      @include flex(space-evenly, center);
-
-
-      p {
-        padding: 30px 0;
-
-        a {
-          font-size: 25px;
-          color: $Primary;
-          text-decoration: none;
-        }
-      }
-    }
-
-    .footer {
-      display: flex;
-      justify-content: space-evenly;
-      padding: 50px 20px;
-      background-color: $Primary;
-      @include font(Lat_Bold, 25, $Second);
-
-      .Dev {
-        display: flex;
-        flex-direction: column;
-
-        p {
-          margin-bottom: 10px;
-        }
-      }
-
-      .reseaux {
-        display: flex;
-        flex-direction: column;
-        .conteneurIcone {
-          display: flex;
-          .icone {
-            width: 2vw;
-            height: 2vw;
-            position: relative;
-            margin: 0px 5px;
-
-            img {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-

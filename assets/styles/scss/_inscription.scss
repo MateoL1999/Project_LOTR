@@ -1,0 +1,58 @@
+section{
+  background-color: $Primary;
+  .Titre--Insc{
+    text-align: center;
+    padding: 10% 0px 34px 0;
+    @include font(Lat_Bold, 40, $Second);
+  }
+  .Form--Insc {
+    .Civilite {
+      display: flex;
+      width: 50%;
+      margin-left: 32%;
+      font-size: 20px;
+
+      div {
+        width: 50%;
+      }
+    }
+
+    .Insc--email {
+
+      margin-left: 17.5%;
+      margin-top: 1%;
+      font-size: 20px;
+
+    }
+
+    .Insc--Password {
+      margin-left: 31.75%;
+      margin-top: 1%;
+      font-size: 20px;
+    }
+
+    .Accepter--Terme {
+      color: $Second;
+      margin-left: 31.75%;
+      margin-top: 1%;
+      font-size: 20px;
+    }
+  }
+    .submit--Insc{
+      margin-top: 5%;
+      text-align: center;
+      width: 100%;
+      @include font(Lat_Bold, 25, $Second);
+      .button-Insc{
+        border-radius: 40px;
+        border: $Second;
+        padding: 5px;
+        background-color: $Second;
+        @include font(Lat_Bold, 25, $Primary);
+      }
+    }
+
+
+
+
+}

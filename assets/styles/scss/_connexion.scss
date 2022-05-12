@@ -1,0 +1,33 @@
+
+body {
+  .conteneurF {
+    padding-top: 100px;
+    background-color: $Primary;
+    padding-bottom: 3%;
+    .titre--connexion{
+      width: 100%;
+      @include font(Lat_Bold, 40, $Second);
+    }
+    .form--connexion{
+      margin: 10% 0px 10px 10%;
+      @include font(Lat_Bold, 25, $Second);
+      .Email{
+        margin-bottom: 20px;
+      }
+    }
+    .submit{
+      margin-top: 10%;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      @include font(Lat_Bold, 25, $Second);
+        .button-submit{
+          border-radius: 40px;
+          border: $Second;
+          background-color: $Second;
+          @include font(Lat_Bold, 25, $Primary);
+
+        }
+    }
+  }
+}
