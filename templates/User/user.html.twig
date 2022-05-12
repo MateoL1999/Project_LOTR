@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="Dashboard">
+        <div class="titreDash">
+            <h1>
+                Dashboard
+            </h1>
+        </div>
+        <table class="table table_striped">
+
+            <thead class="tableau">
+            <th> Id</th>
+            <th> Prénom</th>
+            <th> Nom</th>
+            <th> Email</th>
+            <th> Roles</th>
+            <th> Éditer/Supprimer</th>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr class="StyleDash">
+                    <td>
+                        {{ user.id }}
+                    </td>
+                    <td>
+                        {{ user.firstName }}
+                    </td>
+                    <td>
+                        {{ user.lastName }}
+                    </td>
+                    <td>
+                        {{ user.email }}
+                    </td>
+                    <td>
+                        {{ user.roles|join(', ') }}
+                    </td>
+                    <td class="crud">
+                        <a class="edit" href="{{ path('user_edit', {id: user.id }) }}">
+                            <i class="fa-solid fa-pen text-primary"></i>
+                        </a>
+                        <a class="delete" href="{{ path('user_delete', {id: user.id}) }}">
+                            <i class="fa fa-trash text-danger"></i>
+                        </a>
+                    </td>
+
+                    {#                <td class="text-end"> #}
+                    {#                    <a href="{{ path('user_toggle_role'), {id: user.id, role: 'ROLE_ADMIN'} }}"> #}
+                    {#                        Changer le role admin #}
+                    {#                    </a> #}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
