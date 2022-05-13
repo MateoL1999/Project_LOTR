@@ -4,6 +4,11 @@
 
 {% block body %}
 <section class="Cont--Insc">
+    <div class="img--arbre">
+        <div class="logo--connect">
+            <img class="Arbre" src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
+        </div>
+    </div>
     <div class="Titre--Insc">
         <h1>S'inscrire</h1>
     </div>
@@ -23,7 +28,8 @@
         </div>
         <div class="Accepter--Terme">
             {{ form_row(registrationForm.agreeTerms, {
-                label: 'Accepter les conditions'
+                'label': 'Accepter les conditions',
+                'label_attr': {'class': 'label--Accep'}
             }) }}
         </div>
     </div>

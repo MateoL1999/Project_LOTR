@@ -30,7 +30,15 @@
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#">Article</a></li>
                     <li><a href="#">Recherche</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ path('Contact') }}">Contact</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path('bookKind_listing') }}">Genres</a>#}
+{#                        </li>#}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('user_listing') }}">Utilisateurs</a>
+                        </li>
+                    {% endif %}
                     <li><a class="inscription" href="{{path('Inscription')}}">Inscription</a></li>
                     <li><a class="connecter" href="{{path('Connexion')}}">Connexion</a></li>
                 </ul>

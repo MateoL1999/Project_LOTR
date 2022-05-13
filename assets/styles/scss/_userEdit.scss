@@ -1,14 +1,64 @@
-.Section--Edit{
+.Section--Edit {
   color: $Second;
-      .ConTitre{
-        text-align: center;
-        @include font(Lat_Bold, 40, $Second);
-        padding-top: 5%;
-      }
-  .conteneurE{
 
-
-
+  .ConTitre {
+    text-align: center;
+    @include font(Lat_Bold, 40, $Second);
+    padding-top: 5%;
   }
+
+  .conteneurE {
+    .Edit--Name {
+      @include flex(center,center);
+      margin-left: 3.5%;
+      width: 100%;
+      padding-top: 5%;
+      @include font(Lat_Reg, 20, $Second);
+      margin-right: 5%;
+
+    }
+
+    .Edit--Email {
+      @include flex(center,center);
+      padding-right: 4.5%;
+      width: 100%;
+      padding-top: 2%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+
+    .Edit--roles {
+      @include flex(center,center);
+      padding-right: 5%;
+      padding-top: 2%;
+      @include font(Lat_Reg, 20, $Second);
+
+      .label--roles {
+        margin-bottom: 10px;
+      }
+
+      #user_form_roles {
+        #user_form_roles_0 {
+          margin-right: 10px;
+        }
+
+        #user_form_roles_1 {
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .Save--Edit{
+      padding-top: 4%;
+      @include flex(center,center);
+      .bouton-Edit{
+        border-radius: 10px 100px / 120px;
+        border: $Second;
+        padding: 5px;
+        background-color: $Second;
+        @include font(Lat_Bold, 25, $Primary);
+      }
+    }
 
 }

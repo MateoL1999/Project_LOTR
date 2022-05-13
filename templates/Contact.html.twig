@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="Contact">
+        <div class="conteneur--Contact">
+            <div class="Image--Contact">
+                <img class="Anneau" src={{ asset ("Image/image.png") }} alt="LOTR">
+            </div>
+        </div>
+        <div class="Titre--Edit">
+            <h1 class="Titre--Contact">
+                Contact
+            </h1>
+        </div>
+        <form method="post">
+            <div class="form--connexion">
+                <div class="Email">
+                    <input type="text" name="email" id="email" class="input--contact respond" placeholder="Email">
+                </div>
+                <div class="objet">
+                    <input type="text" name="objet" id="objet" class="input--contact" placeholder="Objet">
+                </div>
+                <div class="message">
+                    <div class="label--container">
+                        <label for="text" class="label--message"> Message </label>
+                    </div>
+                    <div class="input--message">
+                        <input type="text" name="message" id="message" class="input--contact2">
+                    </div>
+                </div>
+                {#    <input type="hidden" name="_csrf_token" #}
+                {#           value="{{ csrf_token('authenticate') }}" #}
+                {#    > #}
+            </div>
+            <div class="conteneur-submit">
+                <button class="contact-submit" type="submit">
+                    Envoyer
+                </button>
+            </div>
+        </form>
+    </section>
+{% endblock body %}

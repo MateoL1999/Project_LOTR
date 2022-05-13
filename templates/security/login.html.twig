@@ -6,20 +6,26 @@
     <section class="conteneurF">
         <form method="post">
             {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div class="alert alert-danger Info--connect">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
             {% if app.user %}
-                <div class="mb-3">
+                <div class="alert alert-danger Info--connect">
                     You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
                 </div>
             {% endif %}
+            <div class="img--arbre">
+            <div class="logo--connect">
+                <img class="Arbre" src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
+            </div>
+            </div>
             <div class="titre--connexion flex--center">
                 <h1 class="">Connexion</h1>
             </div>
             <div class="form--connexion">
                 <div class="Email">
-                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="input-format"
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                           class="input-format respond"
                            autocomplete="email"
                            required autofocus placeholder="Email">
                 </div>

@@ -21,21 +21,21 @@ class UserFormType extends AbstractType
         $builder
             ->add('firstName', TextType::class, [
                 'attr' => [
-                    'class' => 'input-Edit Edit--Prenom',
+                    'class' => 'input-Edit Input--Edit--Prénom',
                     'palceholder' => 'Prénom',
                 ],
                 'label' => false
             ])
             ->add('lastName', TextType::class,[
                 'attr' => [
-                    'class' => 'input-Edit Edit--Nom',
+                    'class' => 'input-Edit Input--Edit--Nom',
                     'palceholder' => 'Nom',
                 ],
                 'label' => false
             ])
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'class' => 'input-Edit Edit--Email',
+                    'class' => 'Input--Edit--Email',
                     'placeholder' => 'Email',
                 ],
                 'label' => false
@@ -56,7 +56,7 @@ class UserFormType extends AbstractType
             ->add('save', SubmitType::class,[
                 'label' => 'Enregistrer',
                 'attr' => [
-                    'class' => 'bouton-submit'
+                    'class' => 'bouton-Edit'
                 ]
             ])
         ;

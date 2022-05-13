@@ -1,18 +1,46 @@
 
 body {
+
+
   .conteneurF {
-    padding-top: 100px;
+    padding-top: 50px;
     background-color: $Primary;
     padding-bottom: 3%;
+    .Info--connect{
+      @include font(Lat_Bold, 20, $grey2);
+          }
+    .img--arbre {
+      display: none;
+      @include respond('phone'){
+        display: block;
+        @include flex(center, center);
+        width: 100%;
+      }
+      .logo--connect {
+        width: 20%;
+        .Arbre {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
     .titre--connexion{
       width: 100%;
       @include font(Lat_Bold, 40, $Second);
     }
     .form--connexion{
       margin: 10% 0px 10px 10%;
-      @include font(Lat_Bold, 25, $Second);
+      @include font(Lat_Bold, 25, $grey2);
+      @include respond ('phone') {
+        margin: 15% 0px 10px 24%;
+      }
       .Email{
         margin-bottom: 20px;
+        .respond{
+          @include respond('phone'){
+            width: 70%;
+        }
+        }
       }
     }
     .submit{
@@ -25,6 +53,7 @@ body {
           border-radius: 40px;
           border: $Second;
           background-color: $Second;
+          padding: 1.5%;
           @include font(Lat_Bold, 25, $Primary);
 
         }

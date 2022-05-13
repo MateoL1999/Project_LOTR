@@ -9,22 +9,28 @@
     </div>
 
     {{ form_start(form) }}
-<div class="conteneurE">
-    <div class="inputEdit">
-        {{ form_row(form.firstName) }}
-        {{ form_row(form.lastName) }}
+    <div class="conteneurE">
+        <div class="Edit--Name">
+            {{ form_row(form.firstName) }}
+            {{ form_row(form.lastName) }}
+        </div>
+        <div class="Edit--Email">
+            {{ form_row(form.email) }}
+        </div>
+        <div class="Edit--roles">
+            {{ form_row(form.roles, {
+                'label_attr': {'class': 'label--roles'}
+            }) }}
+        </div>
     </div>
-    <div class="inputEdit">
-        {{ form_row(form.email) }}
+    <div class="Save--Edit">
+        {{ form_row(form.save) }}
     </div>
-    <div class="inputEdit">
-        {{ form_row(form.roles) }}
-    </div>
-</div>
-{{ form_row(form.save)}}
-{{ form_end(form) }}
-{% endblock %}
+    {{ form_end(form) }}
+    {% endblock %}
 
     {% block title %}
+
 </section>
+
 {% endblock %}

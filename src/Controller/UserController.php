@@ -17,6 +17,10 @@ class UserController extends AbstractController
     #[Route('/users', name:'user_listing')]
     public function userListing(UserRepository $userRepository):Response
     {
+        if(!$this->isGranted('ROLE_ADMIN')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('Connexion');
+        }
         $users = $userRepository->findAll();
         return $this->render('user/user.html.twig',[
            'users'=> $users,
