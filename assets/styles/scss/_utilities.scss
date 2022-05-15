@@ -44,6 +44,38 @@
   }
 }
 
+#registration_form_plainPassword_first {
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 30%;
+  color: $Second;
+  @include respond('phone'){
+    width: 50%;
+  }
+  &::placeholder{
+    color: $Second;
+
+  }
+}
+
+#registration_form_plainPassword_second{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 30%;
+  color: $Second;
+  @include respond('phone'){
+    width: 50%;
+  }
+  &::placeholder{
+    color: $Second;
+
+  }
+}
+
 .input-Edit{
   border-top: white;
   border-right: white;
@@ -80,3 +112,5 @@
       color: $Primary;
     }
   }
+
+

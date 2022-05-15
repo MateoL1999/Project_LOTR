@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+<section  class="carousel">
+    <div class="slider">
+        <img class="img--slider active" src="{{ asset ("Image/slider1.jpg") }}" alt="img1">
+        <img class="img--slider" src="{{ asset ("Image/slider2.jpg") }}" alt="img2">
+        <img class="img--slider" src="{{ asset ("Image/slider3.jpg") }}" alt="img3">
+        <img class="img--slider" src="{{ asset ("Image/slider4.jpg") }}" alt="img4">
+        <img class="img--slider" src="{{ asset ("Image/slider5.jpg") }}" alt="img5">
+        <div class="suivant">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="precedent">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

@@ -33,7 +33,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
-    #[ORM\Column(type:'srting', ²)]
+    #[ORM\Column(type:'srting')]
     
 
     /**
