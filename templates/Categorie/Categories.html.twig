@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="Dashboard">
+        <div class="titreDash">
+            <h1>
+                Categorie
+            </h1>
+
+        </div>
+        <div class="Nouvelle Categorie">
+{#            <a class="edit" href="{{ path('Categorie_edit', {id: categorie.id }) }}">#}
+{#                                            <i class="fa-solid fa-pen text-primary"></i>#}
+{#                                        </a>#}
+        </div>
+        <table class="table table_striped">
+
+            <thead class="tableau">
+            <th> Id</th>
+            <th> Label</th>
+            <th> Wiki</th>
+            <th> Éditer/Supprimer</th>
+            </thead>
+            <tbody>
+            {% for categorie in categories %}
+                <tr class="StyleDash">
+                    <td>
+                        {{ categorie.id }}
+                    </td>
+                    <td>
+                        {{ categorie.label}}
+                    </td>
+                    <td>
+                        {{ categorie.wiki }}
+                    </td>
+{#                    <td class="crud">#}
+{#                        <a class="edit" href="{{ path('Categorie_edit', {id: categorie.id }) }}">#}
+{#                            <i class="fa-solid fa-pen text-primary"></i>#}
+{#                        </a>#}
+{#                        <a class="delete" href="{{ path('Categorie_delete', {id: categorie.id}) }}">#}
+{#                            <i class="fa fa-trash text-danger"></i>#}
+{#                        </a>#}
+{#                    </td>#}
+{#                </tr>#}
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock body %}

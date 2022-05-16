@@ -3,9 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\WikiRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: WikiRepository::class)]
+/**
+ * @Vich\Uploadable
+ */
 class Wiki
 {
     #[ORM\Id]
@@ -14,16 +21,44 @@ class Wiki
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $Titre;
+    private $titre;
 
-    #[ORM\Column(type: 'date')]
-    private $Date;
+    #[ORM\Column(type: 'date', nullable: true)]
+    private $date;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $editeur;
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'wiki')]
+    private $user;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $contenus;
+
+    #[ORM\ManyToMany(targetEntity: Categorie::class, mappedBy: 'wiki')]
+    private $categorie;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="wiki_cover", fileNameProperty="imageName")
+     *
+     * @var File|null
+     */
+    private $imageFile;
+
+
+    #[ORM\Column(type:"string")]
+    private $imageName;
+
+
+    #[ORM\Column(type:"datetime", nullable: true)]
+    private $updatedAt;
+
+
+    public function __construct()
+    {
+      $this->categorie = new ArrayCollection();
+      $this->User = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -32,39 +67,28 @@ class Wiki
 
     public function getTitre(): ?string
     {
-        return $this->Titre;
+        return $this->titre;
     }
 
-    public function setTitre(string $Titre): self
+    public function setTitre(string $titre): self
     {
-        $this->Titre = $Titre;
+        $this->titre = $titre;
 
         return $this;
     }
 
     public function getDate(): ?\DateTimeInterface
     {
-        return $this->Date;
+        return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $Date): self
+    public function setDate(\DateTimeInterface $date): self
     {
-        $this->Date = $Date;
+        $this->date = $date;
 
         return $this;
     }
 
-    public function getEditeur(): ?string
-    {
-        return $this->editeur;
-    }
-
-    public function setEditeur(string $editeur): self
-    {
-        $this->editeur = $editeur;
-
-        return $this;
-    }
 
     public function getContenus(): ?string
     {
@@ -77,4 +101,74 @@ class Wiki
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Categorie>
+     */
+    public function getCategorie(): Collection
+    {
+        return $this->categorie;
+    }
+
+    public function addCategorie(Categorie $categorie): self
+    {
+        if (!$this->categorie->contains($categorie)) {
+            $this->categorie[] = $categorie;
+            $categorie->addWiki($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategorie(Categorie $categorie): self
+    {
+        if ($this->categorie->removeElement($categorie)) {
+            $categorie->removeWiki($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void
+    {
+        $this->user = $user;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
 }

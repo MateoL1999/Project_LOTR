@@ -20,15 +20,14 @@
 <body>
 <header>
     <nav>
-
         <div class="conteneurP">
             <div class="Logo">
-                <img src={{ asset ("Image/La_bibliotheque_de_Valinor.png") }} alt="">
+                <img src="{{ asset ("Image/La_bibliotheque_de_Valinor.png") }}" alt="">
             </div>
             <div class="menu display">
                 <ul class="Hidden">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Article</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li><a href="{{ path('wiki_listing') }} ">Article</a></li>
                     <li><a href="#">Recherche</a></li>
                     <li><a href="{{ path('Contact') }}">Contact</a></li>
                     {% if is_granted('ROLE_ADMIN') %}

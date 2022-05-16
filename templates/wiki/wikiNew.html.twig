@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="Section--Edit">
+    <div class="ConTitre">
+        <h1 class="Titre--Edit">
+            Générer un article
+        </h1>
+    </div>
+
+    {{ form_start(form) }}
+    <div class="conteneurN">
+        <div class="New--Titre">
+            {{ form_row(form.titre) }}
+        </div>
+        <div class="New--User">
+            {{ form_row(form.user) }}
+        </div>
+        <div class="New--image_file">
+            {{ form_row(form.imageFile) }}
+        </div>
+        <div class="New--Categorie">
+            {{ form_row(form.categorie) }}
+        </div>
+    </div>
+    <div class="Save--New">
+        {{ form_row(form.save) }}
+    </div>
+
+    {{ form_end(form) }}
+</section>
+    {% endblock body %}

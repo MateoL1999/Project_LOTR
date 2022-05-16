@@ -33,8 +33,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
-    #[ORM\Column(type:'srting')]
-    
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Wiki::class)]
+    private $wiki;
+
+    public function __toString() {
+        return $this->getFirstName() . ' ' . $this->getLastName();
+    }
+
 
     /**
      * @return mixed
@@ -138,4 +143,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
+    public function getWiki(): ?Wiki
+    {
+        return $this->wiki;
+    }
+
+    public function setWiki(?Wiki $wiki): self
+    {
+        $this->wiki = $wiki;
+
+        return $this;
+    }
+
 }

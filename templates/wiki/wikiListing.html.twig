@@ -1,5 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
 
-{% endblock %}
+
+{% block body %}
+    <section class="ConteneurA">
+        {% for wiki in wikis %}
+        <div class="">
+            <article class="Carte--Image">
+                {% if wiki.imageName %}
+                    <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img-carte" alt="image_name">
+                {% else %}
+                    <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png" class="img-carte"
+                         alt="Default-image">
+                {% endif %}
+                <div class="card-body">
+                    <a href="{{ path('wiki_new', {id: wiki.id}) }}" class="Lien--détails"><h5
+                                class="title-carte">{{ wiki.titre }}</h5></a>
+                    {#                <a href="{{ path('like_book_ajax', {id: book.id}) }}" class="js-book-like"> #}
+                    {#                    {% if app.user in book.likedByUsers %} #}
+                    {#                        Unlike #}
+                    {#                    {% else %} #}
+                    {#                        Like #}
+                    {#                    {% endif %} #}
+                    {#                    ({{ book.likedByUsers|length }}) #}
+                    {#                </a> #}
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+    </section>
+{% endblock body %}

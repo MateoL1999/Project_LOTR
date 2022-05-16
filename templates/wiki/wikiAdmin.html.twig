@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="Dashboard">
+        <div class="titreDash">
+            <h1>
+                Admin Wiki
+            </h1>
+        </div>
+        <table class="table table_striped">
+
+            <thead class="tableau">
+            <th> Id</th>
+            <th> Title</th>
+            <th> Contenus</th>
+            <th> User</th>
+            <th> MAJ </th>
+            <th> Éditer/Supprimer</th>
+            </thead>
+            <tbody>
+            {% for wiki in wikis %}
+                <tr class="StyleDash">
+                    <td>
+                        {{ wiki.titre }}
+                    </td>
+                    <td>
+                        {{ wiki.date }}
+                    </td>
+                    <td>
+                        {{ wiki.user }}
+                    </td>
+{#                    <td>#}
+{#                        {{ wiki.categorie }}#}
+{#                    </td>#}
+                    <td>
+                        {{ wiki.imageName }}
+                    </td>
+{#                    <td>#}
+{#                        {{ wiki.updatedAt }}#}
+{#                    </td>#}
+                    <td class="crud">
+{#                        <a class="edit" href="{{ path('wiki_edit', {id: wiki.id }) }}">#}
+{#                            <i class="fa-solid fa-pen text-primary"></i>#}
+{#                        </a>#}
+                        <a class="delete" href="{{ path('wiki_delete', {id: wiki.id}) }}">
+                            <i class="fa fa-trash text-danger"></i>
+                        </a>
+                    </td>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

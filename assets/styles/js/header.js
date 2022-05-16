@@ -1,12 +1,13 @@
 const nav = document.querySelector("nav");
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
-console.log('kuruma')
 
 let lastScroll = 0;
 
 burger.addEventListener("click", () => {
+    console.log("oui");
     menu.classList.toggle("display");
+
 });
 
 //////////////////////////Slider//////////////////////////
