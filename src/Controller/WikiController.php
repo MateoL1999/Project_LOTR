@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Wiki;
+use App\Form\wikiEditType;
 use App\Form\WikiType;
 use App\Repository\WikiRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -43,6 +44,7 @@ class WikiController extends AbstractController
         }
 
         $newWiki = new Wiki();
+        $newWiki->setDate(new \DateTime('now'));
         $form = $this->createForm(WikiType::class, $newWiki);
 
         $form->handleRequest($request);
@@ -56,6 +58,27 @@ class WikiController extends AbstractController
             return $this->redirectToRoute('wiki_listing');
         }
         return $this->render('wiki/wikiNew.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    #[Route('/wiki/{id}/edit', name: 'wiki_edit')]
+    public function wikiEdit($id, WikiRepository $wikiRepository, Request $request, EntityManagerInterface $entityManager)
+    {
+        $wiki = $wikiRepository->findOneBy(['id' => $id]);
+        if (!$wiki) {
+            return $this->redirectToRoute('wiki_listing');
+        }
+        $form = $this->createForm(wikiEditType::class, $wiki);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $entityManager->persist($wiki);
+            $entityManager->flush();
+        }
+        return $this->render('wiki/wikiEdit.html.twig',[
+            'wiki'=> $wiki,
             'form' => $form->createView()
         ]);
     }

@@ -24,6 +24,10 @@
             margin-right: 10%;
           }
         }
+        .Nom-wiki{
+          display: flex;
+          flex-direction: column;
+        }
       }
       .StyleDash:nth-child(2n+1){
         @include font(Lat_Reg, 15, $Second);

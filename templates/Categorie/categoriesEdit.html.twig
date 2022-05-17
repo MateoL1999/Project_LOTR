@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<section class="Section--Edit">
-    <div class="ConTitre">
-        <h1 class="Titre--Edit">
-            Catégories
-        </h1>
-    </div>
-
-    {{ form_start(form) }}
-    <div class="conteneurC">
-        <div class="New--Categorie">
-            {{ form_row(form.label) }}
+    <section class="Section--Edit">
+        <div class="ConTitre">
+            <h1 class="Titre--Edit">
+                Édition Catégories
+            </h1>
         </div>
-    </div>
-    <div class="Save--Edit">
-        {{ form_row(form.save) }}
-    </div>
-    {{ form_end(form) }}
-</section>
+
+        {{ form_start(form) }}
+        <div class="conteneurC">
+            <div class="New--Categorie">
+                {{ form_row(form.label) }}
+            </div>
+        </div>
+        <div class="submit--Insc">
+            {{ form_row(form.save) }}
+        </div>
+        {{ form_end(form) }}
+    </section>
 
 {% endblock body %}

@@ -72,7 +72,6 @@
   }
   &::placeholder{
     color: $Second;
-
   }
 }
 
@@ -93,7 +92,7 @@
   border-right: white;
   border-left: white;
   background: transparent;
-  width: 100%;
+  width: 130%;
   color: $Second;
     &::placeholder{
       color: $Second;
@@ -160,4 +159,6 @@
     color: $Second;
   }
 }
+
+
 

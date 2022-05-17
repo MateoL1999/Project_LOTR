@@ -1,0 +1,21 @@
+.Titre--Wiki{
+  @include font(Lat_Bold, 40, $Second);
+  background-color: $Primary;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.ConteneurWiki{
+  display: flex;
+  .Card--Image{
+    width: 50%;
+    .Image--Wiki {
+      object-fit: cover;
+      width: 100%;
+    }
+    .Title{
+      text-align: center;
+    }
+  }
+}

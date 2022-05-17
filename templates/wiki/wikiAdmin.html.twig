@@ -18,6 +18,9 @@
             <th> ImageName</th>
             <th> MAJ </th>
             <th> Éditer/Supprimer</th>
+            <th>
+                <a class="new" href="{{ path('wiki_new') }}">New</a>
+            </th>
             </thead>
             <tbody>
             {% for wiki in wikis %}
@@ -29,7 +32,7 @@
                         {{ wiki.titre}}
                     </td>
                     <td>
-                        {{ wiki.date }}
+                        {{ wiki.date|date('d-m-Y') }}
                     </td>
                     <td>
                         {{ wiki.user }}
@@ -46,9 +49,9 @@
                         {{ wiki.updatedAt|date('d-m-Y') }}
                     </td>
                     <td class="crud">
-{#                        <a class="edit" href="{{ path('wiki_edit', {id: wiki.id }) }}">#}
-{#                            <i class="fa-solid fa-pen text-primary"></i>#}
-{#                        </a>#}
+                        <a class="edit" href="{{ path('wiki_wiki_edit', {id: wiki.id }) }}">
+                            <i class="fa-solid fa-pen text-primary"></i>
+                        </a>
                         <a class="delete" href="{{ path('wiki_delete', {id: wiki.id}) }}">
                             <i class="fa fa-trash text-danger"></i>
                         </a>

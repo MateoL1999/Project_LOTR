@@ -57,7 +57,7 @@ class CategorieController extends AbstractController
             return $this->redirectToRoute('categorie_listing');
         }
 
-        return $this->render('Categorie/categoriesEdit.html.twig', [
+        return $this->render('Categorie/categoriesNew.html.twig', [
             'form' => $form->createView()
         ]);
     }

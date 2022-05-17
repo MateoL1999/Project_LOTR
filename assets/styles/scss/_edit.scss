@@ -20,4 +20,17 @@
       }
     }
   }
+  .submit--Insc{
+    margin-top: 5%;
+    text-align: center;
+    width: 100%;
+    @include font(Lat_Bold, 25, $Second);
+    .button-Insc{
+      border-radius: 10px 100px / 120px;
+      border: $Second;
+      padding: 10px;
+      background-color: $Second;
+      @include font(Lat_Bold, 25, $Primary);
+    }
+  }
 }

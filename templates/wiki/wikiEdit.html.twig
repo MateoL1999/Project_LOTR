@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="Section--New--Wiki">
+        <div class="conteneur--Contact">
+            <div class="Image--Contact">
+                <img class="Anneau" src={{ asset ("Image/image.png") }} alt="LOTR">
+            </div>
+        </div>
+        <div class="Titre--Edit--Wiki">
+            <h1 class="Titre--New">
+                Edition d'article
+            </h1>
+        </div>
+
+        {{ form_start(form) }}
+        <div class="conteneurW">
+            <div class="Edit--Titre">
+                {{ form_row(form.titre) }}
+            </div>
+            <div class="Edit--User">
+                {{ form_row(form.user) }}
+            </div>
+            <div class="Edit--image_file">
+                {{ form_row(form.imageFile) }}
+            </div>
+            <div class="Edit--Categorie">
+                {{ form_row(form.categories) }}
+            </div>
+        </div>
+        <div class="Save--New">
+            {{ form_row(form.save) }}
+        </div>
+
+        {{ form_end(form) }}
+    </section>
+{% endblock body %}

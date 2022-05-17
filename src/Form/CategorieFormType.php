@@ -14,14 +14,14 @@ class CategorieFormType extends AbstractType
         $builder
             ->add('label', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'User',
+                    'placeholder' => 'Label',
                     'class' => 'Input--New--Kind'
                 ],
                 'label' => false,
             ])
             ->add('save', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-sucess'
+                    'class' => 'button-Insc'
                 ],
                 'label' => 'Enregistrer'
 

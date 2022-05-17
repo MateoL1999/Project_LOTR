@@ -50,7 +50,7 @@ body {
       width: 100%;
       @include font(Lat_Bold, 25, $Second);
         .button-submit{
-          border-radius: 40px;
+          border-radius: 10px 100px / 120px;
           border: $Second;
           background-color: $Second;
           padding: 1.5%;
