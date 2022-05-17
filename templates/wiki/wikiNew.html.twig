@@ -1,9 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<section class="Section--Edit">
-    <div class="ConTitre">
-        <h1 class="Titre--Edit">
+<section class="Section--New--Wiki">
+    <div class="img--arbre">
+        <div class="logo--connect">
+            <img class="Arbre" src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
+        </div>
+    </div>
+    <div class="Titre--New--Wiki">
+        <h1 class="Titre--New">
             Générer un article
         </h1>
     </div>
@@ -20,7 +25,7 @@
             {{ form_row(form.imageFile) }}
         </div>
         <div class="New--Categorie">
-            {{ form_row(form.categorie) }}
+            {{ form_row(form.categories) }}
         </div>
     </div>
     <div class="Save--New">

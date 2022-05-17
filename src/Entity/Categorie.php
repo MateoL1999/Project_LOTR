@@ -18,12 +18,18 @@ class Categorie
     #[ORM\Column(type: 'string', length: 255)]
     private $label;
 
-    #[ORM\ManyToMany(targetEntity: Wiki::class, inversedBy: 'categorie')]
-    private $wiki;
+    #[ORM\ManyToMany(targetEntity: Wiki::class, mappedBy: 'categories')]
+    private $wikis;
+
+
+    public function __toString()
+    {
+       return $this->getLabel();
+    }
 
     public function __construct()
     {
-        $this->wiki = new ArrayCollection();
+        $this->wikis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -46,23 +52,32 @@ class Categorie
     /**
      * @return Collection<int, Wiki>
      */
-    public function getWiki(): Collection
+    public function getWikis(): Collection
     {
-        return $this->wiki;
+        return $this->wikis;
     }
 
-    public function addWiki(Wiki $wiki): self
+    /**
+     * @param ArrayCollection $wikis
+     */
+    public function setWikis(ArrayCollection $wikis): void
     {
-        if (!$this->wiki->contains($wiki)) {
-            $this->wiki[] = $wiki;
+        $this->wikis = $wikis;
+    }
+
+
+    public function addWiki(Wiki $wikis): self
+    {
+        if (!$this->wikis->contains($wikis)) {
+            $this->wikis[] = $wikis;
         }
 
         return $this;
     }
 
-    public function removeWiki(Wiki $wiki): self
+    public function removeWiki(Wiki $wikis): self
     {
-        $this->wiki->removeElement($wiki);
+        $this->wikis->removeElement($wikis);
 
         return $this;
     }

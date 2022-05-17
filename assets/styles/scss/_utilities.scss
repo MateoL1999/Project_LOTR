@@ -113,4 +113,51 @@
     }
   }
 
+.Input--Categorie{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 50%;
+  color: $Second;
+  &::placeholder{
+    color: $Second;
+  }
+}
+
+.Input--New--Titre{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 75%;
+  color: $Second;
+  &::placeholder{
+    color: $Second;
+  }
+}
+
+.Input--New--User{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: $Primary;
+  width: 75%;
+  color: $Second;
+  &::placeholder{
+    color: $Second;
+  }
+}
+
+.Input--New--Wiki{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 75%;
+  color: $Second;
+  &::placeholder{
+    color: $Second;
+  }
+}
 

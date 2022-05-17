@@ -1,0 +1,23 @@
+.conteneurC {
+  .New--Categorie {
+    @include flex(center, center);
+    width: 100%;
+    padding-top: 5%;
+    @include font(Lat_Reg, 20, $Second);
+    margin-right: 5%;
+    .Input--New--Kind {
+      border-top: white;
+      border-right: white;
+      border-left: white;
+      background: transparent;
+      width: 50%;
+      color: $Second;
+      @include respond('phone') {
+        width: 70%;
+      }
+      &::placeholder {
+        color: $Second;
+      }
+    }
+  }
+}

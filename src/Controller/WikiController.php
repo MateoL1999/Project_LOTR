@@ -25,6 +25,10 @@ class WikiController extends AbstractController
     #[Route('/admin', name: 'admin')]
     public function wikiAdmin(WikiRepository $wikiRepository, Request $request)
     {
+        if(!$this->isGranted('ROLE_ADMIN')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('wiki_listing');
+        }
         $wikis = $wikiRepository->findAll();
         return $this->render('wiki/wikiAdmin.html.twig',[
             'wikis' => $wikis

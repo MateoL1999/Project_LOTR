@@ -32,8 +32,12 @@ class Wiki
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $contenus;
 
-    #[ORM\ManyToMany(targetEntity: Categorie::class, mappedBy: 'wiki')]
-    private $categorie;
+    #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'wikis')]
+    private $categories;
+
+    public function __toString() {
+        return $this->getTitre();
+    }
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
@@ -52,10 +56,26 @@ class Wiki
     #[ORM\Column(type:"datetime", nullable: true)]
     private $updatedAt;
 
+    /**
+     * @return mixed
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param mixed $updatedAt
+     */
+    public function setUpdatedAt($updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
 
     public function __construct()
     {
-      $this->categorie = new ArrayCollection();
+      $this->categories = new ArrayCollection();
       $this->User = new ArrayCollection();
     }
 
@@ -105,25 +125,25 @@ class Wiki
     /**
      * @return Collection<int, Categorie>
      */
-    public function getCategorie(): Collection
+    public function getCategories()
     {
-        return $this->categorie;
+        return $this->categories;
     }
 
-    public function addCategorie(Categorie $categorie): self
+    public function addCategories(Categorie $categories): self
     {
-        if (!$this->categorie->contains($categorie)) {
-            $this->categorie[] = $categorie;
-            $categorie->addWiki($this);
+        if (!$this->categories->contains($categories)) {
+            $this->categories[] = $categories;
+            $categories->addWiki($this);
         }
 
         return $this;
     }
 
-    public function removeCategorie(Categorie $categorie): self
+    public function removeCategories(Categorie $categories): self
     {
-        if ($this->categorie->removeElement($categorie)) {
-            $categorie->removeWiki($this);
+        if ($this->categories->removeElement($categories)) {
+            $categories->removeWiki($this);
         }
 
         return $this;
