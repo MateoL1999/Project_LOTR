@@ -9,15 +9,14 @@
         </h1>
     </div>
     <section class="ConteneurWiki">
-        <div class="">
+        <div class="ConteneurCard">
         {% for wiki in wikis %}
-
             <div class="Card--Image">
                 <div class="Image--Wiki">
                 {% if wiki.imageName %}
                     <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img-carte" alt="image_name">
                 {% else %}
-                    <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png" class="img-carte"
+                    <img  src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png" class="img-carte"
                          alt="Default-image">
                 {% endif %}
                 </div>
@@ -25,7 +24,7 @@
                     <h5 class="title-carte">{{ wiki.titre }}</h5>
                 </div>
             </div>
-        </div>
         {% endfor %}
+        </div>
     </section>
 {% endblock body %}

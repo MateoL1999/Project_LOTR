@@ -7,15 +7,25 @@
 }
 
 .ConteneurWiki{
-  display: flex;
-  .Card--Image{
-    width: 50%;
-    .Image--Wiki {
-      object-fit: cover;
-      width: 100%;
-    }
-    .Title{
-      text-align: center;
+  .ConteneurCard {
+    display: flex;
+    flex-wrap: wrap;
+    .Card--Image {
+      width: 23%;
+      margin: 0 1% 1% 1%;
+      .Image--Wiki {
+
+        .img-carte {
+          object-fit: cover;
+          width: 100%;
+          max-height: 624px;
+        }
+      }
+
+      .Title {
+        text-align: center;
+        background-color: $Second;
+      }
     }
   }
 }

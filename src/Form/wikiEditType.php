@@ -19,14 +19,14 @@ class wikiEditType extends AbstractType
             ->add('titre', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Titre du Livre',
-                    'class' => 'Input--New--Titre'
+                    'class' => 'Input--Edit--Titre'
                 ],
                 'label' => false,
             ])
             ->add('user', EntityType::class,[
                 'attr' => [
                     'placeholder' => 'User',
-                    'class' => 'Input--New--User'
+                    'class' => 'Input--Edit--User'
                 ],
                 'label' => false,
                 'class' => User::class
@@ -34,7 +34,7 @@ class wikiEditType extends AbstractType
             ->add('categories', EntityType::class, [
                 'attr' => [
                     'placeholder' => 'Categories',
-                    'class' => 'Input--New--Wiki'
+                    'class' => 'Input--Edit--Wiki'
                 ],
                 'mapped' => true,
                 'label' => false,

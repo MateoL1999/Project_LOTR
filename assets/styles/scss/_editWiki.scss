@@ -1,0 +1,70 @@
+.Section--New--Wiki {
+  .conteneur--Contact {
+    display: none;
+    @include respond('phone') {
+      display: block;
+      @include flex(center, center);
+      width: 100%;
+    }
+
+    .Image--Contact {
+      width: 20%;
+
+      .Anneau {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  .Titre--Edit--Wiki {
+    text-align: center;
+    @include font(Lat_Bold, 40, $Second);
+    padding-top: 5%;
+  }
+  .conteneurW{
+    .Edit--Titre {
+      @include flex(center, center);
+      padding-right: 4.5%;
+      width: 100%;
+      padding-top: 2%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+    .Edit--User {
+      @include flex(center, center);
+      padding-right: 4.7%;
+      width: 100%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+    .Edit--image_file {
+      @include flex(center, center);
+      width: 100%;
+      padding-left: 5%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+      @include respond('phone') {
+        margin-left: 4%;
+      }
+      label{
+        margin-bottom: 10px;
+      }
+      .vich-image{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .Edit--Categorie{
+      .Input--Edit--Wiki{
+        @include font(Lat_Reg, 20, $Second);
+        @include flex(center,center,column,wrap);
+        height: 138px;
+        margin-top: 1%;
+        margin-left: 15%;
+        @include respond('phone'){
+          margin-left: 18%;
+        }
+      }
+    }
+  }
+
+}
