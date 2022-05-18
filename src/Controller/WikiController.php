@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Wiki;
 use App\Form\wikiEditType;
+use App\Form\WikiSearchFormType;
 use App\Form\WikiType;
 use App\Repository\WikiRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -23,6 +24,26 @@ class WikiController extends AbstractController
         ]);
     }
 
+    #[Route('/recherche', name: 'recherche')]
+    public function wikiRecherche(WikiRepository $wikiRepository, Request $request)
+    {
+        $form = $this->createForm(WikiSearchFormType::class);
+
+        $form->handleRequest($request);
+
+        $searchFormValues =[];
+        if ($form->isSubmitted() && $form->isValid()) {
+            $searchFormValues = $form->getData();
+        }
+
+        // utilise une méthode custom crée par nos soins du repository
+        $wikis = $wikiRepository->findWikisWithCategories($searchFormValues);
+        return $this->render('Recherche/Recherche.html.twig',[
+            'wikis'=>$wikis,
+            'form'=>$form->createView()
+        ]);
+    }
+
     #[Route('/admin', name: 'admin')]
     public function wikiAdmin(WikiRepository $wikiRepository, Request $request)
     {
@@ -39,10 +60,6 @@ class WikiController extends AbstractController
     #[Route('/new', name: 'new')]
     public function wikiNew(Request $request, EntityManagerInterface $entityManager)
     {
-        if(!$this->isGranted('ROLE_ADMIN')) {
-            return $this->redirectToRoute('wiki_listing');
-        }
-
         $newWiki = new Wiki();
         $newWiki->setDate(new \DateTime('now'));
         $form = $this->createForm(WikiType::class, $newWiki);
@@ -77,7 +94,7 @@ class WikiController extends AbstractController
             $entityManager->persist($wiki);
             $entityManager->flush();
         }
-        return $this->render('wiki/wikiEdit.html.twig',[
+        return $this->render('wiki/wikiListing.html.twig',[
             'wiki'=> $wiki,
             'form' => $form->createView()
         ]);

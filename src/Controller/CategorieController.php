@@ -78,7 +78,7 @@ class CategorieController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->render('Categorie/categoriesEdit.html.twig', [
+        return $this->render('Categorie/categories.html.twig', [
             'categories' => $categorie,
             'form' => $form->createView()
         ]);

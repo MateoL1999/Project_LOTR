@@ -10,21 +10,98 @@
   .ConteneurCard {
     display: flex;
     flex-wrap: wrap;
+    @include respond('phone'){
+      flex-direction: column;
+      display: flex;
+
+    }
     .Card--Image {
       width: 23%;
       margin: 0 1% 1% 1%;
+      position: relative;
+      @include respond('phone'){
+        margin: 0;
+        display: flex;
+        width: 100%;
+      }
       .Image--Wiki {
+        @include respond('phone') {
+        }
 
         .img-carte {
           object-fit: cover;
           width: 100%;
-          max-height: 624px;
+          max-height: 612px;
+          @include respond('Desktop') {
+            max-height: 518px;
+          }
+          @include respond('Little-Desktop') {
+            max-height: 475px;
+          }
+          @include respond('large') {
+            max-height: 350px;
+          }
+          @include respond('tab-land') {
+            max-height: 300px;
+          }
+          @include respond('tab') {
+            max-height: 250px;
+          }
+          @include respond('phone'){
+            width: 200px;
+          }
+        }
+
+        .Title {
+          text-align: center;
+          background-color: rgba(255, 249, 236, 0.42);
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          padding: 7% 0 7% 0;
+          @include font(Mod_Exp, 35, $Primary);
+          @include respond('tab') {
+            font-size: 25px;
+          }
+          @include respond('phone') {
+            display: none;
+            position: static;
+            background-color: $Primary2;
+            padding: 0;
+          }
         }
       }
+      .Title--Respond:nth-child(1n+1){
+        display: none;
+        @include respond('phone'){
+          display: block;
+          background-color: $Primary2;
+          width: 100%;
+          @include flex(space-evenly,center);
+          @include font(Mob_Post,35, $Second);
 
-      .Title {
-        text-align: center;
-        background-color: $Second;
+        }
+        .Disparu {
+          display: none;
+          @include respond('phone') {
+            display: block;
+          }
+          .Fleche {
+            @include respond('phone') {
+              padding-left: 20px;
+              display: flex;
+              align-items: center;
+            }
+
+            .Détails {
+              @include font(Mob_Post, 25, $Second);
+              margin-right: 25px;
+            }
+          }
+        }
+      }
+      .Title--Respond:nth-child(2n+1){
+          background-color: $Primary;
       }
     }
   }

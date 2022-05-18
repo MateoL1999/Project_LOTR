@@ -85,6 +85,16 @@ opérateur de comparaison
       @content;
     }
   }
+  @else if ($breakpoint == 'Little-Desktop') {
+    @media(max-width: 1578px) {
+      @content;
+    }
+  }
+  @else if ($breakpoint == 'Desktop') {
+    @media(max-width: 1824px) {
+      @content;
+    }
+  }
 }
 
 // mixin création de font-face

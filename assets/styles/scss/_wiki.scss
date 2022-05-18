@@ -37,16 +37,19 @@
     }
 
     .New--Categorie {
-      @include flex(center, center);
-      width: 100%;
-      padding-right: 12%;
-      padding-top: 1%;
-      @include font(Lat_Reg, 20, $Second);
-      @include respond('phone') {
-        padding-right: 31%;
+      div {
+        @include font(Lat_Reg, 20, $Second);
+        @include flex(center, center, column, wrap);
+        height: 138px;
+        margin-top: 1%;
+        margin-left: 2%;
+        @include respond('phone') {
+          margin-left: 7%;
+        }
       }
     }
   }
+
 
   .Save--New {
     margin-top: 3%;

@@ -1,13 +1,24 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
-    <div class="Titre--Wiki">
-        <h1>
-            Wiki
-        </h1>
+
+<div id="search-form">
+    <div id="search-form-content">
+        {{ form_start(form)}}
+        <div class="ConteneurS">
+            <div class="Search--Titre">
+                {{form_row(form.titre)}}
+            </div>
+            <div class="Search--Categories">
+                {{form_row(form.categories)}}
+            </div>
+        </div>
+        <div class="submit">
+            {{ form_row(form.save) }}
+        </div>
+        {{ form_end(form) }}
     </div>
+</div>
     <section class="ConteneurWiki">
         <div class="ConteneurCard">
             {% for wiki in wikis %}

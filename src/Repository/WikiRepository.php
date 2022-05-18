@@ -47,28 +47,25 @@ class WikiRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Wiki[] Returns an array of Wiki objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('w')
-//            ->andWhere('w.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('w.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findWikisWithCategories($searchFormValues)
+    {
+        $qb = $this->createQueryBuilder('wiki')
+            ->select('wiki')
+            ->leftJoin('wiki.categories', 'categories')
+            ->addSelect('categories')
+        ;
 
-//    public function findOneBySomeField($value): ?Wiki
-//    {
-//        return $this->createQueryBuilder('w')
-//            ->andWhere('w.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        if (!empty($searchFormValues['titre'])) {
+            $qb->andWhere('wiki.titre LIKE :titre')
+                ->setParameter('titre', '%' . $searchFormValues['titre'] . '%');
+        }
+        if (!empty($searchFormValues['categories'])) {
+            $qb->andWhere(':categories MEMBER OF wiki.categories')
+                ->setParameter('categories', $searchFormValues['categories']);
+        }
+
+        $query = $qb->getQuery();
+        return $query->execute();
+
+    }
 }

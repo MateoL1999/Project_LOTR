@@ -28,15 +28,19 @@
                 <ul class="Hidden">
                     <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('wiki_listing') }} ">Article</a></li>
-                    <li><a href="#">Recherche</a></li>
+                    <li><a href="{{ path('wiki_recherche') }}">Recherche</a></li>
                     <li><a href="{{ path('Contact') }}">Contact</a></li>
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_EDITEUR') %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('categorie_listing') }}">Categories</a>
                         </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('user_listing') }}">Utilisateurs</a>
                         </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_EDITEUR') %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('wiki_admin') }}">Wiki-Admin</a>
                         </li>

@@ -44,8 +44,8 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->render('user/userEdit.html.twig',[
-            'user'=> $user,
+        return $this->render('user/user.html.twig',[
+            'users'=> $user,
             'form' => $form->createView()
         ]);
     }
