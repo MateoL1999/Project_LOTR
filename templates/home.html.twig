@@ -1,20 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block body%}
-<section  class="carousel">
-    <div class="slider">
-        <img class="img--slider active" src="{{ asset ("Image/slider1.jpg") }}" alt="img1">
-        <img class="img--slider" src="{{ asset ("Image/slider2.jpg") }}" alt="img2">
-        <img class="img--slider" src="{{ asset ("Image/slider3.jpg") }}" alt="img3">
-        <img class="img--slider" src="{{ asset ("Image/slider4.jpg") }}" alt="img4">
-        <img class="img--slider" src="{{ asset ("Image/slider5.jpg") }}" alt="img5">
-        <div class="suivant">
-            <i class="fas fa-chevron-right"></i>
+{% block body %}
+    <section class="carousel">
+        <div class="slider">
+            <img class="img--slider active" src="{{ asset ("Image/slider1.jpg") }}" alt="img1">
+            <img class="img--slider" src="{{ asset ("Image/slider2.jpg") }}" alt="img2">
+            <img class="img--slider" src="{{ asset ("Image/slider3.jpg") }}" alt="img3">
+            <img class="img--slider" src="{{ asset ("Image/slider4.jpg") }}" alt="img4">
+            <img class="img--slider" src="{{ asset ("Image/slider5.jpg") }}" alt="img5">
+            <div class="suivant">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="precedent">
+                <i class="fas fa-chevron-left"></i>
+            </div>
         </div>
-        <div class="precedent">
-            <i class="fas fa-chevron-left"></i>
+    </section>
+
+    <section class="DernierWiki">
+        <div class="Titre--DernierWiki">
+            <h3>
+                Dernier Article
+            </h3>
         </div>
-    </div>
-</section>
+        <div class="Card--Dernier">
+            {% for wiki in wikis|slice(2, 4) %}
+                <div class="Card--Home">
+                    <div class="Image--Home">
+                        {% if wiki.imageName %}
+                            <img src="{{  vich_uploader_asset(wiki, 'imageFile') }}" class="img-Home" alt="image_name">
+                        {% else %}
+                            <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
+                                 class="img-carte"
+                                 alt="Default-image">
+                        {% endif %}
+                        <div class="Title--Home">
+                            <a href="{{ wiki.url }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 
 {% endblock body %}

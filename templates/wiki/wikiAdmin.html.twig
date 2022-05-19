@@ -15,7 +15,7 @@
             <th> Date</th>
             <th> User</th>
             <th> Categorie</th>
-            <th> ImageName</th>
+            <th> Url</th>
             <th> MAJ </th>
             <th> E/D/<a class="new" href="{{ path('wiki_new') }}">New</a></th>
             </thead>
@@ -40,7 +40,7 @@
                         </td>
                     {% endfor %}
                     <td>
-                        {{ wiki.imageName }}
+                        {{ wiki.contenu }}
                     </td>
                     <td>
                         {{ wiki.updatedAt|date('d-m-Y') }}

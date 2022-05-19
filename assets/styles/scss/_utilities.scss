@@ -185,6 +185,31 @@
     color: $Second;
   }
 }
+.Input--Edit--Contenu{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: $Primary;
+  width: 75%;
+  color: $Second;
+  margin-left: 5%;
+  &::placeholder{
+    color: $Second;
+  }
+}
+
+.Input--New--Url{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: $Primary;
+  width: 75%;
+  color: $Second;
+  margin-left: 2%;
+  &::placeholder{
+    color: $Second;
+  }
+}
 
 .Input--Edit--Wiki{
   border-top: white;

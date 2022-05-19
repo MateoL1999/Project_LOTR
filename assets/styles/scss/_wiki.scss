@@ -22,6 +22,21 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
+    .New--User {
+      @include flex(center, center);
+      padding-right: 4.7%;
+      width: 100%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+    .New--Url {
+      @include flex(center, center);
+      padding-right: 4.7%;
+      width: 100%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+
     .New--image_file {
       @include flex(center, center);
       width: 100%;

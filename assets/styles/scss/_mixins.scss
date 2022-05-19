@@ -60,6 +60,11 @@ opérateur de comparaison
 
 // mixin responsive
 @mixin respond($breakpoint) {
+  @if($breakpoint == 'phone-min') {
+    @media(max-width: 599px) {
+      @content;
+    }
+  }
   @if($breakpoint == 'phone') {
     @media(max-width: 780px) {
       @content;

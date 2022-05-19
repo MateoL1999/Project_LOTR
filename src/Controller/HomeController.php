@@ -2,16 +2,22 @@
 
 namespace App\Controller;
 
+use App\Repository\WikiRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
     #[Route ("/", name: "home")]
-    public function home()
+    public function home(WikiRepository $wikiRepository, Request $request)
     {
-        return $this->render('home.html.twig');
+        $wikis = $wikiRepository->findAll();
+        return $this->render('home.html.twig',[
+            'wikis' => $wikis
+        ]);
     }
+
 
     #[Route ("/Politique de confidentialités", name: "Politique")]
     public function Politique()

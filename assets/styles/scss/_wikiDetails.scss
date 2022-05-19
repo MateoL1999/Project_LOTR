@@ -1,0 +1,65 @@
+.Detail {
+  background-color: $Primary;
+
+  .Detail--Titre {
+    text-align: center;
+    @include font(Mod_Exp, 40, $Second);
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+  }
+
+  .ConteneurDetails {
+    display: flex;
+    .Details--Contenu{
+      @include font(Lat_Reg, 20, $Second);
+    }
+    .Details--Contenu{
+      display: flex;
+      align-items: center;
+      p{
+        padding-right: 94px;
+        padding-left: 30px;
+      }
+    }
+    .Details--Image {
+      width: 44%;
+      margin-right: 2%;
+      @include respond('Desktop'){
+        width: 78%;
+      }
+      @include respond('laptop'){
+        width: 114%;
+      }
+      @include respond('tab-land'){
+        width: 180%;
+      }
+      @include respond('phone'){
+        width: 220%;
+      }
+      @include respond('phone'){
+        width: 220%;
+      }
+      @include respond('phone-min'){
+        width: 400%;
+      }
+      .img-Details {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  .Detail--Categorie{
+    .Categorie {
+      @include font(Mod_Li, 20, $Second);
+      text-align: center;
+    }
+    .Titre--Details {
+      text-align: center;
+      @include font(Mod_Exp, 30, $Second);
+      padding-top: 5%;
+      padding-bottom: 5%;
+
+    }
+  }
+}

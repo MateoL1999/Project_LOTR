@@ -21,7 +21,7 @@ class CategorieController extends AbstractController
     #[Route('/', name: 'listing')]
     public function categories(CategorieRepository $categorieRepository):Response
     {
-        if (!$this->isGranted('ROLE_ADMIN')) {
+        if (!$this->isGranted('ROLE_EDITEUR')) {
             $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
             return $this->redirectToRoute('wiki_listing');
         }

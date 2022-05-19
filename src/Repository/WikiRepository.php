@@ -68,4 +68,18 @@ class WikiRepository extends ServiceEntityRepository
         return $query->execute();
 
     }
+
+    public function findOneWikiByIdAndCategories($id)
+    {
+        $qb = $this->createQueryBuilder('wiki')
+            ->select('wiki')
+            ->leftJoin('wiki.categories', 'categories')
+            ->addSelect('categories')
+            ->where('wiki.id = :id')
+            ->setParameter('id', $id)
+        ;
+
+        $query = $qb->getQuery();
+        return $query->getOneOrNullResult();
+    }
 }

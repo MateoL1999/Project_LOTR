@@ -30,7 +30,34 @@ class Wiki
     private $user;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $contenus;
+    private $url;
+
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $contenu;
+
+    /**
+     * @return mixed
+     */
+    public function getContenu()
+    {
+        return $this->contenu;
+    }
+
+    /**
+     * @param mixed $contenu
+     */
+    public function setContenu($contenu): void
+    {
+        $this->contenu = $contenu;
+    }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url): void
+    {
+        $this->url = $url;
+    }
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'wikis')]
     private $categories;
@@ -110,17 +137,11 @@ class Wiki
     }
 
 
-    public function getContenus(): ?string
+    public function getUrl(): ?string
     {
-        return $this->contenus;
+        return $this->url;
     }
 
-    public function setContenus(string $contenus): self
-    {
-        $this->contenus = $contenus;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Categorie>

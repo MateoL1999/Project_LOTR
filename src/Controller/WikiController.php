@@ -6,6 +6,7 @@ use App\Entity\Wiki;
 use App\Form\wikiEditType;
 use App\Form\WikiSearchFormType;
 use App\Form\WikiType;
+use App\Repository\BookRepository;
 use App\Repository\WikiRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,7 +48,7 @@ class WikiController extends AbstractController
     #[Route('/admin', name: 'admin')]
     public function wikiAdmin(WikiRepository $wikiRepository, Request $request)
     {
-        if(!$this->isGranted('ROLE_ADMIN')){
+        if(!$this->isGranted('ROLE_EDITEUR')){
             $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
             return $this->redirectToRoute('wiki_listing');
         }
@@ -94,8 +95,8 @@ class WikiController extends AbstractController
             $entityManager->persist($wiki);
             $entityManager->flush();
         }
-        return $this->render('wiki/wikiListing.html.twig',[
-            'wiki'=> $wiki,
+        return $this->render('wiki/wikiEdit.html.twig',[
+            'wikis'=> $wiki,
             'form' => $form->createView()
         ]);
     }
@@ -110,6 +111,20 @@ class WikiController extends AbstractController
         $entityManager->remove($wiki);
         $entityManager->flush();
         return $this->redirectToRoute('wiki_listing');
+    }
+
+    #[Route('/wiki/{id}', name: 'detail')]
+    public function bookDetail ($id, WikiRepository $wikiRepository){
+        $wiki = $wikiRepository->findOneWikiByIdAndCategories($id);
+
+        if (!$wiki) {
+            $this->addFlash('warning', 'Aucun livre trouvé.');
+            return $this->redirectToRoute('wiki_listing');
+        }
+
+        return $this->render('wiki/wikiDetail.html.twig', [
+            'wiki' => $wiki
+        ]);
     }
 
 

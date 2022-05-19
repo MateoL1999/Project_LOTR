@@ -1,0 +1,81 @@
+
+  .DernierWiki {
+    .Titre--DernierWiki {
+      text-align: center;
+      @include font(Lat_Bold, 40, $Second);
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+    .Card--Dernier {
+      display: flex;
+      flex-wrap: wrap;
+      @include respond('phone') {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      .Card--Home {
+        width: 23%;
+        margin: 0 1% 1% 1%;
+        position: relative;
+        @include respond('phone') {
+          margin: 0;
+          display: flex;
+          width: 215px;
+        }
+
+        .Image--Home {
+          @include respond('phone') {
+          }
+
+          .img-Home {
+            object-fit: cover;
+            width: 100%;
+            max-height: 612px;
+            @include respond('Desktop') {
+              max-height: 518px;
+            }
+            @include respond('Little-Desktop') {
+              max-height: 475px;
+            }
+            @include respond('large') {
+              max-height: 350px;
+            }
+            @include respond('tab-land') {
+              max-height: 300px;
+            }
+            @include respond('tab') {
+              max-height: 250px;
+            }
+            @include respond('phone') {
+              width: 490px;
+              object-fit: cover;
+            }
+          }
+
+          .Title--Home {
+            text-align: center;
+            background-color: rgba(255, 249, 236, 0.42);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 7% 0 7% 0;
+            @include font(Mod_Exp, 35, $Primary);
+            @include respond('tab') {
+              font-size: 25px;
+            }
+            //@include respond('phone') {
+            //  display: none;
+            //  position: static;
+            //  background-color: $Primary2;
+            //  padding: 0;
+            //}
+          }
+        }
+      }
+    }
+  }
+

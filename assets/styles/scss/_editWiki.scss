@@ -36,6 +36,13 @@
       padding-top: 1%;
       @include font(Lat_Reg, 20, $Second);
     }
+    .Edit--Contenu{
+      @include flex(center, center);
+      padding-right: 4%;
+      width: 100%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+    }
     .Edit--image_file {
       @include flex(center, center);
       width: 100%;
