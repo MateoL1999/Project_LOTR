@@ -24,6 +24,16 @@
         display: flex;
         width: 100%;
       }
+      &:nth-child(even) {
+        @include respond('phone'){
+          background: $Primary;
+        }
+      }
+      &:nth-child(odd) {
+        @include respond('phone'){
+          background: $Primary2;
+        }
+      }
       .Image--Wiki {
         @include respond('phone') {
         }
@@ -75,7 +85,6 @@
         display: none;
         @include respond('phone'){
           display: block;
-          background-color: $Primary2;
           width: 100%;
           @include flex(space-evenly,center);
           @include font(Mob_Post,35, $Second);
