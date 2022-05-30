@@ -41,7 +41,7 @@
         .img-carte {
           object-fit: cover;
           width: 100%;
-          max-height: 612px;
+          max-height: 585px;
           @include respond('Desktop') {
             max-height: 518px;
           }
@@ -69,7 +69,25 @@
           bottom: 0;
           width: 100%;
           padding: 7% 0 7% 0;
-          @include font(Mod_Exp, 35, $Primary);
+          @include font(Mod_Exp, 34, $Primary);
+          @include respond('tab') {
+            font-size: 25px;
+          }
+          @include respond('phone') {
+            display: none;
+            position: static;
+            background-color: $Primary2;
+            padding: 0;
+          }
+        }
+        .Detail--card{
+          text-align: center;
+          background-color: rgba(255, 249, 236, 0.42);
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          padding: 7% 0 7% 0;
+          @include font(Mod_Exp, 34, $Primary);
           @include respond('tab') {
             font-size: 25px;
           }

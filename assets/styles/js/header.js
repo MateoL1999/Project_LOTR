@@ -1,6 +1,9 @@
 const nav = document.querySelector("nav");
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
+const titre = document.querySelector('.Card--Image');
+const detail = document.querySelector('.Detail--card');
+
 
 let lastScroll = 0;
 
@@ -9,6 +12,7 @@ burger.addEventListener("click", () => {
     menu.classList.toggle("display");
 
 });
+
 
 //////////////////////////Slider//////////////////////////
 
@@ -25,34 +29,44 @@ function enleverActiveImages() {
 
 }
 
-suivant.addEventListener('click', function () {
-    etape++;
-    if (etape >= nbrImage) {
-        etape = 0;
-    }
-    enleverActiveImages();
-    imgSlider[etape].classList.add('active');
-})
+if(suivant) {
+    suivant.addEventListener('click', function () {
+        etape++;
+        if (etape >= nbrImage) {
+            etape = 0;
+        }
+        enleverActiveImages();
+        imgSlider[etape].classList.add('active');
+    })
+}
 
-precedent.addEventListener('click', function () {
-    etape--;
-    if (etape < 0) {
-        etape = nbrImage - 1;
-    }
-    enleverActiveImages();
-    imgSlider[etape].classList.add('active');
-})
+if(precedent) {
+    precedent.addEventListener('click', function () {
+        etape--;
+        if (etape < 0) {
+            etape = nbrImage - 1;
+        }
+        enleverActiveImages();
+        imgSlider[etape].classList.add('active');
+    })
+}
 
-setInterval(function () {
-    etape++;
-    if (etape >= nbrImage) {
-        etape = 0;
-    }
-    enleverActiveImages();
-    imgSlider[etape].classList.add('active');
-}, 3000)
+if(precedent) {
+    setInterval(function () {
+        etape++;
+        if (etape >= nbrImage) {
+            etape = 0;
+        }
+        enleverActiveImages();
+        imgSlider[etape].classList.add('active');
+    }, 3000)
+}
 
 
+titre.addEventListener("mouseover", () => {
+    console.log('oui');
+    detail.classList.toggle("display--card");
+});
 // window.addEventListener("scroll", () => {
 //     if (window.scrollY < lastScroll) {
 //         nav.style.top = 0;
