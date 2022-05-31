@@ -28,19 +28,45 @@
                 <div class="Card--Home">
                     <div class="Image--Home">
                         {% if wiki.imageName %}
-                            <img src="{{  vich_uploader_asset(wiki, 'imageFile') }}" class="img-Home" alt="image_name">
+                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img-Home" alt="image_name">
                         {% else %}
                             <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
                                  class="img-carte"
                                  alt="Default-image">
                         {% endif %}
                         <div class="Title--Home">
-                            <a href="{{ wiki.url }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
+                            <a href="{{ wiki.url }}" class="title-carte" target="_blank"><h5
+                                        class="title-carte">{{ wiki.titre }}</h5></a>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </section>
+
+    <section class="carousel--Card">
+        <div class="titre--CarouselCard">
+            <h3>
+                Wiki Aléatoire
+            </h3>
+        </div>
+
+        <div class="container--CarouselCard">
+            {% for wiki in wikis|slice(2, 4) %}
+                <div class="box">
+                    <div class="characters-img">
+                        <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--CarouselCard"
+                             alt="image_name">
+
+                        <div class="oui">
+                            <a href="{{ wiki.url }}" class="title-carte" target="_blank"><h5
+                                        class="title-carte">{{ wiki.titre }}</h5></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
 
 {% endblock body %}
