@@ -26,6 +26,13 @@ class RegistrationFormType extends AbstractType
                     'class' => 'input-Civ Insc--firstName',
                     'placeholder' => 'Prénom'
                 ],
+                'trim' => true,
+                'constraints' => [
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'Le prénom doit contenir au moins {{ limit }}'
+                        ])
+                    ],
                 'label' => false
             ])
 
@@ -33,6 +40,13 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'input-Civ Insc--lastName',
                     'placeholder' => 'Nom'
+                ],
+                'trim' => true,
+                'constraints' => [
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'Le nom doit contenir au moins {{ limit }}'
+                    ])
                 ],
                 'label' => false
             ])
@@ -42,8 +56,10 @@ class RegistrationFormType extends AbstractType
                     'class' => 'input-format Insc--email',
                     'placeholder' => 'Email'
                 ],
+                'trim' => true,
                 'label' => false
             ])
+
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'attr' => [
@@ -52,7 +68,7 @@ class RegistrationFormType extends AbstractType
                 'constraints' => [
                     new IsTrue([
                         'message' => 'Veuillez remplir le email',
-                    ]),
+                    ])
                 ],
             ])
 
@@ -60,8 +76,19 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'type' => PasswordType::class,
-                'first_options' => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Confirmation'],
+                'first_options' => [
+                    'label' =>  false,
+                    'attr' => [
+                      'placeholder' =>'Saisissez votre mot de passe'
+                    ]
+                ],
+                'second_options' => [
+                    'label' => false,
+                    'attr' =>[
+                        'placeholder' => 'Confirmez votre mot de passe',
+
+                    ]
+                ],
                 'invalid_message' => 'Veuillez réessayer',
                 'required' => true,
                 'mapped' => false,
@@ -77,10 +104,10 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Mot de passe trop court {{ limit }}',
+                        'minMessage' => 'Votre mot de passe doit être supèrieur à {{ limit }}',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
-                    ]),
+                    ])
                 ],
 
             ])

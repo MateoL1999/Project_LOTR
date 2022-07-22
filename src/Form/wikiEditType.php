@@ -19,7 +19,7 @@ class wikiEditType extends AbstractType
         $builder
             ->add('titre', TextType::class,[
                 'attr' => [
-                    'placeholder' => 'Titre du Livre',
+                    'placeholder' => 'Titre du Wiki',
                     'class' => 'Input--Edit--Titre'
                 ],
                 'label' => false,
@@ -58,7 +58,7 @@ class wikiEditType extends AbstractType
                 'attr' => [
                     'class' => 'bouton-New'
                 ],
-                'label' => 'Générer'
+                'label' => 'Modifier'
             ])
         ;
     }

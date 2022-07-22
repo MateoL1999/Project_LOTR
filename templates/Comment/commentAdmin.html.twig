@@ -1,61 +1,68 @@
-{% extends 'base.html.twig' %}
+{%  extends 'base.html.twig' %}
 
 {% block body %}
     <section class="Dashboard">
         <div class="titreDash">
             <h1>
-                Admin Wiki
+                Admin Comment
             </h1>
         </div>
         <table class="table table_striped">
 
             <thead class="tableau">
-            <th> Id</th>
-            <th> Title</th>
-            <th> Date</th>
-            <th> User</th>
-            <th> Categorie</th>
-            <th> Contenu</th>
+            <th> Id </th>
+            <th> Titre </th>
+            <th> User </th>
+            <th> Date </th>
+            <th> Wiki </th>
+            <th> Contenu </th>
             <th> MAJ </th>
             <th> E/D/<a class="new" href="{{ path('wiki_new') }}">New</a></th>
             </thead>
             <tbody>
-            {% for wiki in wikis %}
+            {% for comment in comments %}
                 <tr class="StyleDash">
                     <td>
-                        {{ wiki.id}}
+                        {{ comment.id }}
                     </td>
                     <td>
-                        {{ wiki.titre}}
+                        {{ comment.titre }}
                     </td>
                     <td>
-                        {{ wiki.date|date('d-m-Y') }}
+                        {{ comment.user }}
                     </td>
                     <td>
-                        {{ wiki.user }}
+                        {{ comment.date|date('d-m-Y') }}
                     </td>
-                    {% for categorie in wiki.categories %}
+                    <td>
+                        {{ comment.wiki }}
+                    </td>
+                    {% for wiki in comment.wiki %}
                         <td class="Nom-wiki">
-                            {{ categorie }}
+                            {{ wiki }}
                         </td>
                     {% endfor %}
                     <td>
-                        {{ wiki.contenu }}
+                        {{ comment.contenu }}
                     </td>
                     <td>
-                        {{ wiki.updatedAt|date('d-m-Y') }}
+                        {{ comment.updateAt|date('d-m-Y') }}
                     </td>
                     <td class="crud">
-                        <a class="edit" href="{{ path('wiki_wiki_edit', {id: wiki.id }) }}">
+                        <a class="edit" href="{{ path('comment_edit', {id: comment.id}) }}">
                             <i class="fa-solid fa-pen text-primary"></i>
                         </a>
-                        <a class="delete" href="{{ path('wiki_delete', {id: wiki.id}) }}">
+                        <a class="delete" href="{{ path('comment_delete', {id: comment.id}) }}">
                             <i class="fa fa-trash text-danger"></i>
                         </a>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
+
+
+
         </table>
+
     </section>
-{% endblock %}
+{% endblock body %}

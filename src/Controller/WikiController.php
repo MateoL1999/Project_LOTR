@@ -6,7 +6,6 @@ use App\Entity\Wiki;
 use App\Form\wikiEditType;
 use App\Form\WikiSearchFormType;
 use App\Form\WikiType;
-use App\Repository\BookRepository;
 use App\Repository\WikiRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;

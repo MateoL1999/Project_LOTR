@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -34,12 +36,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $roles = [];
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Wiki::class)]
-    private $wiki;
+    private $wikis;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]
+    private $comments;
 
     public function __toString() {
         return $this->getFirstName() . ' ' . $this->getLastName();
     }
 
+    public function __construct()
+    {
+        $this->wikis = new ArrayCollection();
+        $this->comments = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -144,16 +154,67 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getWiki(): ?Wiki
+
+
+    /**
+     * @return Collection<int, Wiki>
+     */
+    public function getWikis(): Collection
     {
-        return $this->wiki;
+        return $this->wikis;
     }
 
-    public function setWiki(?Wiki $wiki): self
+    public function addWiki(Wiki $wiki): self
     {
-        $this->wiki = $wiki;
+        if (!$this->wikis->contains($wiki)) {
+            $this->wikis[] = $wiki;
+            $wiki->setUser($this);
+        }
 
         return $this;
     }
+
+    public function removeWiki(Wiki $wiki): self
+    {
+        if ($this->wikis->removeElement($wiki)) {
+            // set the owning side to null (unless already changed)
+            if ($wiki->getUser() === $this) {
+                $wiki->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getUser() === $this) {
+                $comment->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
 
 }

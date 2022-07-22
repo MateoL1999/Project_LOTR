@@ -39,6 +39,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('user_listing') }}">Utilisateurs</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('comment_listing') }}">Commentaire</a>
+                        </li>
                     {% endif %}
                     {% if is_granted('ROLE_EDITEUR') %}
                         <li class="nav-item">
@@ -53,8 +56,12 @@
                 <i class="fa fa-bars fa-2x"></i>
             </div>
         </div>
+        {% for message in app.flashes('warning') %}
+            <div class="securite">
+                {{ message }}
+            </div>
+        {% endfor %}
     </nav>
-
 </header>
 
 {##}

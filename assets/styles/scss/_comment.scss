@@ -1,0 +1,18 @@
+
+.section__commentEdit{
+  .Comment__h1{
+    width: 100%;
+    @include flex(center, center);
+    padding: 2% 0 3% 0;
+    .Titre__commentEdit{
+      @include font(Lat_Reg, 30, white);
+
+    }
+  }
+  .conteneurComment{
+    .Edit--commentTitre{
+      margin-bottom: 2%;
+    }
+  }
+
+}

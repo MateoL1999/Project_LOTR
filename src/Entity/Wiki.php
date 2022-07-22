@@ -13,6 +13,9 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @Vich\Uploadable
  */
+
+
+
 class Wiki
 {
     #[ORM\Id]
@@ -34,6 +37,9 @@ class Wiki
 
     #[ORM\Column(type: 'text', nullable: true)]
     private $contenu;
+
+
+
 
     /**
      * @return mixed
@@ -83,6 +89,9 @@ class Wiki
     #[ORM\Column(type:"datetime", nullable: true)]
     private $updatedAt;
 
+    #[ORM\OneToMany(mappedBy: 'wiki', targetEntity: Comment::class)]
+    private $comments;
+
     /**
      * @return mixed
      */
@@ -104,6 +113,7 @@ class Wiki
     {
       $this->categories = new ArrayCollection();
       $this->User = new ArrayCollection();
+      $this->comments = new ArrayCollection();
     }
 
 
@@ -170,6 +180,7 @@ class Wiki
         return $this;
     }
 
+
     /**
      * @return Collection<int, User>
      */
@@ -210,6 +221,36 @@ class Wiki
     public function getImageName(): ?string
     {
         return $this->imageName;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setWiki($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getWiki() === $this) {
+                $comment->setWiki(null);
+            }
+        }
+
+        return $this;
     }
 
 }
