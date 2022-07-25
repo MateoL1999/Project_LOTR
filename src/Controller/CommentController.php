@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\Comment;
 use App\Form\commentEditType;
-use App\Form\CommentFormType;
 use App\Repository\CommentRepository;
-use App\Repository\WikiRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,27 +23,6 @@ class CommentController extends AbstractController
             'comments' => $comments
         ]);
     }
-
-//    #[Route('/comment/{id}/new', name: 'new')]
-//    public function commentNew(Request $request, EntityManagerInterface $entityManager)
-//    {
-//        $newComment = new Comment();
-//        $form = $this->createForm(CommentFormType::class, $newComment);
-//
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $commentToSave = $form->getData();
-//            $entityManager->persist($commentToSave);
-//            $entityManager->flush();
-//
-//            $this->addFlash('sucess', 'Votre commentaire est posté');
-//            return $this->redirectToRoute('wiki_listing');
-//        }
-//
-//       return $this->render('')
-//    }
-
 
     #[Route('/comment/{id}/edit', name:'edit')]
     public function wikiEdit($id, CommentRepository $commentRepository, Request $request, EntityManagerInterface $entityManager)

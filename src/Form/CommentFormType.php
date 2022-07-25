@@ -2,11 +2,13 @@
 
 namespace App\Form;
 
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class CommentFormType
+class CommentFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $option): void
     {
@@ -14,7 +16,7 @@ class CommentFormType
             ->add('titre', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Titre',
-                    'class' => 'Input--Edit--CommentTitre'
+                    'class' => 'Input--New--CommentTitre'
                 ],
         'label' => false,
 
@@ -22,9 +24,15 @@ class CommentFormType
             ->add('Contenu', TextareaType::class,[
                     'attr' => [
                         'placeholder' => 'Contenu',
-                        'class' => 'Input--Edit--CommentContenu'
+                        'class' => 'Input--New--CommentContenu'
                     ],
                     'label' => false,
+            ])
+            ->add('save', SubmitType::class,[
+                'attr' => [
+                    'class' => 'button-Insc'
+                ],
+                'label' => 'Enregistrer'
             ]);
         }
     }

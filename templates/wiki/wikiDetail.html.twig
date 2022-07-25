@@ -20,6 +20,33 @@
         <div class="Commentaire">
 
         </div>
+        <div class="comments">
+            <h4 class="title--comment">
+                {{ wiki.comments|length }} commentaire(s)
+            </h4>
+            <div class="comment--wiki">
+                {% for comment in wiki.comments %}
+                    <div class="comment--detail">
+                        <p class="date--comment"> Du : <span> {{ comment.date | date('d-m-y') }} </span></p>
+{#                        <p class="user--comment"> De: <span> {{ comment.user.firstName }}</span></p>#}
+                        <p class="user--comment"> Titre : <span> {{ comment.titre }} </span></p>
+                        <p class="contenu--comment"><span> {{ comment.contenu }} </span></p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="new--comment">
+                <h4 class="title--newComment">
+                    Votre opinion est intéressante !
+                </h4>
+                <div class="form--newComment">
+                    {% if app.user %}
+                        {{ form(newComment) }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
         <div class="Detail--Categorie">
             <div class="Titre--Details">
             <h3>Categories</h3>

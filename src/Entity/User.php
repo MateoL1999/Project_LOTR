@@ -26,8 +26,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 180)]
     private $lastName;
 
+    #[ORM\Column(type: 'string', length: 180)]
+    private $pseudo;
+
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
+
 
     #[ORM\Column(type: 'string')]
     private $password;
@@ -143,6 +147,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPseudo()
+    {
+        return $this->pseudo;
+    }
+
+    /**
+     * @param mixed $pseudo
+     */
+    public function setPseudo($pseudo): void
+    {
+        $this->pseudo = $pseudo;
     }
 
     /**

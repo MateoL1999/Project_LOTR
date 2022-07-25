@@ -16,3 +16,58 @@
   }
 
 }
+
+.comments{
+  .title--comment{
+    @include font(Lat_Reg, 20, $Second);
+    margin-left: 1%;
+  }
+  .comment--detail{
+    color: $grey2;
+    margin: 1% 0 1% 1%;
+    padding: 1%;
+    width: 55%;
+    background-color: $Second;
+      .date--comment{
+        padding-bottom: 0.5%;
+        span{
+          @include font(Mod_Exp, 18, $Primary);
+        }
+      }
+      .user--comment{
+        padding-bottom: 1%;
+        font-size: 15px;
+        span{
+          @include font(Mod_Exp, 18, $Primary);
+        }
+      }
+      .contenu--comment{
+        @include font(Lat_Li, 15.5, $Primary);
+
+      }
+
+  }
+  .new--comment{
+    .title--newComment{
+      @include font(Lat_Reg, 20, $Second);
+      margin-left: 1%;
+    }
+    .form--newComment{
+      background-color: $Second;
+      margin: 1% 0 1% 1%;
+      padding: 1%;
+      width: 55%;
+        .button-Insc{
+          border-radius: 10px 100px / 120px;
+          border: 1px, solid, $Primary;
+          background-color: $Second;
+          margin: 1% 0 1% 5%;
+          padding: 1%;
+          @include font(Lat_Bold, 10, $Primary);
+        }
+    }
+  }
+
+
+
+}

@@ -2,15 +2,19 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Wiki;
+use App\Form\CommentFormType;
 use App\Form\wikiEditType;
 use App\Form\WikiSearchFormType;
 use App\Form\WikiType;
+use App\Repository\CommentRepository;
 use App\Repository\WikiRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\FormTypeInterface;
 
 #[Route('/wiki', name: 'wiki_')]
 class WikiController extends AbstractController
@@ -25,7 +29,7 @@ class WikiController extends AbstractController
     }
 
     #[Route('/recherche', name: 'recherche')]
-    public function wikiRecherche(WikiRepository $wikiRepository, Request $request)
+    public function wikiRecherche(WikiRepository $wikiRepository, Request $request): \Symfony\Component\HttpFoundation\Response
     {
         $form = $this->createForm(WikiSearchFormType::class);
 
@@ -112,21 +116,37 @@ class WikiController extends AbstractController
         return $this->redirectToRoute('wiki_listing');
     }
 
-    #[Route('/wiki/{id}', name: 'detail')]
-    public function bookDetail ($id, WikiRepository $wikiRepository){
+    #[Route('/wiki/{id}', name: 'detail', methods: ['GET', 'POST'])]
+    public function bookDetail ($id, WikiRepository $wikiRepository, CommentRepository $commentRepository, Request $request, EntityManagerInterface $entityManager): \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+    {
         $wiki = $wikiRepository->findOneWikiByIdAndCategories($id);
 
         if (!$wiki) {
             $this->addFlash('warning', 'Aucun livre trouvé.');
             return $this->redirectToRoute('wiki_listing');
         }
+        $comment = new Comment();
+
+        $newComment= $this->createForm(CommentFormType::class, $comment);
+        $newComment->handleRequest($request);
+
+        if($newComment->isSubmitted() && $newComment->isValid())
+        {
+            $comment->setWiki($wiki);
+
+            $entityManager->persist($comment);
+            $entityManager->flush();
+
+            $this->addFlash('sucess', "Le commentaire est publié.");
+            return $this ->redirectToRoute('wiki_detail',[
+               'id' => $id
+            ]);
+        }
 
         return $this->render('wiki/wikiDetail.html.twig', [
-            'wiki' => $wiki
+            'wiki' => $wiki,
+            'newComment'=> $newComment->createView()
         ]);
     }
-
-
-
 
 }
