@@ -21,6 +21,9 @@
   .title--comment{
     @include font(Lat_Reg, 20, $Second);
     margin-left: 1%;
+    @include respond('tab-land'){
+      margin-top: 4%;
+    }
   }
   .comment--detail{
     color: $grey2;
@@ -28,6 +31,9 @@
     padding: 1%;
     width: 55%;
     background-color: $Second;
+    @include respond('tab-land'){
+      width: 75%;
+    }
       .date--comment{
         padding-bottom: 0.5%;
         span{
@@ -48,6 +54,9 @@
 
   }
   .new--comment{
+    @include respond('tab-land'){
+      margin-top: 4%;
+    }
     .title--newComment{
       @include font(Lat_Reg, 20, $Second);
       margin-left: 1%;
@@ -57,6 +66,9 @@
       margin: 1% 0 1% 1%;
       padding: 1%;
       width: 55%;
+      @include respond('tab-land'){
+        width: 75%;
+      }
         .button-Insc{
           border-radius: 10px 100px / 120px;
           border: 1px, solid, $Primary;
