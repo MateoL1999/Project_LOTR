@@ -52,8 +52,7 @@ class CategorieController extends AbstractController
             $entityManager->flush();
 
             // Ajoute un message éphémère pour avertir de l'état de la demande
-            $this->addFlash('success', 'Votre genre à été créé avec succès.');
-
+            $this->addFlash('sucess', 'Votre catégorie à été créé avec succès.');
             return $this->redirectToRoute('categorie_listing');
         }
 
@@ -76,9 +75,11 @@ class CategorieController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($categorie);
             $entityManager->flush();
+            $this->addFlash('sucess', "La catégorie as bien était modifié.");
+            return $this->redirectToRoute('categorie_listing');
         }
 
-        return $this->render('Categorie/categories.html.twig', [
+        return $this->render('Categorie/categoriesEdit.html.twig', [
             'categories' => $categorie,
             'form' => $form->createView()
         ]);
@@ -89,10 +90,13 @@ class CategorieController extends AbstractController
     {
         $categorie = $categorieRepository->findOneBy(['id' => $id]);
         if (!$categorie) {
+            $this->addFlash('warning', "La catégorie n'a pas été trouvée");
             return $this->redirectToRoute('categorie_listing');
         }
         $entityManager->remove($categorie);
         $entityManager->flush();
+
+        $this->addFlash('sucess', "La catégorie a bien était supprimée");
         return $this->redirectToRoute('categorie_listing');
     }
 }

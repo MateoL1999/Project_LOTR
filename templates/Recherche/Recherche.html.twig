@@ -32,7 +32,7 @@
                                  alt="Default-image">
                         {% endif %}
                         <div class="Title">
-                            <h5 class="title-carte">{{ wiki.titre }}</h5>
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte"> {{ wiki.titre }}</h5></a>
                         </div>
                     </div>
                     <div class="Title--Respond">

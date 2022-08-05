@@ -35,8 +35,7 @@
                                  alt="Default-image">
                         {% endif %}
                         <div class="Title--Home">
-                            <a href="{{ wiki.url }}" class="title-carte" target="_blank"><h5
-                                        class="title-carte">{{ wiki.titre }}</h5></a>
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
                         </div>
                     </div>
                 </div>
@@ -59,8 +58,7 @@
                              alt="image_name">
 
                         <div class="oui">
-                            <a href="{{ wiki.url }}" class="title-carte" target="_blank"><h5
-                                        class="title-carte">{{ wiki.titre }}</h5></a>
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
                         </div>
                     </div>
                 </div>

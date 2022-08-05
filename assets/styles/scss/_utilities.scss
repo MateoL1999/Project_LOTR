@@ -238,6 +238,14 @@
   padding: 1%;
 }
 
+.securite_V2{
+  color: white;
+  background-color: #53af4b;
+  margin:0px -2px -1px -1px;
+  padding: 1%;
+  @include font(Lat_Bold, 17, $Second);
+}
+
 
 .Input--Edit--CommentTitre{
   margin-left: 30%;

@@ -24,7 +24,7 @@ footer {
       justify-content: space-evenly;
       padding: 50px 20px;
       background-color: $Primary;
-      @include font(Lat_Bold, 25, $Second);
+      @include font(Lat_Reg, 25, $Second);
 
       .Dev {
         display: flex;

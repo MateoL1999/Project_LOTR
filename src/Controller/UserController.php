@@ -42,6 +42,8 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($user);
             $entityManager->flush();
+            $this->addFlash('sucess', "L'utilisateur a bien était modifié.");
+            return $this->redirectToRoute('user_listing');
         }
 
         return $this->render('user/userEdit.html.twig',[
@@ -72,6 +74,7 @@ class UserController extends AbstractController
         }
         $entityManager->remove($user);
         $entityManager->flush();
+        $this->addFlash('sucess', "L'utilisateur a bien était suprimée");
         return $this->redirectToRoute('user_listing');
     }
 

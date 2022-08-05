@@ -22,7 +22,7 @@
     <nav>
         <div class="conteneurP">
             <div class="Logo">
-                <img src="{{ asset ("Image/La_bibliotheque_de_Valinor.png") }}" alt="">
+                <a href="{{ path('home') }}"> <img src="{{ asset ("Image/La_bibliotheque_de_Valinor.png") }}" alt="Logo du site"> </a>
             </div>
             <div class="menu display">
                 <ul class="Hidden">
@@ -61,6 +61,12 @@
                 {{ message }}
             </div>
         {% endfor %}
+
+        {% for message in app.flashes('sucess') %}
+            <div class="securite_V2">
+                {{ message }}
+            </div>
+        {%  endfor %}
     </nav>
 </header>
 
