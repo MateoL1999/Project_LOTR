@@ -125,6 +125,8 @@ class WikiController extends AbstractController
             $this->addFlash('warning', 'Aucun livre trouvé.');
             return $this->redirectToRoute('wiki_listing');
         }
+
+        $user = $this->getUser();
         $comment = new Comment();
 
         $newComment= $this->createForm(CommentFormType::class, $comment);
@@ -133,6 +135,7 @@ class WikiController extends AbstractController
         if($newComment->isSubmitted() && $newComment->isValid())
         {
             $comment->setWiki($wiki);
+            $comment->setUser($user);
 
             $entityManager->persist($comment);
             $entityManager->flush();

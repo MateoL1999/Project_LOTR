@@ -29,7 +29,9 @@
                         {{ comment.titre }}
                     </td>
                     <td>
+                        {% if comment.user %}
                         {{ comment.user.pseudo }}
+                        {% endif %}
                     </td>
                     <td>
                         {{ comment.date|date('d-m-Y') }}

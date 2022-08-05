@@ -57,6 +57,9 @@ class CommentController extends AbstractController
             $this->addFlash( 'success', 'Le Commentaire à était effacé avec succés');
             return $this->redirectToRoute('comment_listing');
             }
+        $entityManager->remove($comment);
+        $entityManager->flush();
+
         return $this->redirectToRoute('comment_listing',[
             'comment' => $comment
         ]);

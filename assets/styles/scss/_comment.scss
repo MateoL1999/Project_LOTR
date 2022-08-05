@@ -37,18 +37,19 @@
       .date--comment{
         padding-bottom: 0.5%;
         span{
-          @include font(Mod_Exp, 18, $Primary);
+          @include font(Mod_Exp, 15, $Primary);
         }
       }
       .user--comment{
         padding-bottom: 1%;
         font-size: 15px;
         span{
-          @include font(Mod_Exp, 18, $Primary);
+          @include font(Mod_Exp, 15, $Primary);
         }
       }
       .contenu--comment{
-        @include font(Lat_Li, 15.5, $Primary);
+        @include font(Lat_Li, 19, $Primary);
+        padding-top: 1%;
 
       }
 

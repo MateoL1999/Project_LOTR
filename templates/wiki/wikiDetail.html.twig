@@ -28,7 +28,7 @@
                 {% for comment in wiki.comments %}
                     <div class="comment--detail">
                         <p class="date--comment"> Du : <span> {{ comment.date | date('d-m-y') }} </span></p>
-{#                        <p class="user--comment"> De: <span> {{ comment.user.firstName }}</span></p>#}
+                        <p class="user--comment"> De: <span> {% if comment.user %}{{ comment.user.pseudo }} {% endif %} </span></p>
                         <p class="user--comment"> Titre : <span> {{ comment.titre }} </span></p>
                         <p class="contenu--comment"><span> {{ comment.contenu }} </span></p>
                     </div>
