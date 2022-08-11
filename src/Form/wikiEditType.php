@@ -7,8 +7,8 @@ use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
@@ -32,7 +32,7 @@ class wikiEditType extends AbstractType
                 'label' => false,
                 'class' => User::class
             ])
-            ->add('contenu', TextType::class,[
+            ->add('contenu', TextareaType::class,[
                 'attr' => [
                     'placeholder' => 'Résumer',
                     'class' => 'Input--Edit--Contenu'

@@ -8,9 +8,7 @@ const detail = document.querySelector('.Detail--card');
 let lastScroll = 0;
 
 burger.addEventListener("click", () => {
-    console.log("oui");
     menu.classList.toggle("display");
-
 });
 
 

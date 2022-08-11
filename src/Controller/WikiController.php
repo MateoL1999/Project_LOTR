@@ -48,6 +48,7 @@ class WikiController extends AbstractController
         ]);
     }
 
+
     #[Route('/admin', name: 'admin')]
     public function wikiAdmin(WikiRepository $wikiRepository, Request $request)
     {

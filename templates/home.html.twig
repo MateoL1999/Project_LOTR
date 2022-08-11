@@ -24,18 +24,18 @@
             </h3>
         </div>
         <div class="Card--Dernier">
-            {% for wiki in wikis|slice(2, 4) %}
+            {% for Dwiki in Dwikis %}
                 <div class="Card--Home">
                     <div class="Image--Home">
-                        {% if wiki.imageName %}
-                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img-Home" alt="image_name">
+                        {% if Dwiki.imageName %}
+                            <img src="{{ vich_uploader_asset(Dwiki, 'imageFile') }}" class="img-Home" alt="image_name">
                         {% else %}
                             <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
                                  class="img-carte"
                                  alt="Default-image">
                         {% endif %}
                         <div class="Title--Home">
-                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
+                            <a href="{{ path('wiki_detail', {id: Dwiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ Dwiki.titre }}</h5></a>
                         </div>
                     </div>
                 </div>

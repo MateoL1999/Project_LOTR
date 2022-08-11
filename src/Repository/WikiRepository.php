@@ -82,4 +82,18 @@ class WikiRepository extends ServiceEntityRepository
         $query = $qb->getQuery();
         return $query->getOneOrNullResult();
     }
+
+    public function lastWiki()
+    {
+        $qb = $this->createQueryBuilder('wiki');
+
+        $qb->select('wiki');
+
+        $query = $qb
+            ->orderBy('wiki.date','DESC')
+            ->setMaxResults(4)
+            ->getQuery();
+            $wiki = $query->getArrayResult();
+        return $wiki;
+    }
 }

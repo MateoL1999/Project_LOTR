@@ -13,11 +13,13 @@ class HomeController extends AbstractController
     public function home(WikiRepository $wikiRepository, Request $request)
     {
         $wikis = $wikiRepository->findAll();
+        $Dwikis = $wikiRepository->lastWiki();
+
         return $this->render('home.html.twig',[
-            'wikis' => $wikis
+            'wikis' => $wikis,
+            'Dwikis' => $Dwikis
         ]);
     }
-
 
     #[Route ("/Politique de confidentialités", name: "Politique")]
     public function Politique()
