@@ -24,18 +24,18 @@
             </h3>
         </div>
         <div class="Card--Dernier">
-            {% for Dwiki in Dwikis %}
+            {% for lastwiki in lastwikis %}
                 <div class="Card--Home">
                     <div class="Image--Home">
-                        {% if Dwiki.imageName %}
-                            <img src="{{ vich_uploader_asset(Dwiki, 'imageFile') }}" class="img-Home" alt="image_name">
+                        {% if lastwiki.imageName %}
+                            <img src="{{ vich_uploader_asset(lastwiki, 'imageFile') }}" class="img-Home" alt="image_name">
                         {% else %}
                             <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
                                  class="img-carte"
                                  alt="Default-image">
                         {% endif %}
                         <div class="Title--Home">
-                            <a href="{{ path('wiki_detail', {id: Dwiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ Dwiki.titre }}</h5></a>
+                            <a href="{{ path('wiki_detail', {id: lastwiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ lastwiki.titre }}</h5></a>
                         </div>
                     </div>
                 </div>
@@ -65,6 +65,16 @@
             {% endfor %}
         </div>
     </section>
+
+{#    <section class="bio--tolkien">#}
+{#        <div>#}
+{#            <p>#}
+{#                #}
+{#            </p>#}
+{#        </div>#}
+
+
+{#    </section>#}
 
 
 {% endblock body %}

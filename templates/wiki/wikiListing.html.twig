@@ -20,11 +20,13 @@
                                  class="img-carte"
                                  alt="Default-image">
                         {% endif %}
+                        <div class="conteneur--title">
                         <div class="Title">
-                           <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
                         </div>
                         <div class="Detail--card display--card">
-                            <h5 class="title-carte">Détails</h5>
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">Détails</h5></a>
+                        </div>
                         </div>
                     </div>
                     <div class="Title--Respond">

@@ -13,11 +13,11 @@ class HomeController extends AbstractController
     public function home(WikiRepository $wikiRepository, Request $request)
     {
         $wikis = $wikiRepository->findAll();
-        $Dwikis = $wikiRepository->lastWiki();
+        $lastwikis = $wikiRepository->getLastWiki();
 
         return $this->render('home.html.twig',[
             'wikis' => $wikis,
-            'Dwikis' => $Dwikis
+            'lastwikis' => $lastwikis
         ]);
     }
 

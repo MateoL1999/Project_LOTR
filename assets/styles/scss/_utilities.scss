@@ -4,6 +4,7 @@
     display: none;
   }
 }
+
 .display--card {
   display: none;
   @include respond('phone') {
