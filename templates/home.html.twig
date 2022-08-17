@@ -17,36 +17,36 @@
         </div>
     </section>
 
-    <section class="DernierWiki">
-        <div class="Titre--DernierWiki">
-            <h3>
-                Dernier Article
-            </h3>
-        </div>
-        <div class="Card--Dernier">
-            {% for lastwiki in lastwikis %}
-                <div class="Card--Home">
-                    <div class="Image--Home">
-                        {% if lastwiki.imageName %}
-                            <img src="{{ vich_uploader_asset(lastwiki, 'imageFile') }}" class="img-Home" alt="image_name">
-                        {% else %}
-                            <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
-                                 class="img-carte"
-                                 alt="Default-image">
-                        {% endif %}
-                        <div class="Title--Home">
-                            <a href="{{ path('wiki_detail', {id: lastwiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ lastwiki.titre }}</h5></a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
+{#    <section class="DernierWiki">#}
+{#        <div class="Titre--DernierWiki">#}
+{#            <h3>#}
+{#                Dernier Article#}
+{#            </h3>#}
+{#        </div>#}
+{#        <div class="Card--Dernier">#}
+{#            {% for lastwiki in lastwikis %}#}
+{#                <div class="Card--Home">#}
+{#                    <div class="Image--Home">#}
+{#                        {% if lastwiki.imageName %}#}
+{#                            <img src="{{ vich_uploader_asset(lastwiki, 'imageFile') }}" class="img-Home" alt="image_name">#}
+{#                        {% else %}#}
+{#                            <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"#}
+{#                                 class="img-carte"#}
+{#                                 alt="Default-image">#}
+{#                        {% endif %}#}
+{#                        <div class="Title--Home">#}
+{#                            <a href="{{ path('wiki_detail', {id: lastwiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ lastwiki.titre }}</h5></a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+{#    </section>#}
 
     <section class="carousel--Card">
         <div class="titre--CarouselCard">
             <h3>
-                Wiki Aléatoire
+                Wiki
             </h3>
         </div>
 
@@ -57,7 +57,7 @@
                         <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--CarouselCard"
                              alt="image_name">
 
-                        <div class="oui">
+                        <div class="lien--details">
                             <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
                         </div>
                     </div>
@@ -66,15 +66,17 @@
         </div>
     </section>
 
-{#    <section class="bio--tolkien">#}
-{#        <div>#}
-{#            <p>#}
-{#                #}
-{#            </p>#}
-{#        </div>#}
-
-
-{#    </section>#}
+    <section class="conteneur--bio">
+        <div class="biographie">
+            <p>
+                John Ronald Reuel Tolkien, plus connu sous sa signature : J. R. R. Tolkien, est un écrivain, poète, philologue et professeur d'université anglais.
+                Il est principalement connu en tant qu'auteur des romans de high fantasy "Bilbo le Hobbit" et "Le Seigneur des anneaux".
+            </p>
+        </div>
+        <div class="image--bio">
+            <img src="{{ asset('Image/th.jfif') }}" alt="Tolkien">
+        </div>
+    </section>
 
 
 {% endblock body %}
