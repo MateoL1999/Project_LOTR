@@ -1,12 +1,12 @@
 
-  .DernierWiki {
-    .Titre--DernierWiki {
+  .dernier--wiki {
+    .titre--dernierWiki {
       text-align: center;
       @include font(Lat_Bold, 40, $Second);
       padding-top: 5%;
       padding-bottom: 5%;
     }
-    .Card--Dernier {
+    .card--dernier {
       display: flex;
       flex-wrap: wrap;
       @include respond('phone') {
@@ -17,7 +17,7 @@
 
       }
 
-      .Card--Home {
+      .card--home {
         width: 23%;
         margin: 0 1% 1% 1%;
         position: relative;
@@ -27,7 +27,7 @@
           width: 215px;
         }
 
-        .Image--Home {
+        .image--home {
           @include respond('phone') {
           }
 
@@ -56,7 +56,7 @@
             }
           }
 
-          .Title--Home {
+          .title--home {
             text-align: center;
             background-color: rgba(255, 249, 236, 0.42);
             position: absolute;

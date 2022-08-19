@@ -1,12 +1,12 @@
 
-.Contact {
+.contact {
   padding-top: 50px;
   background-color: $Primary;
   padding-bottom: 3%;
   //.Info--connect{
   //  @include font(Lat_Bold, 20, $grey2);
   //}
-  .conteneur--Contact {
+  .conteneur--contact {
     display: none;
     @include respond('phone') {
       display: block;
@@ -14,17 +14,17 @@
       width: 100%;
     }
 
-    .Image--Contact {
+    .image--contact {
       width: 20%;
 
-      .Anneau {
+      .anneau {
         object-fit: cover;
         width: 100%;
       }
     }
   }
 
-  .Titre--Edit {
+  .titre--edit {
     @include flex(center, center);
     width: 100%;
     @include font(Lat_Bold, 40, $Second);
@@ -68,13 +68,13 @@
       }
     }
   }
-    .conteneur-submit{
+    .conteneur--submit{
       margin-top: 8%;
       display: flex;
       justify-content: center;
       width: 100%;
       @include font(Lat_Bold, 25, $Second);
-      .contact-submit{
+      .contact--submit{
         border-radius: 10px 100px / 120px;
         border: $Second;
         background-color: $Second;

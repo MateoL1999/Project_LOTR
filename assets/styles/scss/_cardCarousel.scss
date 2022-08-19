@@ -1,5 +1,5 @@
-.carousel--Card {
-  .titre--CarouselCard {
+.carousel--card {
+  .titre--carouselCard {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
@@ -9,7 +9,7 @@
     }
   }
 
-  .container--CarouselCard {
+  .container--carouselCard {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -28,8 +28,8 @@
         margin: 7% 7% 7% 7%;
       }
     }
-    .characters-img {
-      .img--CarouselCard {
+    .characters--img {
+      .img--carouselCard {
         object-fit: cover;
         width: 100%;
         max-height: 490px;
