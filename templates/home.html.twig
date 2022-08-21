@@ -24,18 +24,23 @@
             </h3>
         </div>
         <div class="card--dernier">
-            {% for lastwiki in lastwikis %}
+            {% for wiki in wikis|slice(2 ,4) %}
                 <div class="card--home">
                     <div class="image--home">
-{#                        {% if lastwiki.imageName %}#}
-{#                            <img src="{{ vich_uploader_asset(lastwiki, 'imageFile') }}" class="img--home" alt="image_name">#}
-{#                        {% else %}#}
-{#                            <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"#}
-{#                                 class="img-carte"#}
-{#                                 alt="Default-image">#}
-{#                        {% endif %}#}
-                        <div class="title--home">
-                            <a href="{{ path('wiki_detail', {id: lastwiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ lastwiki.titre }}</h5></a>
+                        {% if wiki.imageName %}
+                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--home" alt="image_name">
+                        {% else %}
+                            <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
+                                 class="img-carte"
+                                 alt="Default-image">
+                        {% endif %}
+                        <div class="conteneur--details">
+                            <div class="lien--details">
+                                <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.titre }}</h5></a>
+                            </div>
+                            <div class="title--details display--card">
+                                <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">Détails</h5></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,8 +62,13 @@
                         <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--carouselCard"
                              alt="image_name">
 
+                        <div class="conteneur--details">
                         <div class="lien--details">
-                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.titre }}</h5></a>
+                        </div>
+                        <div class="title--details display--card">
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">Détails</h5></a>
+                        </div>
                         </div>
                     </div>
                 </div>

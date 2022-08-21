@@ -1,7 +1,8 @@
 const nav = document.querySelector("nav");
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
-const boites = document.querySelectorAll('.conteneur--title')
+const boites = document.querySelectorAll('.conteneur--title');
+const boitesV2 = document.querySelectorAll('.conteneur--details');
 
 
 let lastScroll = 0;
@@ -70,6 +71,24 @@ boites.forEach(boiteElement => {
     });
     boiteElement.addEventListener("mouseleave", () => {
         boiteElement.childNodes.forEach(elementChild =>{
+            if(elementChild.tagName === 'DIV') {
+                elementChild.classList.toggle("display--card");
+            }
+        })
+    });
+
+})
+
+boitesV2.forEach(boiteElementV2 => {
+    boiteElementV2.addEventListener("mouseenter", () => {
+        boiteElementV2.childNodes.forEach(elementChild =>{     // Pour chaque enfant de la boite
+            if(elementChild.tagName === 'DIV') {                      // Vérifier que c'est une div
+                elementChild.classList.toggle("display--card");  // si oui, toggle la classe
+            }
+        })
+    });
+    boiteElementV2.addEventListener("mouseleave", () => {
+        boiteElementV2.childNodes.forEach(elementChild =>{
             if(elementChild.tagName === 'DIV') {
                 elementChild.classList.toggle("display--card");
             }
