@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="Section--New--Wiki">
-        <div class="conteneur--Contact">
-            <div class="Image--Contact">
-                <img class="Anneau" src={{ asset ("Image/image.png") }} alt="LOTR">
+    <section class="section--new--wiki">
+        <div class="conteneur--contact">
+            <div class="image--contact">
+                <img class="anneau" src={{ asset ("Image/image.png") }} alt="LOTR">
             </div>
         </div>
-        <div class="Titre--Edit--Wiki">
-            <h1 class="Titre--New">
+        <div class="titre--edit--wiki">
+            <h1 class="titre--new">
                 Edition d'article
             </h1>
         </div>
@@ -16,26 +16,26 @@
         {{ form_start(form) }}
         <div class="conteneurW">
             <div class="conteneurEditParam">
-                <div class="Edit--Titre">
+                <div class="edit--titre">
                     {{ form_row(form.titre) }}
                 </div>
-                <div class="Edit--User">
+                <div class="edit--user">
                     {{ form_row(form.user) }}
                 </div>
-                <div class="Edit--Contenu">
+                <div class="edit--contenu">
                     {{ form_row(form.contenu) }}
                 </div>
             </div>
-            <div class="conteneurEditImg">
-                <div class="Edit--image_file">
+            <div class="conteneur--editImg">
+                <div class="edit--image_file">
                     {{ form_row(form.imageFile) }}
                 </div>
-                <div class="Edit--Categorie">
+                <div class="edit--categorie">
                     {{ form_row(form.categories) }}
                 </div>
             </div>
         </div>
-        <div class="Save--New">
+        <div class="save--New">
             {{ form_row(form.save) }}
         </div>
 

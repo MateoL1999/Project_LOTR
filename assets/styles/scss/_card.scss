@@ -1,4 +1,4 @@
-.Titre--Wiki{
+.titre--wiki{
   @include font(Lat_Bold, 40, $Second);
   background-color: $Primary;
   text-align: center;
@@ -6,8 +6,8 @@
   padding-bottom: 5%;
 }
 
-.ConteneurWiki{
-  .ConteneurCard {
+.conteneur--wiki{
+  .conteneur--card {
     display: flex;
     flex-wrap: wrap;
     @include respond('phone'){
@@ -15,7 +15,7 @@
       display: flex;
 
     }
-    .Card--Image {
+    .card--image {
       width: 23%;
       margin: 0 1% 1% 1%;
       position: relative;
@@ -34,11 +34,11 @@
           background: $Primary2;
         }
       }
-      .Image--Wiki {
+      .image--wiki {
         @include respond('phone') {
         }
 
-        .img-carte {
+        .img--carte {
           object-fit: cover;
           width: 100%;
           max-height: 585px;
@@ -62,7 +62,7 @@
           }
         }
 
-        .Title {
+        .title--carte {
           text-align: center;
           background-color: rgba(255, 249, 236, 0.42);
           position: absolute;
@@ -80,7 +80,7 @@
             padding: 0;
           }
         }
-        .Detail--card{
+        .title--details {
           text-align: center;
           background-color: rgba(255, 249, 236, 0.42);
           position: absolute;
@@ -99,7 +99,7 @@
           }
         }
       }
-      .Title--Respond:nth-child(1n+1){
+      .title--respond:nth-child(1n+1){
         display: none;
         @include respond('phone'){
           display: block;
@@ -108,26 +108,26 @@
           @include font(Mob_Post,35, $Second);
 
         }
-        .Disparu {
+        .disparu {
           display: none;
           @include respond('phone') {
             display: block;
           }
-          .Fleche {
+          .fleche {
             @include respond('phone') {
               padding-left: 20px;
               display: flex;
               align-items: center;
             }
 
-            .Détails {
+            .details {
               @include font(Mob_Post, 25, $Second);
               margin-right: 25px;
             }
           }
         }
       }
-      .Title--Respond:nth-child(2n+1){
+      .title--respond:nth-child(2n+1){
           background-color: $Primary;
       }
     }

@@ -1,14 +1,14 @@
-.Section--Edit {
+.section--edit {
   color: $Second;
 
-  .ConTitre {
+  .con--titre {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
   }
 
   .conteneurE {
-    .Edit--Name {
+    .edit--name {
       @include flex(center,center);
       margin-left: 3.5%;
       width: 100%;
@@ -18,7 +18,7 @@
 
     }
 
-    .Edit--Email {
+    .edit--email {
       @include flex(center,center);
       padding-right: 4.5%;
       width: 100%;
@@ -26,7 +26,7 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
-    .Edit--roles {
+    .edit--roles {
       @include flex(center,center);
       padding-right: 5%;
       padding-top: 2%;
@@ -49,7 +49,7 @@
     }
   }
 
-  .Save--Edit{
+  .save--edit{
       padding-top: 4%;
       @include flex(center,center);
       .bouton-Edit{

@@ -1,5 +1,5 @@
-.Section--New--Wiki {
-  .conteneur--Contact {
+.section--new--wiki {
+  .conteneur--contact {
     display: none;
     @include respond('phone') {
       display: block;
@@ -7,43 +7,43 @@
       width: 100%;
     }
 
-    .Image--Contact {
+    .image--contact {
       width: 20%;
 
-      .Anneau {
+      .anneau {
         object-fit: cover;
         width: 100%;
       }
     }
   }
-  .Titre--Edit--Wiki {
+  .titre--edit--wiki {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
   }
   .conteneurW{
-    .Edit--Titre {
+    .edit--titre {
       @include flex(center, center);
       padding-right: 4.5%;
       width: 100%;
       padding-top: 2%;
       @include font(Lat_Reg, 20, $Second);
     }
-    .Edit--User {
+    .edit--user {
       @include flex(center, center);
       padding-right: 4.7%;
       width: 100%;
       padding-top: 1%;
       @include font(Lat_Reg, 20, $Second);
     }
-    .Edit--Contenu{
+    .edit--contenu{
       @include flex(center, center);
       padding-right: 4%;
       width: 100%;
       padding-top: 1%;
       @include font(Lat_Reg, 20, $Second);
     }
-    .Edit--image_file {
+    .edit--image_file {
       @include flex(center, center);
       width: 100%;
       padding-left: 5%;
@@ -60,8 +60,8 @@
         flex-direction: column;
       }
     }
-    .Edit--Categorie{
-      .Input--Edit--Wiki{
+    .edit--categorie{
+      .input--edit--wiki{
         @include font(Lat_Reg, 20, $Second);
         @include flex(center,center,column,wrap);
         height: 138px;

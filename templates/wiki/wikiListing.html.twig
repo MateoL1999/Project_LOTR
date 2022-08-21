@@ -3,39 +3,39 @@
 
 
 {% block body %}
-    <div class="Titre--Wiki">
+    <div class="titre--wiki">
         <h1>
             Wiki
         </h1>
     </div>
-    <section class="ConteneurWiki">
-        <div class="ConteneurCard">
+    <section class="conteneur--wiki">
+        <div class="conteneur--card">
             {% for wiki in wikis %}
-                <div class="Card--Image">
-                    <div class="Image--Wiki">
+                <div class="card--image">
+                    <div class="image--wiki">
                         {% if wiki.imageName %}
-                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img-carte" alt="image_name">
+                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--carte" alt="image_name">
                         {% else %}
                             <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
                                  class="img-carte"
                                  alt="Default-image">
                         {% endif %}
                         <div class="conteneur--title">
-                        <div class="Title">
-                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
+                        <div class="title">
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title-carte">{{ wiki.titre }}</h5></a>
                         </div>
-                        <div class="Detail--card display--card">
-                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title-carte" target="_blank"><h5 class="title-carte">Détails</h5></a>
+                        <div class="title--details display--card">
+                            <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title-carte">Détails</h5></a>
                         </div>
                         </div>
                     </div>
-                    <div class="Title--Respond">
-                        <h5 class="title-carte">
+                    <div class="title--respond">
+                        <h5 class="title--carte">
                             {{ wiki.titre }}
                         </h5>
-                        <div class="Disparu">
-                            <div class="Fleche">
-                                <p class="Détails">
+                        <div class="disparu">
+                            <div class="fleche">
+                                <p class="details">
                                     <a href="{{ path('wiki_detail', {id: wiki.id}) }}">DÉTAILS</a>
                                 </p>
                                 <i class="fa-solid fa-arrow-right-long"></i>

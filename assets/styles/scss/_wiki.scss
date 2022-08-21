@@ -1,12 +1,12 @@
-.Section--New--Wiki {
-  .Titre--New--Wiki {
+.section--new--wiki {
+  .titre--new--wiki {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
   }
 
   .conteneurN {
-    .New--Titre {
+    .new--titre {
       @include flex(center, center);
       padding-right: 4.5%;
       width: 100%;
@@ -14,7 +14,7 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
-    .New--User {
+    .new--user {
       @include flex(center, center);
       padding-right: 4.7%;
       width: 100%;
@@ -22,14 +22,7 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
-    .New--User {
-      @include flex(center, center);
-      padding-right: 4.7%;
-      width: 100%;
-      padding-top: 1%;
-      @include font(Lat_Reg, 20, $Second);
-    }
-    .New--Url {
+    .new--url {
       @include flex(center, center);
       padding-right: 4.7%;
       width: 100%;
@@ -37,7 +30,7 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
-    .New--image_file {
+    .new--image_file {
       @include flex(center, center);
       width: 100%;
       padding-left: 5%;
@@ -51,7 +44,7 @@
       }
     }
 
-    .New--Categorie {
+    .new--categorie {
       div {
         @include font(Lat_Reg, 20, $Second);
         @include flex(center, center, column, wrap);
@@ -66,12 +59,12 @@
   }
 
 
-  .Save--New {
+  .save--new {
     margin-top: 3%;
     text-align: center;
     width: 100%;
     @include font(Lat_Bold, 25, $Second);
-    .bouton-New {
+    .bouton--new {
       border-radius: 10px 100px / 120px;
       border: $Second;
       padding: 10px;

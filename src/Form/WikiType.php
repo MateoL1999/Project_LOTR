@@ -56,7 +56,7 @@ class WikiType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'attr' => [
-                    'class' => 'bouton-New'
+                    'class' => 'bouton--new'
                 ],
                 'label' => 'Générer'
             ])

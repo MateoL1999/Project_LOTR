@@ -1,25 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <article class="Detail">
-        <div class="Detail--Titre">
+    <article class="detail">
+        <div class="detail--titre">
         <h2>
             {{ wiki.titre }}
         </h2>
         </div>
-        <div class="ConteneurDetails">
-        <div class="Details--Contenu">
+        <div class="conteneur--details">
+        <div class="details--contenu">
         <p>
             {{ wiki.contenu }}
         </p>
         </div>
-        <div class="Details--Image">
+        <div class="details--image">
             <img class="img-Details" src="{{ vich_uploader_asset(wiki, 'imageFile') }}">
         </div>
         </div>
-        <div class="Commentaire">
 
-        </div>
         <div class="comments">
             <h4 class="title--comment">
                 {{ wiki.comments|length }} commentaire(s)
@@ -47,12 +45,12 @@
             </div>
         </div>
 
-        <div class="Detail--Categorie">
-            <div class="Titre--Details">
+        <div class="detail--categorie">
+            <div class="titre--details">
             <h3>Categories</h3>
             </div>
-            <div class="Detail-Categories">
-            <ul class="Categorie">
+            <div class="detail-categories">
+            <ul class="categorie">
                 {% for categorie in wiki.categories %}
                     <li>{{ categorie }}</li>
                 {% endfor %}

@@ -1,7 +1,7 @@
-.Detail {
+.detail {
   background-color: $Primary;
 
-  .Detail--Titre {
+  .detail--titre {
     text-align: center;
     @include font(Mod_Exp, 40, $Second);
     padding-top: 5%;
@@ -9,12 +9,12 @@
 
   }
 
-  .ConteneurDetails {
+  .conteneur--details {
     display: flex;
-    .Details--Contenu{
+    .details--contenu{
       @include font(Lat_Reg, 20, $Second);
     }
-    .Details--Contenu{
+    .details--contenu{
       display: flex;
       align-items: center;
       p{
@@ -35,7 +35,7 @@
         }
       }
     }
-    .Details--Image {
+    .details--image {
       width: 44%;
       margin-right: 2%;
       @include respond('Desktop'){
@@ -62,12 +62,12 @@
       }
     }
   }
-  .Detail--Categorie{
-    .Categorie {
+  .detail--categorie{
+    .categorie {
       @include font(Mod_Li, 20, $Second);
       text-align: center;
     }
-    .Titre--Details {
+    .titre--details {
       text-align: center;
       @include font(Mod_Exp, 30, $Second);
       padding-top: 5%;

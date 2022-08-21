@@ -84,7 +84,7 @@
   }
 }
 
-.input-Edit{
+.input--edit{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -96,7 +96,7 @@
   }
 }
 
-.Input--Edit--Email{
+.input--edit--email{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -169,7 +169,7 @@
   }
 }
 
-.Input--Edit--Titre{
+.input--edit--titre{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -182,7 +182,7 @@
   }
 }
 
-.Input--Edit--User{
+.input--edit--user{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -194,7 +194,7 @@
     color: $Second;
   }
 }
-.Input--Edit--Contenu{
+.input--edit--contenu{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -221,7 +221,7 @@
   }
 }
 
-.Input--Edit--Wiki{
+.input--edit--wiki{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -240,7 +240,7 @@
   padding: 1%;
 }
 
-.securite_V2{
+.securite--v2{
   color: white;
   background-color: #53af4b;
   margin:0px -2px -1px -1px;

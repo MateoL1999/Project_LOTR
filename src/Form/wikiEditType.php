@@ -20,14 +20,14 @@ class wikiEditType extends AbstractType
             ->add('titre', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Titre du Wiki',
-                    'class' => 'Input--Edit--Titre'
+                    'class' => 'input--edit--titre'
                 ],
                 'label' => false,
             ])
             ->add('user', EntityType::class,[
                 'attr' => [
                     'placeholder' => 'User',
-                    'class' => 'Input--Edit--User'
+                    'class' => 'input--edit--user'
                 ],
                 'label' => false,
                 'class' => User::class
@@ -35,14 +35,14 @@ class wikiEditType extends AbstractType
             ->add('contenu', TextareaType::class,[
                 'attr' => [
                     'placeholder' => 'Résumer',
-                    'class' => 'Input--Edit--Contenu'
+                    'class' => 'input--edit--contenu'
                 ],
                 'label' => false,
             ])
             ->add('categories', EntityType::class, [
                 'attr' => [
                     'placeholder' => 'Categories',
-                    'class' => 'Input--Edit--Wiki'
+                    'class' => 'input--edit--wiki'
                 ],
                 'mapped' => true,
                 'label' => false,
