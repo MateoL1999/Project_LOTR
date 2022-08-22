@@ -1,20 +1,32 @@
 
 .section__commentEdit{
-  .Comment__h1{
+  .comment__h1{
     width: 100%;
     @include flex(center, center);
     padding: 2% 0 3% 0;
-    .Titre__commentEdit{
+    .titre__commentEdit{
       @include font(Lat_Reg, 30, white);
-
+      @include respond('tab'){
+        font-size: 25px;
+      }
     }
   }
   .conteneurComment{
-    .Edit--commentTitre{
+    margin: auto;
+    width: 95%;
+    max-width: 1000px;
+    .edit--commentTitre{
       margin-bottom: 2%;
     }
+    .edit--commentUser{
+      margin-bottom: 2%;
+    }
+    .submit--Insc{
+      @include respond('tab'){
+        font-size: 25px;
+      }
+    }
   }
-
 }
 
 .comments{
@@ -50,9 +62,7 @@
       .contenu--comment{
         @include font(Lat_Li, 19, $Primary);
         padding-top: 1%;
-
       }
-
   }
   .new--comment{
     @include respond('tab-land'){
@@ -80,7 +90,4 @@
         }
     }
   }
-
-
-
 }

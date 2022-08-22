@@ -21,18 +21,18 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route ("/Politique de confidentialités", name: "Politique")]
+    #[Route ("/Politique de confidentialités", name: "politique")]
     public function Politique()
     {
         return $this->render('CGU/Politique.html.twig');
     }
 
-    #[Route ("/Condition d'utilisation", name: "CGU")]
+    #[Route ("/Condition d'utilisation", name: "cgu")]
     public function CGU()
     {
         return $this->render('CGU/CGU.html.twig');
     }
-    #[Route ("/Contact", name: "Contact")]
+    #[Route ("/Contact", name: "contact")]
     public function Contact()
     {
         return $this->render('Contact.html.twig');

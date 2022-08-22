@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
 <section class="Cont--Insc">
@@ -29,7 +29,8 @@
         <div class="Accepter--Terme">
             {{ form_row(registrationForm.agreeTerms, {
                 'label': 'Accepter les conditions',
-                'label_attr': {'class': 'label--Accep'}
+                'label_attr': {'class': 'label--Accep'
+                }
             }) }}
         </div>
     </div>

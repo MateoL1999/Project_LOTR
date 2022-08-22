@@ -1,36 +1,47 @@
-.conteneurC {
-  .New--Categorie {
-    @include flex(center, center);
-    width: 100%;
-    padding-top: 5%;
-    @include font(Lat_Reg, 20, $Second);
-    margin-right: 5%;
-    .Input--New--Kind {
-      border-top: white;
-      border-right: white;
-      border-left: white;
-      background: transparent;
-      width: 50%;
-      color: $Second;
-      @include respond('phone') {
-        width: 70%;
-      }
-      &::placeholder {
-        color: $Second;
-      }
+.Section--Edit {
+  .com--titre{
+    .titre--edit{
+      @include font(Lat_Reg, 20, $Second);
     }
   }
-  .submit--Insc{
-    margin-top: 5%;
-    text-align: center;
-    width: 100%;
-    @include font(Lat_Bold, 25, $Second);
-    .button-Insc{
-      border-radius: 10px 100px / 120px;
-      border: $Second;
-      padding: 10px;
-      background-color: $Second;
-      @include font(Lat_Bold, 25, $Primary);
+  .conteneurC {
+    .New--Categorie {
+      @include flex(center, center);
+      width: 100%;
+      padding-top: 5%;
+      @include font(Lat_Reg, 20, $Second);
+      margin-right: 5%;
+
+      .Input--New--Kind {
+        border-top: white;
+        border-right: white;
+        border-left: white;
+        background: transparent;
+        width: 50%;
+        color: $Second;
+        @include respond('phone') {
+          width: 70%;
+        }
+
+        &::placeholder {
+          color: $Second;
+        }
+      }
+    }
+
+    .submit--Insc {
+      margin-top: 5%;
+      text-align: center;
+      width: 100%;
+      @include font(Lat_Bold, 25, $Second);
+
+      .button-Insc {
+        border-radius: 10px 100px / 120px;
+        border: $Second;
+        padding: 10px;
+        background-color: $Second;
+        @include font(Lat_Bold, 25, $Primary);
+      }
     }
   }
 }

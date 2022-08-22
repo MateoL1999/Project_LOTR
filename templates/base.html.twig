@@ -29,10 +29,10 @@
                     <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('wiki_listing') }} ">Article</a></li>
                     <li><a href="{{ path('wiki_recherche') }}">Recherche</a></li>
-                    <li><a href="{{ path('Contact') }}">Contact</a></li>
+                    <li><a href="{{ path('contact') }}">Contact</a></li>
                     {% if is_granted('ROLE_EDITEUR') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('categorie_listing') }}">Categories</a>
+                            <a class="nav-link" href="{{ path('categorie_listing') }}">Catégories</a>
                         </li>
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
@@ -40,7 +40,7 @@
                             <a class="nav-link" href="{{ path('user_listing') }}">Utilisateurs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('comment_listing') }}">Commentaire</a>
+                            <a class="nav-link" href="{{ path('comment_listing') }}">Commentaires</a>
                         </li>
                     {% endif %}
                     {% if is_granted('ROLE_EDITEUR') %}
@@ -48,7 +48,7 @@
                             <a class="nav-link" href="{{ path('wiki_admin') }}">Wiki-Admin</a>
                         </li>
                     {% endif %}
-                    <li><a class="inscription" href="{{path('Inscription')}}">Inscription</a></li>
+                    <li><a class="inscription" href="{{path('inscription')}}">Inscription</a></li>
                     <li><a class="connecter" href="{{path('Connexion')}}">Connexion</a></li>
                 </ul>
             </div>
@@ -84,8 +84,8 @@
 <footer>
     <div>
         <div class="RGPD">
-            <p><a href="{{path('Politique')}}">Politique de confidentialités</a></p>
-            <p><a href="{{path('CGU')}}">Conditions d'utilisation</a></p>
+            <p><a href="{{path('politique')}}">Politiques de confidentialités</a></p>
+            <p><a href="{{path('cgu')}}">Conditions d'utilisations</a></p>
         </div>
         <div class="footer">
             <div class="Dev">

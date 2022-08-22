@@ -54,7 +54,7 @@ class CommentController extends AbstractController
     {
         $comment = $commentRepository->findOneBy(['id' => $id]);
         if(!$comment){
-            $this->addFlash( 'success', 'Le Commentaire à était effacé avec succés');
+            $this->addFlash( 'success', 'Le Commentaire a été effacé avec succés');
             return $this->redirectToRoute('comment_listing');
             }
         $entityManager->remove($comment);

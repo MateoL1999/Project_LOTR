@@ -18,14 +18,14 @@ class commentEditType extends AbstractType
             ->add('titre', TextType::class,[
                 'attr'=>[
                     'placeholder'=> 'Titre du commentaire',
-                    'class' => 'Input--Edit--CommentTitre'
+                    'class' => 'input--edit--commentTitre'
                 ],
                 'label' => false,
             ])
             ->add('user', EntityType::class,[
                 'attr'=>[
                     'placeholder'=> 'User',
-                    'class' => 'Input--Edit--User'
+                    'class' => 'input--edit--commentUser'
                 ],
                 'label' => false,
                 'class' => User::class
@@ -34,7 +34,7 @@ class commentEditType extends AbstractType
             ->add('contenu', TextareaType::class,[
                 'attr' => [
                     'placeholder'=>'Contenu',
-                    'class' => 'Input--Edit--CommentContenu'
+                    'class' => 'input--edit--commentContenu'
                 ],
                 'label' => false,
             ])

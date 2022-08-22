@@ -2,18 +2,21 @@
 
 {% block body %}
     <section class="section__commentEdit">
-        <div class="Comment__h1">
-            <h1 class="Titre__commentEdit">
+        <div class="comment__h1">
+            <h1 class="titre__commentEdit">
                 Modification de commentaire
             </h1>
         </div>
 
         {{ form_start(form) }}
         <div class="conteneurComment">
-            <div class="Edit--commentTitre">
+            <div class="edit--commentTitre">
                 {{ form_row(form.titre) }}
             </div>
-            <div class="Edit--commentContenu">
+            <div class="edit--commentUser">
+                {{ form_row(form.user) }}
+            </div>
+            <div class="edit--commentContenu">
                 {{ form_row(form.contenu) }}
             </div>
         </div>

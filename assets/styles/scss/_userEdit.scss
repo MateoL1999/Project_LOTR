@@ -5,45 +5,71 @@
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
+    @include respond('tab'){
+      font-size: 30px;
+    }
   }
 
   .conteneurE {
+    width: 95%;
+    margin: auto;
+    max-width: 1000px;
     .edit--name {
-      @include flex(center,center);
-      margin-left: 3.5%;
-      width: 100%;
-      padding-top: 5%;
+      //@include flex(center,center);
+      //margin-left: 3.5%;
+      width: 25%;
+      padding-top: 2%;
       @include font(Lat_Reg, 20, $Second);
-      margin-right: 5%;
+      //margin-right: 5%;
+      @include respond('tab'){
+        width: 50%;
+        padding-top: 3%;
+      }
 
+      #user_form_lastName{
+        margin-top: 8%;
+      }
     }
 
     .edit--email {
-      @include flex(center,center);
-      padding-right: 4.5%;
-      width: 100%;
+      //@include flex(center,center);
+      //padding-right: 4.5%;
+      width: 25%;
       padding-top: 2%;
       @include font(Lat_Reg, 20, $Second);
+      @include respond('tab'){
+        width: 55%;
+        padding-top: 3%;
+      }
     }
 
     .edit--roles {
-      @include flex(center,center);
-      padding-right: 5%;
+      //@include flex(center,center);
+      //padding-right: 5%;
       padding-top: 2%;
+      width: 100%;
       @include font(Lat_Reg, 20, $Second);
+      @include respond('tab'){
+        padding-top: 3%;
+      }
 
       .label--roles {
         margin-bottom: 10px;
       }
 
       #user_form_roles {
+        width: 137%;
         #user_form_roles_0 {
-          margin-right: 10px;
+          margin-right: 1%;
         }
 
         #user_form_roles_1 {
-          margin-right: 10px;
-          margin-left: 10px;
+          margin-right: 1%;
+          margin-left: 1%;
+        }
+        #user_form_roles_2{
+          margin-left: 1%;
+          margin-right: 1%;
         }
       }
     }

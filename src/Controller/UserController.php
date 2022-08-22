@@ -19,7 +19,7 @@ class UserController extends AbstractController
     {
         if(!$this->isGranted('ROLE_ADMIN')){
             $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
-            return $this->redirectToRoute('Connexion');
+            return $this->redirectToRoute('connexion');
         }
         $users = $userRepository->findAll();
         return $this->render('user/user.html.twig',[
@@ -52,18 +52,18 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/users/{id}/profil', name: 'user_profil')]
-    public function userProfil($id, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager)
-    {
-        $user = $userRepository->findOneBy(['id' => $id]);
-        if (!$user) {
-            return $this->redirectToRoute('home');
-        }
-
-        return $this->render('user/userProfil.html.twig',[
-            'users' => $user
-    ]);
-    }
+//    #[Route('/users/{id}/profil', name: 'user_profil')]
+//    public function userProfil($id, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager)
+//    {
+//        $user = $userRepository->findOneBy(['id' => $id]);
+//        if (!$user) {
+//            return $this->redirectToRoute('home');
+//        }
+//
+//        return $this->render('user/userProfil.html.twig',[
+//            'users' => $user
+//    ]);
+//    }
 
     #[Route('/user/{id}/delete',name: 'user_delete')]
     public function userDelete(UserRepository $userRepository, EntityManagerInterface $entityManager,$id )

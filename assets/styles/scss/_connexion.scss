@@ -29,10 +29,11 @@ body {
       @include font(Lat_Bold, 40, $Second);
     }
     .form--connexion{
-      margin: 10% 0px 10px 10%;
+      margin: 10% auto 10px auto;
       @include font(Lat_Bold, 25, $grey2);
+      max-width: 622px;
       @include respond ('phone') {
-        margin: 15% 0px 10px 24%;
+        margin: 15% auto 10px auto;
       }
       .Email{
         margin-bottom: 20px;
