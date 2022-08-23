@@ -23,7 +23,6 @@ class CommentFormType extends AbstractType
         'label' => false,
 
             ])
-
             ->add('Contenu', TextareaType::class,[
                     'attr' => [
                         'placeholder' => 'Contenu',

@@ -91,11 +91,12 @@ class RegistrationFormType extends AbstractType
                 ],
                 'invalid_message' => 'Veuillez réessayer',
                 'required' => true,
+                'trim' => true,
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
                     'class' => 'input-Civ',
-                    'placeholder' => 'Password',
+                    'placeholder' => 'Mot de passe',
                 ],
                 'label' => false,
                 'constraints' => [
@@ -111,22 +112,6 @@ class RegistrationFormType extends AbstractType
                 ],
 
             ])
-
-//            ->add('ConfirmPass', PasswordType::class, [
-//                // instead of being set onto the object directly,
-//                // this is read and encoded in the controller
-//                'mapped' => false,
-//                'attr' => [
-//                    'autocomplete' => 'new-password',
-//                    'class' => 'input-Insc',
-//                    'placeholder' => 'Password',
-//                ],
-//                'label' => false,
-//                'constraints' => [
-//
-//                   ],
-//
-//                ])
         ;
     }
 
