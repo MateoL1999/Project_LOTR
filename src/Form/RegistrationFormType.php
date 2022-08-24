@@ -51,6 +51,21 @@ class RegistrationFormType extends AbstractType
                 'label' => false
             ])
 
+            ->add('pseudo', TextType::class,[
+                'attr' => [
+                    'class' => 'insc--pseudo',
+                    'placeholder' => 'Pseudo'
+                ],
+                'trim' => true,
+                'constraints' => [
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'le pseudo doit contenir au moins {{ limit }}'
+                    ])
+                ],
+                'label' => false
+            ])
+
             ->add('email', EmailType::class, [
                 'attr' => [
                     'class' => 'input-formatV2 Insc--email',

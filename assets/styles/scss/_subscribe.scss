@@ -47,6 +47,9 @@ section{
         width: 50%;
       }
     }
+    .pseudo{
+      @include font(Lat_Reg, 15, $Second);
+    }
 
     .insc--email {
       margin-top: 1%;

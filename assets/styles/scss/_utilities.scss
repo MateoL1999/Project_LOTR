@@ -31,7 +31,7 @@
   color: $Second;
   width: 85%;
     &::placeholder{
-      color: $grey;
+      color: $Second;
     }
 }
 .input-formatV2{
@@ -42,7 +42,7 @@
   color: $Second;
   width:45%;
   &::placeholder{
-    color: $grey;
+    color: $Second;
   }
   @include respond('phone'){
     width: 50%;
@@ -62,6 +62,22 @@
   &::placeholder{
     color: $Second;
 
+  }
+}
+
+.insc--pseudo {
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 12.5%;
+  margin: 2.5% 0 0 0;
+  @include font(Lat_Reg, 21, $Second);
+  @include respond('phone'){
+    width: 70%;
+  }
+  &::placeholder{
+    color: $Second;
   }
 }
 
