@@ -57,7 +57,7 @@ class UserFormType extends AbstractType
             ->add('save', SubmitType::class,[
                 'label' => 'Enregistrer',
                 'attr' => [
-                    'class' => 'bouton-Edit'
+                    'class' => 'button-Edit'
                 ]
             ])
         ;

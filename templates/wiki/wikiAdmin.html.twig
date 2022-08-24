@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="Dashboard">
-        <div class="titreDash">
+    <section class="dashboard">
+        <div class="title--Dash">
             <h1>
                 Admin Wiki
             </h1>
         </div>
         <table class="table table_striped">
 
-            <thead class="tableau">
+            <thead class="table">
             <th> Id</th>
             <th> Title</th>
             <th> Date</th>
@@ -21,7 +21,7 @@
             </thead>
             <tbody>
             {% for wiki in wikis %}
-                <tr class="StyleDash">
+                <tr class="style--dash">
                     <td>
                         {{ wiki.id}}
                     </td>
@@ -35,7 +35,7 @@
                         {{ wiki.user.pseudo }}
                     </td>
                     {% for categorie in wiki.categories %}
-                        <td class="Nom-wiki">
+                        <td class="name--wiki">
                             {{ categorie }}
                         </td>
                     {% endfor %}

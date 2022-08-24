@@ -2,13 +2,13 @@
 
 {% block body %}
     <section class="contact">
-        <div class="conteneur--contact">
+        <div class="container--contact">
             <div class="image--contact">
-                <img class="Anneau" src={{ asset ("Image/image.png") }} alt="LOTR">
+                <img class="ring" src={{ asset ("Image/image.png") }} alt="LOTR">
             </div>
         </div>
-        <div class="titre--edit">
-            <h1 class="titre--contact">
+        <div class="title--edit">
+            <h1 class="title--contact">
                 Contact
             </h1>
         </div>
@@ -17,7 +17,7 @@
                 <div class="email">
                     <input type="text" name="email" id="email" class="input--contact respond" placeholder="Email">
                 </div>
-                <div class="objet">
+                <div class="object">
                     <input type="text" name="objet" id="objet" class="input--contact" placeholder="Objet">
                 </div>
                 <div class="message">
@@ -28,11 +28,8 @@
                         <input type="text" name="message" id="message" class="input--contact2">
                     </div>
                 </div>
-                {#    <input type="hidden" name="_csrf_token" #}
-                {#           value="{{ csrf_token('authenticate') }}" #}
-                {#    > #}
             </div>
-            <div class="conteneur--submit">
+            <div class="container--submit">
                 <button class="contact--submit" type="submit">
                     Envoyer
                 </button>

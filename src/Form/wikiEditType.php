@@ -20,7 +20,7 @@ class wikiEditType extends AbstractType
             ->add('titre', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Titre du Wiki',
-                    'class' => 'input--edit--titre'
+                    'class' => 'input--edit--title'
                 ],
                 'label' => false,
             ])
@@ -35,7 +35,7 @@ class wikiEditType extends AbstractType
             ->add('contenu', TextareaType::class,[
                 'attr' => [
                     'placeholder' => 'Résumer',
-                    'class' => 'input--edit--contenu'
+                    'class' => 'input--edit--content'
                 ],
                 'label' => false,
             ])
@@ -56,7 +56,7 @@ class wikiEditType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'attr' => [
-                    'class' => 'bouton-New'
+                    'class' => 'button--new'
                 ],
                 'label' => 'Modifier'
             ])

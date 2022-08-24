@@ -5,11 +5,11 @@
 <div id="search-form">
     <div id="search-form-content">
         {{ form_start(form)}}
-        <div class="ConteneurS">
-            <div class="Search--Titre">
+        <div class="containerS">
+            <div class="search--title">
                 {{form_row(form.titre)}}
             </div>
-            <div class="Search--Categories">
+            <div class="search--category">
                 {{form_row(form.categories)}}
             </div>
         </div>
@@ -19,19 +19,19 @@
         {{ form_end(form) }}
     </div>
 </div>
-    <section class="conteneur--wiki">
-        <div class="conteneur--card">
+    <section class="container--wiki">
+        <div class="container--card">
             {% for wiki in wikis %}
                 <div class="card--image">
                     <div class="image--wiki">
                         {% if wiki.imageName %}
-                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--carte" alt="image_name">
+                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--card" alt="image_name">
                         {% else %}
                             <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
-                                 class="img-carte"
+                                 class="img-card"
                                  alt="Default-image">
                         {% endif %}
-                        <div class="conteneur--title">
+                        <div class="container--title">
                             <div class="title">
                                 <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.titre }}</h5></a>
                             </div>
@@ -41,11 +41,11 @@
                         </div>
                     </div>
                     <div class="title--respond">
-                        <h5 class="title--carte">
+                        <h5 class="title--card">
                             {{ wiki.titre }}
                         </h5>
-                        <div class="disparu">
-                            <div class="fleche">
+                        <div class="disappear">
+                            <div class="arrow">
                                 <p class="details">
                                     <a href="{{ path('wiki_detail', {id: wiki.id}) }}">DÉTAILS</a>
                                 </p>

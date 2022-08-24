@@ -19,22 +19,23 @@ class WikiSearchFormType extends AbstractType
             ->setMethod('GET')
             ->add('titre', TextType::class, [
                 'attr' => [
-                    'class' => 'input-Edit Search--Titre',
-                    'palceholder' => 'Tire',
+                    'class' => 'Search--Titre',
+                    'placeholder' => 'Titre',
                 ],
-                'required' => false
+                'required' => false,
+                'label' => false,
 
             ])
             ->add('categories', EntityType::class, [
-                'label' => 'Categories',
                 'class' => Categorie::class,
-                'placeholder' => '--Sélectionner--',
-                'required' => false
+                'placeholder' => '--Catégorie--',
+                'required' => false,
+                'label' => false,
 
             ])
             ->add('save', SubmitType::class, [
                 'attr' => [
-                    'class' => 'bouton-submit'
+                    'class' => 'button-submit'
                 ],
                 'label' => 'Générer'
             ]);

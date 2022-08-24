@@ -1,7 +1,7 @@
 .detail {
   background-color: $Primary;
 
-  .detail--titre {
+  .detail--title {
     text-align: center;
     @include font(Mod_Exp, 40, $Second);
     padding-top: 5%;
@@ -9,14 +9,12 @@
 
   }
 
-  .conteneur--details {
+  .container--details {
     display: flex;
-    .details--contenu{
-      @include font(Lat_Reg, 20, $Second);
-    }
-    .details--contenu{
+    .details--content{
       display: flex;
       align-items: center;
+      @include font(Lat_Reg, 20, $Second);
       p{
         padding-right: 2%;
         padding-left: 2%;
@@ -56,18 +54,18 @@
       @include respond('phone-min'){
         width: 400%;
       }
-      .img-Details {
+      .img--details {
         object-fit: cover;
         width: 100%;
       }
     }
   }
-  .detail--categorie{
-    .categorie {
+  .detail--category{
+    .category {
       @include font(Mod_Li, 20, $Second);
       text-align: center;
     }
-    .titre--details {
+    .title--details {
       text-align: center;
       @include font(Mod_Exp, 30, $Second);
       padding-top: 5%;

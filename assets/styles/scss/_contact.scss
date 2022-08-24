@@ -17,14 +17,14 @@
     .image--contact {
       width: 20%;
 
-      .anneau {
+      .ring {
         object-fit: cover;
         width: 100%;
       }
     }
   }
 
-  .titre--edit {
+  .title--edit {
     @include flex(center, center);
     width: 100%;
     @include font(Lat_Bold, 40, $Second);
@@ -68,7 +68,7 @@
       }
     }
   }
-    .conteneur--submit{
+    .container--submit{
       margin-top: 8%;
       display: flex;
       justify-content: center;

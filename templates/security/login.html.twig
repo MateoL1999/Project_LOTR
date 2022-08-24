@@ -3,27 +3,27 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
-    <section class="conteneurF">
+    <section class="containerF">
         <form method="post">
             {% if error %}
-                <div class="alert alert-danger Info--connect">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div class="alert alert-danger info--connect">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
             {% if app.user %}
-                <div class="alert alert-danger Info--connect">
+                <div class="alert alert-danger info--connect">
                     Tu es déjà connecter avec {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnecter</a>
                 </div>
             {% endif %}
-            <div class="img--arbre">
+            <div class="img--tree">
             <div class="logo--connect">
                 <img class="Arbre" src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
             </div>
             </div>
-            <div class="titre--connexion flex--center">
+            <div class="title--connexion flex--center">
                 <h1 class="">Connexion</h1>
             </div>
             <div class="form--connexion">
-                <div class="Email">
+                <div class="email">
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
                            class="input-format respond"
                            autocomplete="email"

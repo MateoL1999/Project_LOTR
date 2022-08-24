@@ -1,12 +1,12 @@
 #search-form{
   background-color: $Primary;
   #search-form-content{
-    .ConteneurS{
+    .containerS{
       @include font(Lat_Bold, 20, $Second);
       display: flex;
       flex-direction: column;
       align-items: center;
-      .Search--Titre{
+      .search--title{
       padding-top: 2%;
 
       }
@@ -17,7 +17,7 @@
       justify-content: center;
       width: 100%;
       @include font(Lat_Bold, 25, $Second);
-      .bouton-submit{
+      .button-submit{
         border-radius: 10px 100px / 120px;
         border: $Second;
         background-color: $Second;
@@ -27,7 +27,7 @@
     }
   }
 }
-.conteneur--wiki {
+.container--wiki {
   padding-top: 5%;
 }
 

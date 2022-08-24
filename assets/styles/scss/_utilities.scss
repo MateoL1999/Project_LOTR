@@ -12,8 +12,6 @@
   }
 }
 
-
-
 .flex--spaceE{
   display: flex;
   justify-content: space-evenly;
@@ -31,10 +29,24 @@
   border-left: white;
   background: transparent;
   color: $Second;
-  width: 100%;
+  width: 85%;
     &::placeholder{
       color: $grey;
     }
+}
+.input-formatV2{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  color: $Second;
+  width:45%;
+  &::placeholder{
+    color: $grey;
+  }
+  @include respond('phone'){
+    width: 50%;
+  }
 }
 
 .input-Civ{
@@ -58,7 +70,7 @@
   border-right: white;
   border-left: white;
   background: transparent;
-  width: 30%;
+  width: 45%;
   color: $Second;
   @include respond('phone'){
     width: 50%;
@@ -74,7 +86,7 @@
   border-right: white;
   border-left: white;
   background: transparent;
-  width: 30%;
+  width: 45%;
   color: $Second;
   @include respond('phone'){
     width: 50%;
@@ -121,7 +133,7 @@
     }
   }
 
-.Input--Categorie{
+.input--category{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -132,7 +144,7 @@
   }
 }
 
-.Input--New--Titre{
+.input--new--title{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -144,7 +156,7 @@
   }
 }
 
-.Input--New--User{
+.input--new--user{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -156,7 +168,7 @@
   }
 }
 
-.Input--New--Wiki{
+.input--new--wiki{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -168,7 +180,7 @@
   }
 }
 
-.input--edit--titre{
+.input--edit--title{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -193,7 +205,7 @@
     color: $Second;
   }
 }
-.input--edit--contenu{
+.input--edit--content{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -207,7 +219,7 @@
   }
 }
 
-.Input--New--Url{
+.input--new--url{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -225,7 +237,7 @@
   border-right: white;
   border-left: white;
   background: transparent;
-  width: 75%;
+  //width: 75%;
   color: $Second;
   &::placeholder{
     color: $Second;
@@ -248,7 +260,7 @@
 }
 
 
-.input--edit--commentTitre{
+.input--edit--commentTitle{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -257,7 +269,7 @@
   @include font(Lat_Reg, 15, $Second);
 }
 
-.input--edit--commentContenu{
+.input--edit--commentContent{
   border-top: white;
   border-right: white;
   border-left: white;
@@ -275,7 +287,7 @@
   @include font(Lat_Reg, 15, $Second);
 }
 
-.Input--New--CommentTitre{
+.input--new--commentTitle{
   margin-left: 5%;
   border-top: white;
   border-right: white;
@@ -288,7 +300,7 @@
   }
 }
 
-.Input--New--CommentContenu{
+.input--new--commentContent{
   margin-left: 5%;
   margin-top: 1%;
   background: transparent;
@@ -300,8 +312,20 @@
   }
 }
 
-
 a:hover{
   color: $Second;
+}
+
+.Search--Titre{
+    border-top: white;
+    border-right: white;
+    border-left: white;
+    background: transparent;
+    width: 100%;
+    margin-bottom: 10%;
+    margin-left: -3%;
+  &::placeholder{
+    color: $Second;
+  }
 }
 

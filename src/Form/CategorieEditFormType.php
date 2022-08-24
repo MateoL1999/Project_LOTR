@@ -15,7 +15,7 @@ class CategorieEditFormType extends AbstractType
             ->add('label', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Label',
-                    'class' => 'Input--Categorie'
+                    'class' => 'input--category'
                 ],
                 'label' => false,
             ])

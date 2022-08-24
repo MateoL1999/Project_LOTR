@@ -20,14 +20,14 @@ class WikiType extends AbstractType
             ->add('titre', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Titre du Livre',
-                    'class' => 'Input--New--Titre'
+                    'class' => 'input--new--title'
                 ],
                 'label' => false,
             ])
             ->add('user', EntityType::class,[
                 'attr' => [
                     'placeholder' => 'User',
-                    'class' => 'Input--New--User'
+                    'class' => 'input--new--user'
                 ],
                 'label' => false,
                 'class' => User::class
@@ -35,14 +35,14 @@ class WikiType extends AbstractType
             ->add('url', UrlType::class,[
                 'attr' => [
                     'placeholder' => 'Url',
-                    'class' => 'Input--New--Url'
+                    'class' => 'input--new--url'
                 ],
                 'label' => false,
             ])
             ->add('categories', EntityType::class, [
                 'attr' => [
                     'placeholder' => 'Categories',
-                    'class' => 'Input--New--Wiki'
+                    'class' => 'input--new--wiki'
                 ],
                 'mapped' => true,
                 'label' => false,
@@ -56,7 +56,7 @@ class WikiType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'attr' => [
-                    'class' => 'bouton--new'
+                    'class' => 'button--new'
                 ],
                 'label' => 'Générer'
             ])

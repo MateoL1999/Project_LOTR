@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="Dashboard">
-        <div class="titreDash">
+    <section class="dashboard">
+        <div class="titre--dash">
             <h1>
                 Dashboard
             </h1>
         </div>
         <table class="table table_striped">
 
-            <thead class="tableau">
+            <thead class="table">
             <th> Id</th>
             <th> Prénom</th>
             <th> Nom</th>
@@ -20,7 +20,7 @@
             </thead>
             <tbody>
             {% for user in users %}
-                <tr class="StyleDash">
+                <tr class="style--dash">
                     <td>
                         {{ user.id }}
                     </td>

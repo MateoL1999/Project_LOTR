@@ -2,20 +2,20 @@
 
 {% block body %}
 <section class="section--new--wiki">
-    <div class="img--arbre">
+    <div class="img--tree">
         <div class="logo--connect">
-            <img class="Arbre" src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
+            <img class="tree" src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
         </div>
     </div>
-    <div class="titre--new--wiki">
-        <h1 class="titre--new">
+    <div class="title--new--wiki">
+        <h1 class="title--new">
             Générer un article
         </h1>
     </div>
 
     {{ form_start(form) }}
     <div class="conteneurN">
-        <div class="new--titre">
+        <div class="new--title">
             {{ form_row(form.titre) }}
         </div>
         <div class="new--user">
@@ -27,7 +27,7 @@
         <div class="new--image_file">
             {{ form_row(form.imageFile) }}
         </div>
-        <div class="new--categorie">
+        <div class="new--category">
             {{ form_row(form.categories) }}
         </div>
     </div>

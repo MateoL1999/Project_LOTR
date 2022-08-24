@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="Dashboard">
-        <div class="titreDash">
+    <section class="dashboard">
+        <div class="title--dash">
             <h1>
                 Categorie
             </h1>
@@ -15,7 +15,7 @@
 {#        </div>#}
         <table class="table table_striped">
 
-            <thead class="tableau">
+            <thead class="table">
             <th> Id</th>
             <th> Label</th>
             <th> Wiki</th>
@@ -23,7 +23,7 @@
             </thead>
             <tbody>
             {% for categorie in categories %}
-                <tr class="StyleDash">
+                <tr class="style--dash">
                     <td>
                         {{ categorie.id }}
                     </td>
@@ -31,7 +31,7 @@
                         {{ categorie.label}}
                     </td>
                     {% for wiki in categorie.wikis %}
-                    <td class="Nom-wiki">
+                    <td class="name--wiki">
                         {{ wiki }}
                     </td>
                     {% endfor %}

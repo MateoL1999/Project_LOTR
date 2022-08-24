@@ -1,15 +1,15 @@
 {%  extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="Dashboard">
-        <div class="titreDash">
+    <section class="dashboard">
+        <div class="title--dash">
             <h1>
                 Admin Comment
             </h1>
         </div>
         <table class="table table_striped">
 
-            <thead class="tableau">
+            <thead class="table">
             <th> Id </th>
             <th> Titre </th>
             <th> User </th>
@@ -21,7 +21,7 @@
             </thead>
             <tbody>
             {% for comment in comments %}
-                <tr class="StyleDash">
+                <tr class="style--dash">
                     <td>
                         {{ comment.id }}
                     </td>
@@ -40,7 +40,7 @@
                         {{ comment.wiki }}
                     </td>
                     {% for wiki in comment.wiki %}
-                        <td class="Nom-wiki">
+                        <td class="name--wiki">
                             {{ wiki }}
                         </td>
                     {% endfor %}

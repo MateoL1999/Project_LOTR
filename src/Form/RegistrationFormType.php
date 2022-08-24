@@ -53,7 +53,7 @@ class RegistrationFormType extends AbstractType
 
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'class' => 'input-format Insc--email',
+                    'class' => 'input-formatV2 Insc--email',
                     'placeholder' => 'Email'
                 ],
                 'trim' => true,

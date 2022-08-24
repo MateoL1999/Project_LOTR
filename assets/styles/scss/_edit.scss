@@ -1,18 +1,20 @@
-.Section--Edit {
-  .com--titre{
-    .titre--edit{
-      @include font(Lat_Reg, 20, $Second);
+.section--edit {
+  .com--title{
+    .title--edit{
+      @include font(Lat_Reg, 30, $Second);
+      text-align: center;
+      padding-top: 5%;
     }
   }
   .conteneurC {
-    .New--Categorie {
+    .new--category{
       @include flex(center, center);
       width: 100%;
       padding-top: 5%;
       @include font(Lat_Reg, 20, $Second);
       margin-right: 5%;
 
-      .Input--New--Kind {
+      .input--new--kind {
         border-top: white;
         border-right: white;
         border-left: white;
@@ -29,7 +31,7 @@
       }
     }
 
-    .submit--Insc {
+    .submit--insc {
       margin-top: 5%;
       text-align: center;
       width: 100%;

@@ -1,6 +1,6 @@
 section{
   background-color: $Primary;
-  .img--arbre {
+  .img--tree {
     display: none;
     @include respond('phone'){
       display: block;
@@ -10,26 +10,34 @@ section{
     }
     .logo--connect {
       width: 20%;
-      .Arbre {
+      .tree {
         object-fit: cover;
         width: 100%;
       }
     }
   }
-  .Titre--Insc{
+  .title--insc{
     text-align: center;
-    padding: 10% 0px 34px 0;
+    padding: 5% 0 5% 0;
     @include font(Lat_Bold, 40, $Second);
     @include respond('phone'){
-      padding: 5% 0px 5% 0;
+      padding: 5% 0 5% 0;
     }
 
   }
-  .Form--Insc {
-    .Civilite {
+  .form--insc {
+    margin: 0 0 0 40%;
+    max-width: 1000px;
+    width: 95%;
+    @include respond('laptop'){
+      margin: 0 0 0 33%;
+    }
+    @include respond('phone'){
+    margin: 0 -25% 0 auto;
+    }
+    .civilite {
       display: flex;
       width: 50%;
-      margin-left: 32%;
       @include font(Lat_Reg, 20, $Second);
       @include respond('phone'){
         margin-bottom: 4% ;
@@ -40,20 +48,20 @@ section{
       }
     }
 
-    .Insc--email {
-
-      margin-left: 17.5%;
+    .insc--email {
       margin-top: 1%;
       @include font(Lat_Reg, 20, $Second);
       @include respond('phone'){
         margin-bottom: 4% ;
+      }
+      div{
+        padding: 1% 0 0 0;
       }
       li{
         background-color: $error;
         padding: 10px;
         width: 27%;
         text-align: center;
-        margin-left: 27%;
         @include respond('phone'){
          width: 67%;
           margin-left: 5%;
@@ -61,19 +69,20 @@ section{
       }
     }
 
-    .Insc--Password {
-      margin-left: 31.75%;
+    .insc--Password {
       margin-top: 1%;
       @include font(Lat_Reg, 20, $Second);
       @include respond('phone'){
         padding-bottom: 4% ;
+      }
+      div{
+        padding: 1% 0 1% 0;
       }
       li{
         background-color: $error;
         padding: 10px;
         width: 30%;
         text-align: center;
-        margin-left: 13%;
         @include respond('phone'){
           width: 67%;
           margin-left: 5%;
@@ -81,8 +90,7 @@ section{
       }
     }
 
-    .Accepter--Terme {
-      margin-left: 31.75%;
+    .agree--terms {
       margin-top: 1%;
       @include font(Lat_Reg, 20, $Second);
       .label--Accep{
@@ -90,7 +98,7 @@ section{
       }
     }
   }
-    .submit--Insc{
+    .submit--insc{
       margin-top: 5%;
       text-align: center;
       width: 100%;

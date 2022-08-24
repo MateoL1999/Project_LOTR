@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="Section--Edit">
-        <div class="ConTitre">
-            <h1 class="Titre--Edit">
+    <section class="section--edit">
+        <div class="com--title">
+            <h1 class="title--edit">
                 Édition Catégories
             </h1>
         </div>
 
         {{ form_start(form) }}
         <div class="conteneurC">
-            <div class="New--Categorie">
+            <div class="new--category">
                 {{ form_row(form.label) }}
             </div>
         </div>
-        <div class="submit--Insc">
+        <div class="submit--insc">
             {{ form_row(form.save) }}
         </div>
         {{ form_end(form) }}

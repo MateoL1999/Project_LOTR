@@ -1,5 +1,5 @@
 .section--new--wiki {
-  .conteneur--contact {
+  .container--contact {
     display: none;
     @include respond('phone') {
       display: block;
@@ -10,25 +10,32 @@
     .image--contact {
       width: 20%;
 
-      .anneau {
+      .ring {
         object-fit: cover;
         width: 100%;
       }
     }
   }
-  .titre--edit--wiki {
+
+  .title--edit--wiki {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
-    padding-top: 5%;
+    padding: 5% 0 5% 0 ;
   }
-  .conteneurW{
-    .edit--titre {
+
+  .containerW {
+    .conteneur--editWiki{
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .edit--title{
       @include flex(center, center);
       padding-right: 4.5%;
       width: 100%;
       padding-top: 2%;
       @include font(Lat_Reg, 20, $Second);
     }
+
     .edit--user {
       @include flex(center, center);
       padding-right: 4.7%;
@@ -36,15 +43,16 @@
       padding-top: 1%;
       @include font(Lat_Reg, 20, $Second);
     }
-    .edit--contenu{
+
+    .edit--content {
       @include flex(center, center);
       padding-right: 4%;
       width: 100%;
       padding-top: 1%;
       @include font(Lat_Reg, 20, $Second);
     }
+
     .edit--image_file {
-      @include flex(center, center);
       width: 100%;
       padding-left: 5%;
       padding-top: 1%;
@@ -52,23 +60,36 @@
       @include respond('phone') {
         margin-left: 4%;
       }
-      label{
+      img{
+        max-width: 33%;
+      }
+
+      label {
         margin-bottom: 10px;
       }
-      .vich-image{
+
+      .vich-image {
         display: flex;
         flex-direction: column;
       }
     }
-    .edit--categorie{
-      .input--edit--wiki{
+
+    .edit--category {
+      .input--edit--wiki {
         @include font(Lat_Reg, 20, $Second);
-        @include flex(center,center,column,wrap);
-        height: 138px;
-        margin-top: 1%;
-        margin-left: 15%;
-        @include respond('phone'){
+        //@include flex(center, center, column, wrap);
+        display: flex;
+        flex-wrap: wrap;
+        //height: 138px;
+        width: 95%;
+        max-width: 1000px;
+        margin: auto;
+        //margin-left: 15%;
+        @include respond('phone') {
           margin-left: 18%;
+        }
+        label{
+          padding: 5% 2% 5% 2%;
         }
       }
     }

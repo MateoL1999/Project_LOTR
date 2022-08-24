@@ -1,7 +1,7 @@
 
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
-const boites = document.querySelectorAll('.conteneur--title');
+const boites = document.querySelectorAll('.container--title');
 const boitesV2 = document.querySelectorAll('.conteneur--details');
 
 

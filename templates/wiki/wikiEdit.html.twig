@@ -2,38 +2,40 @@
 
 {% block body %}
     <section class="section--new--wiki">
-        <div class="conteneur--contact">
+        <div class="container--contact">
             <div class="image--contact">
-                <img class="anneau" src={{ asset ("Image/image.png") }} alt="LOTR">
+                <img class="ring" src="{{ asset ("Image/image.png") }}" alt="Anneau">
             </div>
         </div>
-        <div class="titre--edit--wiki">
-            <h1 class="titre--new">
+        <div class="title--edit--wiki">
+            <h1 class="title--new">
                 Edition d'article
             </h1>
         </div>
 
         {{ form_start(form) }}
-        <div class="conteneurW">
-            <div class="conteneurEditParam">
-                <div class="edit--titre">
-                    {{ form_row(form.titre) }}
+        <div class="containerW">
+            <div class="container--editWiki">
+                <div class="container--EditParam">
+                    <div class="edit--title">
+                        {{ form_row(form.titre) }}
+                    </div>
+                    <div class="edit--user">
+                        {{ form_row(form.user) }}
+                    </div>
+                    <div class="edit--content">
+                        {{ form_row(form.contenu) }}
+                    </div>
                 </div>
-                <div class="edit--user">
-                    {{ form_row(form.user) }}
-                </div>
-                <div class="edit--contenu">
-                    {{ form_row(form.contenu) }}
+                <div class="conteneur--editImg">
+                    <div class="edit--image_file">
+                        {{ form_row(form.imageFile) }}
+                    </div>
                 </div>
             </div>
-            <div class="conteneur--editImg">
-                <div class="edit--image_file">
-                    {{ form_row(form.imageFile) }}
-                </div>
-                <div class="edit--categorie">
+                <div class="edit--category">
                     {{ form_row(form.categories) }}
                 </div>
-            </div>
         </div>
         <div class="save--new">
             {{ form_row(form.save) }}

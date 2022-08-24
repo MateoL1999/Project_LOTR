@@ -1,15 +1,13 @@
 
 body {
-
-
-  .conteneurF {
+  .containerF {
     padding-top: 50px;
     background-color: $Primary;
     padding-bottom: 3%;
-    .Info--connect{
+    .info--connect{
       @include font(Lat_Bold, 20, $grey2);
           }
-    .img--arbre {
+    .img--tree {
       display: none;
       @include respond('phone'){
         display: block;
@@ -24,18 +22,18 @@ body {
         }
       }
     }
-    .titre--connexion{
+    .title--connexion{
       width: 100%;
       @include font(Lat_Bold, 40, $Second);
     }
     .form--connexion{
-      margin: 10% auto 10px auto;
+      margin: 5% auto 1% auto;
       @include font(Lat_Bold, 25, $grey2);
       max-width: 622px;
       @include respond ('phone') {
         margin: 15% auto 10px auto;
       }
-      .Email{
+      .email{
         margin-bottom: 20px;
         .respond{
           @include respond('phone'){
@@ -45,7 +43,7 @@ body {
       }
     }
     .submit{
-      margin-top: 10%;
+      margin-top: 7%;
       display: flex;
       justify-content: center;
       width: 100%;

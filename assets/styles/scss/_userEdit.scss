@@ -1,7 +1,7 @@
 .section--edit {
   color: $Second;
 
-  .con--titre {
+  .con--title {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
@@ -10,7 +10,7 @@
     }
   }
 
-  .conteneurE {
+  .containerE {
     width: 95%;
     margin: auto;
     max-width: 1000px;
@@ -78,7 +78,7 @@
   .save--edit{
       padding-top: 4%;
       @include flex(center,center);
-      .bouton-Edit{
+      .button-Edit{
         border-radius: 10px 100px / 120px;
         border: $Second;
         padding: 5px;

@@ -1,0 +1,29 @@
+.section__commentEdit{
+  .comment__h1{
+    width: 100%;
+    @include flex(center, center);
+    padding: 2% 0 3% 0;
+    .title__commentEdit{
+      @include font(Lat_Reg, 30, white);
+      @include respond('tab'){
+        font-size: 25px;
+      }
+    }
+  }
+  .container--comment{
+    margin: auto;
+    width: 95%;
+    max-width: 1000px;
+    .edit--commentTitle{
+      margin-bottom: 2%;
+    }
+    .edit--commentUser{
+      margin-bottom: 2%;
+    }
+    .submit--insc{
+      @include respond('tab'){
+        font-size: 25px;
+      }
+    }
+  }
+}

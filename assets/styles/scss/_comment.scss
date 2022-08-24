@@ -1,34 +1,3 @@
-
-.section__commentEdit{
-  .comment__h1{
-    width: 100%;
-    @include flex(center, center);
-    padding: 2% 0 3% 0;
-    .titre__commentEdit{
-      @include font(Lat_Reg, 30, white);
-      @include respond('tab'){
-        font-size: 25px;
-      }
-    }
-  }
-  .conteneurComment{
-    margin: auto;
-    width: 95%;
-    max-width: 1000px;
-    .edit--commentTitre{
-      margin-bottom: 2%;
-    }
-    .edit--commentUser{
-      margin-bottom: 2%;
-    }
-    .submit--Insc{
-      @include respond('tab'){
-        font-size: 25px;
-      }
-    }
-  }
-}
-
 .comments{
   .title--comment{
     @include font(Lat_Reg, 20, $Second);
@@ -59,7 +28,7 @@
           @include font(Mod_Exp, 15, $Primary);
         }
       }
-      .contenu--comment{
+      .content--comment{
         @include font(Lat_Li, 19, $Primary);
         padding-top: 1%;
       }
@@ -80,7 +49,7 @@
       @include respond('tab-land'){
         width: 75%;
       }
-        .button-Insc{
+        .button-insc{
           border-radius: 10px 100px / 120px;
           border: 1px, solid, $Primary;
           background-color: $Second;

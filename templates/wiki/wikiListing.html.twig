@@ -1,15 +1,12 @@
 {% extends 'base.html.twig' %}
-
-
-
 {% block body %}
-    <div class="titre--wiki">
+    <div class="title--wiki">
         <h1>
             Wiki
         </h1>
     </div>
-    <section class="conteneur--wiki">
-        <div class="conteneur--card">
+    <section class="container--wiki">
+        <div class="container--card">
             {% for wiki in wikis %}
                 <div class="card--image">
                     <div class="image--wiki">
@@ -17,10 +14,10 @@
                             <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--carte" alt="image_name">
                         {% else %}
                             <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
-                                 class="img-carte"
+                                 class="img--carte"
                                  alt="Default-image">
                         {% endif %}
-                        <div class="conteneur--title">
+                        <div class="container--title">
                         <div class="title">
                             <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.titre }}</h5></a>
                         </div>
@@ -30,11 +27,11 @@
                         </div>
                     </div>
                     <div class="title--respond">
-                        <h5 class="title--carte">
+                        <h5 class="title--card">
                             {{ wiki.titre }}
                         </h5>
-                        <div class="disparu">
-                            <div class="fleche">
+                        <div class="disappear">
+                            <div class="arrow">
                                 <p class="details">
                                     <a href="{{ path('wiki_detail', {id: wiki.id}) }}">DÉTAILS</a>
                                 </p>

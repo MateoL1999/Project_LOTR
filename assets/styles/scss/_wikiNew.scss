@@ -1,12 +1,12 @@
 .section--new--wiki {
-  .titre--new--wiki {
+  .title--new--wiki {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
   }
 
   .conteneurN {
-    .new--titre {
+    .new--title {
       @include flex(center, center);
       padding-right: 4.5%;
       width: 100%;
@@ -44,7 +44,7 @@
       }
     }
 
-    .new--categorie {
+    .new--category {
       div {
         @include font(Lat_Reg, 20, $Second);
         @include flex(center, center, column, wrap);
@@ -64,7 +64,7 @@
     text-align: center;
     width: 100%;
     @include font(Lat_Bold, 25, $Second);
-    .bouton--new {
+    .button--new {
       border-radius: 10px 100px / 120px;
       border: $Second;
       padding: 10px;

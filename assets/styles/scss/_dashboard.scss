@@ -1,7 +1,6 @@
 
-.Dashboard {
-
-  .titreDash{
+.dashboard {
+  .title--Dash{
     @include font(Lat_Bold, 35, $Second);
     display: flex;
     justify-content: center;
@@ -10,13 +9,13 @@
   }
   table{
     margin-bottom: 0;
-    .tableau{
+    .table{
       background-color: $Second;
       @include font(Lat_Reg, 20, $Primary);
     }
     tbody{
       color: $Second;
-      .StyleDash:nth-child(1n+1){
+      .style--dash:nth-child(1n+1){
         @include font(Lat_Reg, 15, $Second);
         background-color: $grey;
         .crud{
@@ -24,12 +23,12 @@
             margin-right: 10%;
           }
         }
-        .Nom-wiki{
+        .name--wiki{
           display: flex;
           flex-direction: column;
         }
       }
-      .StyleDash:nth-child(2n+1){
+      .style--dash:nth-child(2n+1){
         @include font(Lat_Reg, 15, $Second);
         background-color: $grey2;
       }

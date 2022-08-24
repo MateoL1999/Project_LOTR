@@ -18,7 +18,7 @@ class CommentFormType extends AbstractType
             ->add('titre', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Titre',
-                    'class' => 'Input--New--CommentTitre'
+                    'class' => 'input--new--commentTitle'
                 ],
         'label' => false,
 
@@ -26,13 +26,13 @@ class CommentFormType extends AbstractType
             ->add('Contenu', TextareaType::class,[
                     'attr' => [
                         'placeholder' => 'Contenu',
-                        'class' => 'Input--New--CommentContenu'
+                        'class' => 'input--new--commentContent'
                     ],
                     'label' => false,
             ])
             ->add('save', SubmitType::class,[
                 'attr' => [
-                    'class' => 'button-Insc'
+                    'class' => 'button-insc'
                 ],
                 'label' => 'Enregistrer'
             ]);
