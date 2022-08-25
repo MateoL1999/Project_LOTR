@@ -6,9 +6,9 @@
 }
 
 .display--card {
-  opacity: 0;
+  opacity: 100% !important;
   @include respond('phone') {
-    display: none;
+    opacity: 100%;
   }
 }
 
@@ -136,6 +136,22 @@
     }
 }
 
+.input--edit--pseudo{
+  border-top: white;
+  border-right: white;
+  border-left: white;
+  background: transparent;
+  width: 32%;
+  margin: 2.5% 0 0 0;
+  @include font(Lat_Reg, 21, $Second);
+  @include respond('phone'){
+    width: 70%;
+  }
+  &::placeholder{
+    color: $Second;
+  }
+}
+
   .input--contact2 {
     width: 45%;
     padding: 5%;
@@ -216,7 +232,7 @@
   background: $Primary;
   width: 105%;
   color: $Second;
-  margin-left: 5%;
+  margin: 5% 0 5% -4%;
   &::placeholder{
     color: $Second;
   }

@@ -39,7 +39,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Wiki::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Wiki::class, cascade: ['remove'])]
     private $wikis;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class, cascade: ['remove'])]

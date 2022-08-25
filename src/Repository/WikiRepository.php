@@ -52,6 +52,7 @@ class WikiRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('wiki')
             ->select('wiki')
             ->leftJoin('wiki.categories', 'categories')
+            ->orderBy('wiki.date', 'DESC')
             ->addSelect('categories')
         ;
 
@@ -85,15 +86,12 @@ class WikiRepository extends ServiceEntityRepository
 
     public function getLastWiki()
     {
-        $qb = $this->createQueryBuilder('wiki');
-
-        $qb->select('wiki');
-
-        $query = $qb
+        $qb = $this->createQueryBuilder('wiki')
+            ->select('wiki')
             ->orderBy('wiki.date','DESC')
             ->setMaxResults(4)
             ->getQuery();
-            $wiki = $query->getArrayResult();
-        return $wiki;
-    }
+            $lastwikis = $qb->getResult();
+        return $lastwikis;
+        }
 }

@@ -25,21 +25,21 @@ class CommentController extends AbstractController
     }
 
     #[Route('/comment/{id}/edit', name:'edit')]
-    public function wikiEdit($id, CommentRepository $commentRepository, Request $request, EntityManagerInterface $entityManager)
+    public function commentEdit($id, CommentRepository $commentRepository, Request $request, EntityManagerInterface $entityManager)
     {
         $comment = $commentRepository->findOneBy(['id' => $id]);
         if(!$comment){
-            $this->addFlash('warning', 'Le commentaire est vide ');
+            $this->addFlash('warning', 'Le commentaire n\'a pas été trouvé');
             return $this->redirectToRoute('comment_listing');
         }
-        $form=$this->createForm(commentEditType::class, $comment);
+        $form= $this->createForm(commentEditType::class, $comment);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
             $entityManager->persist($comment);
             $entityManager->flush();
-            $this->addFlash('sucess','Le commentaire à bien était modifier');
+            $this->addFlash('sucess','Le commentaire à bien était modifié');
             return $this->redirectToRoute('comment_listing');
         }
         return $this->render('comment/commentEdit.html.twig',[
@@ -53,16 +53,15 @@ class CommentController extends AbstractController
     public function commentDelete(CommentRepository $commentRepository, EntityManagerInterface $entityManager,$id)
     {
         $comment = $commentRepository->findOneBy(['id' => $id]);
-        if(!$comment){
-            $this->addFlash( 'success', 'Le Commentaire a été effacé avec succés');
+
+        if (!$comment) {
+            $this->addFlash('warning', 'Le commentaire n\'a pas été trouvé');
             return $this->redirectToRoute('comment_listing');
-            }
+        }
+
         $entityManager->remove($comment);
         $entityManager->flush();
-
-        return $this->redirectToRoute('comment_listing',[
-            'comment' => $comment
-        ]);
-
+        $this->addFlash('sucess', 'Le commentaire a été effacé avec succès');
+        return $this->redirectToRoute('comment_listing');
     }
 }

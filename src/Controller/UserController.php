@@ -14,12 +14,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
 
-    #[Route('/users', name:'user_listing')]
+    #[Route('/admin/users', name:'user_listing')]
     public function userListing(UserRepository $userRepository):Response
     {
         if(!$this->isGranted('ROLE_ADMIN')){
             $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
-            return $this->redirectToRoute('connexion');
+            return $this->redirectToRoute('Connexion');
         }
         $users = $userRepository->findAll();
         return $this->render('user/user.html.twig',[
@@ -51,19 +51,6 @@ class UserController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-
-//    #[Route('/users/{id}/profil', name: 'user_profil')]
-//    public function userProfil($id, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager)
-//    {
-//        $user = $userRepository->findOneBy(['id' => $id]);
-//        if (!$user) {
-//            return $this->redirectToRoute('home');
-//        }
-//
-//        return $this->render('user/userProfil.html.twig',[
-//            'users' => $user
-//    ]);
-//    }
 
     #[Route('/user/{id}/delete',name: 'user_delete')]
     public function userDelete(UserRepository $userRepository, EntityManagerInterface $entityManager,$id )

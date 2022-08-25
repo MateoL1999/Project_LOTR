@@ -11,17 +11,17 @@
                 <div class="card--image">
                     <div class="image--wiki">
                         {% if wiki.imageName %}
-                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--carte" alt="image_name">
+                            <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--card" alt="image_name">
                         {% else %}
                             <img src="https://cdn.pixabay.com/photo/2014/04/02/11/14/book-305625_1280.png"
-                                 class="img--carte"
+                                 class="img--card"
                                  alt="Default-image">
                         {% endif %}
                         <div class="container--title">
-                        <div class="title">
+                        <div class="title display--card">
                             <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.titre }}</h5></a>
                         </div>
-                        <div class="title--details display--card">
+                        <div class="title--details">
                             <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">Détails</h5></a>
                         </div>
                         </div>

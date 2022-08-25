@@ -3,10 +3,8 @@
   padding-top: 50px;
   background-color: $Primary;
   padding-bottom: 3%;
-  //.Info--connect{
-  //  @include font(Lat_Bold, 20, $grey2);
-  //}
-  .conteneur--contact {
+
+  .container--contact {
     display: none;
     @include respond('phone') {
       display: block;
@@ -42,11 +40,6 @@
       margin-bottom: 5%;
       margin-left: 25%;
       @include font(Lat_Bold, 20, $Second);
-      //@include respond('phone') {
-      //  width: 41%;
-      //  margin-bottom: 5%;
-      //  margin-left: 25%;
-      //}
 
       &::placeholder {
         color: $grey;

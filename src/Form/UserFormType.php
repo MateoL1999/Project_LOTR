@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
 
 class UserFormType extends AbstractType
 {
@@ -30,6 +31,20 @@ class UserFormType extends AbstractType
                 'attr' => [
                     'class' => 'input--edit input--edit--nom',
                     'palceholder' => 'Nom',
+                ],
+                'label' => false
+            ])
+            ->add('pseudo', TextType::class,[
+                'attr' => [
+                    'class' => 'input--edit--pseudo',
+                    'placeholder' => 'Pseudo'
+                ],
+                'trim' => true,
+                'constraints' => [
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'le pseudo doit contenir au moins {{ limit }}'
+                    ])
                 ],
                 'label' => false
             ])

@@ -72,6 +72,7 @@
       background-color: rgba(255, 249, 236, 0.42);
       position: absolute;
       bottom: 0;
+      opacity: 0;
       width: 100%;
       padding: 7% 0 7% 0;
       @include font(Mod_Exp, 35, $Primary);
@@ -94,6 +95,7 @@
       background-color: rgba(255, 249, 236, 0.42);
       position: absolute;
       bottom: 0;
+      opacity: 0;
       width: 100%;
       padding: 7% 0 7% 0;
       @include font(Mod_Exp, 34, $Primary);
