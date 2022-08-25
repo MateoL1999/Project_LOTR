@@ -27,6 +27,16 @@
     .container--editWiki{
       display: flex;
       justify-content: space-evenly;
+      @include respond('large'){
+        margin-left: 30%;
+      }
+      @include respond('laptop'){
+        margin-left: 10%;
+      }
+      @include respond('tab'){
+        flex-direction: column;
+        margin: 0 15% 0 -21%;
+      }
     }
     .edit--title{
       @include flex(center, center);
@@ -52,25 +62,35 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
-    .edit--image_file {
-      width: 100%;
-      padding-left: 5%;
-      padding-top: 1%;
-      @include font(Lat_Reg, 20, $Second);
-      @include respond('phone') {
-        margin-left: 4%;
+    .conteneur--editImg {
+      @include respond('large'){
+        margin-left: 40%;
       }
-      img{
-        max-width: 33%;
+      @include respond('laptop'){
+        margin-left: 27%;
       }
 
-      label {
-        margin-bottom: 10px;
-      }
+      .edit--image_file {
+        width: 100%;
+        padding-left: 5%;
+        padding-top: 1%;
+        @include font(Lat_Reg, 20, $Second);
+        @include respond('laptop') {
+          margin-left: 4%;
+        }
 
-      .vich-image {
-        display: flex;
-        flex-direction: column;
+        img {
+          max-width: 33%;
+        }
+
+        label {
+          margin-bottom: 10px;
+        }
+
+        .vich-image {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
 
@@ -85,8 +105,15 @@
         max-width: 1000px;
         margin: auto;
         //margin-left: 15%;
+        @include respond('laptop'){
+          margin-left: 5%;
+        }
+        @include respond('laptop'){
+          //margin-left: 5% ;
+          margin-left: 5%;
+        }
         @include respond('phone') {
-          margin-left: 18%;
+          margin-left: 3%;
         }
         label{
           padding: 5% 2% 5% 2%;
