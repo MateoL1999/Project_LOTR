@@ -15,7 +15,7 @@ class CommentFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $option): void
     {
         $builder
-            ->add('titre', TextType::class, [
+            ->add('title', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Titre',
                     'class' => 'input--new--commentTitle'
@@ -23,7 +23,7 @@ class CommentFormType extends AbstractType
         'label' => false,
 
             ])
-            ->add('Contenu', TextareaType::class,[
+            ->add('Content', TextareaType::class,[
                     'attr' => [
                         'placeholder' => 'Contenu',
                         'class' => 'input--new--commentContent'

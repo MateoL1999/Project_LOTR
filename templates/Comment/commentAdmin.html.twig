@@ -26,7 +26,7 @@
                         {{ comment.id }}
                     </td>
                     <td>
-                        {{ comment.titre }}
+                        {{ comment.title }}
                     </td>
                     <td>
                         {% if comment.user %}
@@ -45,7 +45,7 @@
                         </td>
                     {% endfor %}
                     <td>
-                        {{ comment.contenu }}
+                        {{ comment.content }}
                     </td>
                     <td>
                         {{ comment.updateAt|date('d-m-Y') }}

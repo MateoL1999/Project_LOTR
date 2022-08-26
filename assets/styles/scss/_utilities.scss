@@ -181,7 +181,7 @@
   border-right: white;
   border-left: white;
   background: transparent;
-  width: 75%;
+  width: 100%;
   color: $Second;
   &::placeholder{
     color: $Second;
@@ -193,7 +193,7 @@
   border-right: white;
   border-left: white;
   background: $Primary;
-  width: 75%;
+  width: 100%;
   color: $Second;
   &::placeholder{
     color: $Second;
@@ -205,7 +205,7 @@
   border-right: white;
   border-left: white;
   background: transparent;
-  width: 75%;
+  width: 100%;
   color: $Second;
   &::placeholder{
     color: $Second;
@@ -251,14 +251,15 @@
   }
 }
 
-.input--new--url{
+.input--new--content{
   border-top: white;
   border-right: white;
   border-left: white;
   background: $Primary;
-  width: 75%;
+  width: 200%;
+  height: 275px;
   color: $Second;
-  margin-left: 2%;
+  margin-left: 5%;
   &::placeholder{
     color: $Second;
   }

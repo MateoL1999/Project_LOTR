@@ -1,8 +1,8 @@
 
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
-const boites = document.querySelectorAll('.container--title');
-const boitesV2 = document.querySelectorAll('.conteneur--details');
+const box = document.querySelectorAll('.container--title');
+const boxV2 = document.querySelectorAll('.conteneur--details');
 
 
 let lastScroll = 0;
@@ -61,34 +61,35 @@ if(precedent) {
 }
 
 
-boites.forEach(boiteElement => {
-    boiteElement.addEventListener("mouseenter", () => {
-       boiteElement.childNodes.forEach(elementChild =>{     // Pour chaque enfant de la boite
+box.forEach(boxElement => {
+    boxElement.addEventListener("mouseenter", () => {
+       boxElement.childNodes.forEach(elementChild =>{     // Pour chaque enfant de la boite
            if(elementChild.tagName === 'DIV') {                      // Vérifier que c'est une div
                elementChild.classList.toggle("display--card");  // si oui, toggle la classe
            }
        })
     });
-    boiteElement.addEventListener("mouseleave", () => {
-        boiteElement.childNodes.forEach(elementChild =>{
+    boxElement.addEventListener("mouseleave", () => {
+        boxElement.childNodes.forEach(elementChild =>{
             if(elementChild.tagName === 'DIV') {
                 elementChild.classList.toggle("display--card");
             }
         })
     });
 
+
 })
 
-boitesV2.forEach(boiteElementV2 => {
-    boiteElementV2.addEventListener("mouseenter", () => {
-        boiteElementV2.childNodes.forEach(elementChild =>{     // Pour chaque enfant de la boite
+boxV2.forEach(boxElementV2 => {
+    boxElementV2.addEventListener("mouseenter", () => {
+        boxElementV2.childNodes.forEach(elementChild =>{     // Pour chaque enfant de la boite
             if(elementChild.tagName === 'DIV') {                      // Vérifier que c'est une div
                 elementChild.classList.toggle("display--card");  // si oui, toggle la classe
             }
         })
     });
-    boiteElementV2.addEventListener("mouseleave", () => {
-        boiteElementV2.childNodes.forEach(elementChild =>{
+    boxElementV2.addEventListener("mouseleave", () => {
+        boxElementV2.childNodes.forEach(elementChild =>{
             if(elementChild.tagName === 'DIV') {
                 elementChild.classList.toggle("display--card");
             }

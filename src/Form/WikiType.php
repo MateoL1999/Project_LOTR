@@ -2,11 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Categorie;
+use App\Entity\Category;
 use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +18,7 @@ class WikiType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('titre', TextType::class,[
+            ->add('title', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Titre du Livre',
                     'class' => 'input--new--title'
@@ -32,14 +33,14 @@ class WikiType extends AbstractType
                 'label' => false,
                 'class' => User::class
             ])
-            ->add('url', UrlType::class,[
+            ->add('content', TextareaType::class,[
                 'attr' => [
-                    'placeholder' => 'Url',
-                    'class' => 'input--new--url'
+                    'placeholder' => 'Résumer',
+                    'class' => 'input--new--content'
                 ],
                 'label' => false,
             ])
-            ->add('categories', EntityType::class, [
+            ->add('category', EntityType::class, [
                 'attr' => [
                     'placeholder' => 'Categories',
                     'class' => 'input--new--wiki'
@@ -48,7 +49,7 @@ class WikiType extends AbstractType
                 'label' => false,
                 'multiple' => true,
                 'expanded' => true,
-                'class' => Categorie::class
+                'class' => Category::class
             ])
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image de couverture',

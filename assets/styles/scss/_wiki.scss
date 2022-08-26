@@ -1,19 +1,12 @@
 .section--new--wiki {
-  .title--new--wiki {
+  .titre--new--wiki {
     text-align: center;
     @include font(Lat_Bold, 40, $Second);
     padding-top: 5%;
   }
 
   .conteneurN {
-    .new--wiki{
-      display: flex;
-      margin: auto;
-      max-width: 625px;
-      width: 95%;
-      padding-top: 5%;
-    }
-    .new--title {
+    .new--titre {
       @include flex(center, center);
       padding-right: 4.5%;
       width: 100%;
@@ -29,7 +22,7 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
-    .new--content {
+    .new--url {
       @include flex(center, center);
       padding-right: 4.7%;
       width: 100%;
@@ -51,7 +44,7 @@
       }
     }
 
-    .new--category {
+    .new--categorie {
       div {
         @include font(Lat_Reg, 20, $Second);
         @include flex(center, center, column, wrap);
@@ -71,7 +64,7 @@
     text-align: center;
     width: 100%;
     @include font(Lat_Bold, 25, $Second);
-    .button--new {
+    .bouton--new {
       border-radius: 10px 100px / 120px;
       border: $Second;
       padding: 10px;

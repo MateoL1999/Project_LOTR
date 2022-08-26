@@ -1,0 +1,111 @@
+section{
+  background-color: $Primary;
+  .img--arbre {
+    display: none;
+    @include respond('phone'){
+      display: block;
+      padding-top: 10%;
+      @include flex(center, center);
+      width: 100%;
+    }
+    .logo--connect {
+      width: 20%;
+      .Arbre {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  .Titre--Insc{
+    text-align: center;
+    padding: 10% 0px 34px 0;
+    @include font(Lat_Bold, 40, $Second);
+    @include respond('phone'){
+      padding: 5% 0px 5% 0;
+    }
+
+  }
+  .Form--Insc {
+    .Civilite {
+      display: flex;
+      width: 50%;
+      margin-left: 32%;
+      @include font(Lat_Reg, 20, $Second);
+      @include respond('phone'){
+        margin-bottom: 4% ;
+      }
+
+      div {
+        width: 50%;
+      }
+    }
+
+    .Insc--email {
+
+      margin-left: 17.5%;
+      margin-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+      @include respond('phone'){
+        margin-bottom: 4% ;
+      }
+      li{
+        background-color: $error;
+        padding: 10px;
+        width: 27%;
+        text-align: center;
+        margin-left: 27%;
+        @include respond('phone'){
+         width: 67%;
+          margin-left: 5%;
+        }
+      }
+    }
+
+    .Insc--Password {
+      margin-left: 31.75%;
+      margin-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+      @include respond('phone'){
+        padding-bottom: 4% ;
+      }
+      li{
+        background-color: $error;
+        padding: 10px;
+        width: 30%;
+        text-align: center;
+        margin-left: 13%;
+        @include respond('phone'){
+          width: 67%;
+          margin-left: 5%;
+        }
+      }
+    }
+
+    .Accepter--Terme {
+      margin-left: 31.75%;
+      margin-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+      .label--Accep{
+        margin-right: 10px;
+      }
+    }
+  }
+    .submit--Insc{
+      margin-top: 5%;
+      text-align: center;
+      width: 100%;
+      @include font(Lat_Bold, 25, $Second);
+      .button-Insc{
+        border-radius: 10px 100px / 120px;
+        border: $Second;
+        padding: 10px;
+        background-color: $Second;
+        @include font(Lat_Bold, 25, $Primary);
+
+      }
+    }
+
+
+
+
+}

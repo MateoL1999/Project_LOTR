@@ -51,18 +51,18 @@ class WikiRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('wiki')
             ->select('wiki')
-            ->leftJoin('wiki.categories', 'categories')
+            ->leftJoin('wiki.category', 'category')
             ->orderBy('wiki.date', 'DESC')
-            ->addSelect('categories')
+            ->addSelect('category')
         ;
 
         if (!empty($searchFormValues['titre'])) {
             $qb->andWhere('wiki.titre LIKE :titre')
                 ->setParameter('titre', '%' . $searchFormValues['titre'] . '%');
         }
-        if (!empty($searchFormValues['categories'])) {
-            $qb->andWhere(':categories MEMBER OF wiki.categories')
-                ->setParameter('categories', $searchFormValues['categories']);
+        if (!empty($searchFormValues['category'])) {
+            $qb->andWhere(':categories MEMBER OF wiki.category')
+                ->setParameter('category', $searchFormValues['category']);
         }
 
         $query = $qb->getQuery();
@@ -74,8 +74,8 @@ class WikiRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('wiki')
             ->select('wiki')
-            ->leftJoin('wiki.categories', 'categories')
-            ->addSelect('categories')
+            ->leftJoin('wiki.category', 'category')
+            ->addSelect('category')
             ->where('wiki.id = :id')
             ->setParameter('id', $id)
         ;
