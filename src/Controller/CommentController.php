@@ -14,7 +14,7 @@ class CommentController extends AbstractController
     #[Route('/', name: 'listing')]
     public function comment(CommentRepository $commentRepository, Request $request)
     {
-        if(!$this->isGranted('ROLE_ADMIN')){
+        if(!$this->isGranted('ROLE_EDITEUR')){
             $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
             return $this->redirectToRoute('home');
         }
@@ -27,6 +27,10 @@ class CommentController extends AbstractController
     #[Route('/comment/{id}/edit', name:'edit')]
     public function commentEdit($id, CommentRepository $commentRepository, Request $request, EntityManagerInterface $entityManager)
     {
+        if(!$this->isGranted('ROLE_EDITEUR')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $comment = $commentRepository->findOneBy(['id' => $id]);
         if(!$comment){
             $this->addFlash('warning', 'Le commentaire n\'a pas été trouvé');
@@ -39,7 +43,7 @@ class CommentController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $entityManager->persist($comment);
             $entityManager->flush();
-            $this->addFlash('sucess','Le commentaire à bien était modifié');
+            $this->addFlash('sucess','Le commentaire a été modifié');
             return $this->redirectToRoute('comment_listing');
         }
         return $this->render('comment/commentEdit.html.twig',[
@@ -52,6 +56,10 @@ class CommentController extends AbstractController
     #[Route('/comment/{id}/delete',name: 'delete')]
     public function commentDelete(CommentRepository $commentRepository, EntityManagerInterface $entityManager,$id)
     {
+        if(!$this->isGranted('ROLE_EDITEUR')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $comment = $commentRepository->findOneBy(['id' => $id]);
 
         if (!$comment) {

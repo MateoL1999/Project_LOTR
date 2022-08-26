@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Categorie;
+use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -17,7 +17,7 @@ class WikiSearchFormType extends AbstractType
     {
         $builder
             ->setMethod('GET')
-            ->add('titre', TextType::class, [
+            ->add('title', TextType::class, [
                 'attr' => [
                     'class' => 'Search--Titre',
                     'placeholder' => 'Titre',
@@ -27,7 +27,7 @@ class WikiSearchFormType extends AbstractType
 
             ])
             ->add('categories', EntityType::class, [
-                'class' => Categorie::class,
+                'class' => Category::class,
                 'placeholder' => '--Catégorie--',
                 'required' => false,
                 'label' => false,

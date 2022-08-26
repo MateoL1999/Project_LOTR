@@ -32,7 +32,7 @@
                     <li><a href="{{ path('contact') }}">Contact</a></li>
                     {% if is_granted('ROLE_EDITEUR') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('categorie_listing') }}">Catégories</a>
+                            <a class="nav-link" href="{{ path('category_listing') }}">Catégories</a>
                         </li>
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}

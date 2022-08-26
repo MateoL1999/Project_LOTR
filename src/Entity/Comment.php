@@ -14,10 +14,10 @@ class Comment
     private $id;
 
     #[ORM\Column(type: 'text')]
-    private $titre;
+    private $title;
 
     #[ORM\Column(type: 'text', nullable: true)]
-    private $contenu;
+    private $content;
 
     #[ORM\Column(type: 'date', nullable: true)]
     private $date;
@@ -36,26 +36,26 @@ class Comment
         return $this->id;
     }
 
-    public function getTitre(): ?string
+    public function getTitle(): ?string
     {
-        return $this->titre;
+        return $this->title;
     }
 
-    public function setTitre(string $titre): self
+    public function setTitle(string $title): self
     {
-        $this->titre = $titre;
+        $this->title = $title;
 
         return $this;
     }
 
-    public function getContenu(): ?string
+    public function getContent(): ?string
     {
-        return $this->contenu;
+        return $this->content;
     }
 
-    public function setContenu(?string $contenu): self
+    public function setContent(?string $content): self
     {
-        $this->contenu = $contenu;
+        $this->content = $content;
 
         return $this;
     }

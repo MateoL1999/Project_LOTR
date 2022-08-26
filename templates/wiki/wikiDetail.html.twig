@@ -4,13 +4,13 @@
     <article class="detail">
         <div class="detail--title">
         <h2>
-            {{ wiki.titre }}
+            {{ wiki.title }}
         </h2>
         </div>
         <div class="container--details">
         <div class="details--content">
         <p>
-            {{ wiki.contenu }}
+            {{ wiki.content }}
         </p>
         </div>
         <div class="details--image">
@@ -27,8 +27,8 @@
                     <div class="comment--detail">
                         <p class="date--comment"> Du : <span> {{ comment.date | date('d-m-y') }} </span></p>
                         <p class="user--comment"> De: <span> {% if comment.user %}{{ comment.user.pseudo }} {% endif %} </span></p>
-                        <p class="user--comment"> Titre : <span> {{ comment.titre }} </span></p>
-                        <p class="content--comment"><span> {{ comment.contenu }} </span></p>
+                        <p class="user--comment"> Titre : <span> {{ comment.title }} </span></p>
+                        <p class="content--comment"><span> {{ comment.content }} </span></p>
                     </div>
                 {% endfor %}
             </div>
@@ -51,8 +51,8 @@
             </div>
             <div class="detail-category">
             <ul class="category">
-                {% for categorie in wiki.categories %}
-                    <li>{{ categorie }}</li>
+                {% for category in wiki.category %}
+                    <li>{{ category }}</li>
                 {% endfor %}
             </ul>
             </div>

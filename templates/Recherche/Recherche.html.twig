@@ -7,7 +7,7 @@
         {{ form_start(form)}}
         <div class="containerS">
             <div class="search--title">
-                {{form_row(form.titre)}}
+                {{form_row(form.title)}}
             </div>
             <div class="search--category">
                 {{form_row(form.categories)}}
@@ -33,7 +33,7 @@
                         {% endif %}
                         <div class="container--title">
                             <div class="title display--card">
-                                <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.titre }}</h5></a>
+                                <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.title }}</h5></a>
                             </div>
                             <div class="title--details">
                                 <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">Détails</h5></a>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="title--respond">
                         <h5 class="title--card">
-                            {{ wiki.titre }}
+                            {{ wiki.title }}
                         </h5>
                         <div class="disappear">
                             <div class="arrow">

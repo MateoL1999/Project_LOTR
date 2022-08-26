@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Categorie;
+use App\Entity\Category;
 use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -17,7 +17,7 @@ class wikiEditType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('titre', TextType::class,[
+            ->add('title', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Titre du Wiki',
                     'class' => 'input--edit--title'
@@ -32,14 +32,14 @@ class wikiEditType extends AbstractType
                 'label' => false,
                 'class' => User::class
             ])
-            ->add('contenu', TextareaType::class,[
+            ->add('content', TextareaType::class,[
                 'attr' => [
                     'placeholder' => 'Résumer',
                     'class' => 'input--edit--content'
                 ],
                 'label' => false,
             ])
-            ->add('categories', EntityType::class, [
+            ->add('category', EntityType::class, [
                 'attr' => [
                     'placeholder' => 'Categories',
                     'class' => 'input--edit--wiki'
@@ -48,7 +48,7 @@ class wikiEditType extends AbstractType
                 'label' => false,
                 'multiple' => true,
                 'expanded' => true,
-                'class' => Categorie::class
+                'class' => Category::class
             ])
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image de couverture',

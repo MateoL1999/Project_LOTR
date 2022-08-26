@@ -24,7 +24,7 @@ class Wiki
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $titre;
+    private $title;
 
     #[ORM\Column(type: 'date', nullable: true)]
     private $date;
@@ -36,7 +36,7 @@ class Wiki
     private $url;
 
     #[ORM\Column(type: 'text', nullable: true)]
-    private $contenu;
+    private $content;
 
 
 
@@ -44,17 +44,17 @@ class Wiki
     /**
      * @return mixed
      */
-    public function getContenu()
+    public function getContent()
     {
-        return $this->contenu;
+        return $this->content;
     }
 
     /**
-     * @param mixed $contenu
+     * @param mixed $content
      */
-    public function setContenu($contenu): void
+    public function setContent($content): void
     {
-        $this->contenu = $contenu;
+        $this->content = $content;
     }
 
     /**
@@ -65,11 +65,11 @@ class Wiki
         $this->url = $url;
     }
 
-    #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'wikis')]
-    private $categories;
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'wikis')]
+    private $category;
 
     public function __toString() {
-        return $this->getTitre();
+        return $this->getTitle();
     }
 
     /**
@@ -111,7 +111,7 @@ class Wiki
 
     public function __construct()
     {
-      $this->categories = new ArrayCollection();
+      $this->category = new ArrayCollection();
       $this->User = new ArrayCollection();
       $this->comments = new ArrayCollection();
     }
@@ -122,14 +122,14 @@ class Wiki
         return $this->id;
     }
 
-    public function getTitre(): ?string
+    public function getTitle(): ?string
     {
-        return $this->titre;
+        return $this->title;
     }
 
-    public function setTitre(string $titre): self
+    public function setTitle(string $title): self
     {
-        $this->titre = $titre;
+        $this->title = $title;
 
         return $this;
     }
@@ -154,27 +154,27 @@ class Wiki
 
 
     /**
-     * @return Collection<int, Categorie>
+     * @return Collection<int, Category>
      */
-    public function getCategories()
+    public function getCategory()
     {
-        return $this->categories;
+        return $this->category;
     }
 
-    public function addCategories(Categorie $categories): self
+    public function addCategory(Category $category): self
     {
-        if (!$this->categories->contains($categories)) {
-            $this->categories[] = $categories;
-            $categories->addWiki($this);
+        if (!$this->category->contains($category)) {
+            $this->category[] = $category;
+            $category->addWiki($this);
         }
 
         return $this;
     }
 
-    public function removeCategories(Categorie $categories): self
+    public function removeCategories(Category $category): self
     {
-        if ($this->categories->removeElement($categories)) {
-            $categories->removeWiki($this);
+        if ($this->category->removeElement($category)) {
+            $category->removeWiki($this);
         }
 
         return $this;

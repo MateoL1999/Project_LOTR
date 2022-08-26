@@ -22,6 +22,10 @@ class WikiController extends AbstractController
     #[Route('/', name: 'listing')]
     public function wiki(WikiRepository $wikiRepository, Request $request)
     {
+        if(!$this->isGranted('ROLE_EDITEUR')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $wikis = $wikiRepository->findAll();
         return $this->render('wiki/wikiListing.html.twig',[
             'wikis' => $wikis
@@ -31,6 +35,7 @@ class WikiController extends AbstractController
     #[Route('/recherche', name: 'recherche')]
     public function wikiRecherche(WikiRepository $wikiRepository, Request $request): \Symfony\Component\HttpFoundation\Response
     {
+
         $form = $this->createForm(WikiSearchFormType::class);
 
         $form->handleRequest($request);
@@ -54,7 +59,7 @@ class WikiController extends AbstractController
     {
         if(!$this->isGranted('ROLE_EDITEUR')){
             $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
-            return $this->redirectToRoute('wiki_listing');
+            return $this->redirectToRoute('home');
         }
         $wikis = $wikiRepository->findAll();
         return $this->render('wiki/wikiAdmin.html.twig',[
@@ -65,6 +70,10 @@ class WikiController extends AbstractController
     #[Route('/new', name: 'new')]
     public function wikiNew(Request $request, EntityManagerInterface $entityManager)
     {
+        if(!$this->isGranted('ROLE_EDITEUR')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $newWiki = new Wiki();
         $newWiki->setDate(new \DateTime('now'));
         $form = $this->createForm(WikiType::class, $newWiki);
@@ -87,6 +96,10 @@ class WikiController extends AbstractController
     #[Route('/wiki/{id}/edit', name: 'wiki_edit')]
     public function wikiEdit($id, WikiRepository $wikiRepository, Request $request, EntityManagerInterface $entityManager)
     {
+        if(!$this->isGranted('ROLE_EDITEUR')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $wiki = $wikiRepository->findOneBy(['id' => $id]);
         if (!$wiki) {
             return $this->redirectToRoute('wiki_listing');
@@ -98,6 +111,8 @@ class WikiController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $entityManager->persist($wiki);
             $entityManager->flush();
+            $this->addFlash('sucess', "Le wiki a été modifié.");
+            return $this->redirectToRoute('wiki_admin');
         }
         return $this->render('wiki/wikiEdit.html.twig',[
             'wikis'=> $wiki,
@@ -108,12 +123,17 @@ class WikiController extends AbstractController
     #[Route('/wiki/{id}/delete',name: 'delete')]
     public function wikiDelete(WikiRepository $wikiRepository, EntityManagerInterface $entityManager,$id)
     {
+        if(!$this->isGranted('ROLE_EDITEUR')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $wiki = $wikiRepository->findOneBy(['id' => $id ]);
         if (!$wiki){
-            return $this->redirectToRoute('wiki_listing');
+            return $this->redirectToRoute('wiki_admin');
         }
         $entityManager->remove($wiki);
         $entityManager->flush();
+        $this->addFlash('sucess', "Le wiki a été supprimé.");
         return $this->redirectToRoute('wiki_listing');
     }
 

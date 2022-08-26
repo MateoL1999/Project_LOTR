@@ -31,6 +31,10 @@ class UserController extends AbstractController
     #[Route('/users/{id}/edit', name: 'user_edit')]
     public function userEdit($id, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager)
     {
+        if(!$this->isGranted('ROLE_ADMIN')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $user = $userRepository->findOneBy(['id' => $id]);
         if (!$user) {
             return $this->redirectToRoute('user_listing');
@@ -55,6 +59,10 @@ class UserController extends AbstractController
     #[Route('/user/{id}/delete',name: 'user_delete')]
     public function userDelete(UserRepository $userRepository, EntityManagerInterface $entityManager,$id )
     {
+        if(!$this->isGranted('ROLE_ADMIN')){
+            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
+            return $this->redirectToRoute('home');
+        }
         $user = $userRepository->findOneBy(['id' => $id]);
         if (!$user){
             return $this->redirectToRoute('user_listing');
