@@ -1,0 +1,75 @@
+.section--new--wiki {
+  .titre--new--wiki {
+    text-align: center;
+    @include font(Lat_Bold, 40, $Second);
+    padding-top: 5%;
+  }
+
+  .conteneurN {
+    .new--titre {
+      @include flex(center, center);
+      padding-right: 4.5%;
+      width: 100%;
+      padding-top: 2%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+
+    .new--user {
+      @include flex(center, center);
+      padding-right: 4.7%;
+      width: 100%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+
+    .new--url {
+      @include flex(center, center);
+      padding-right: 4.7%;
+      width: 100%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+    }
+
+    .new--image_file {
+      @include flex(center, center);
+      width: 100%;
+      padding-left: 5%;
+      padding-top: 1%;
+      @include font(Lat_Reg, 20, $Second);
+      @include respond('phone') {
+        margin-left: 4%;
+      }
+      label{
+        margin-bottom: 10px;
+      }
+    }
+
+    .new--categorie {
+      div {
+        @include font(Lat_Reg, 20, $Second);
+        @include flex(center, center, column, wrap);
+        height: 138px;
+        margin-top: 1%;
+        margin-left: 2%;
+        @include respond('phone') {
+          margin-left: 7%;
+        }
+      }
+    }
+  }
+
+
+  .save--new {
+    margin-top: 3%;
+    text-align: center;
+    width: 100%;
+    @include font(Lat_Bold, 25, $Second);
+    .bouton--new {
+      border-radius: 10px 100px / 120px;
+      border: $Second;
+      padding: 10px;
+      background-color: $Second;
+      @include font(Lat_Bold, 25, $Primary);
+    }
+  }
+}

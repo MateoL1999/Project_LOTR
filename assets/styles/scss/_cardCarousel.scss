@@ -1,0 +1,111 @@
+.carousel--card {
+  .titre--carouselCard {
+    text-align: center;
+    @include font(Lat_Bold, 40, $Second);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    @include respond('phone'){
+      font-size: 185%;
+    }
+  }
+
+  .container--carouselCard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include respond('phone'){
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 23%;
+      margin: 0 1% 1% 1%;
+      border-radius: 10px;
+      box-shadow: 2px 10px 12px rgba(0, 0, 0, 0.5);
+      position: relative;
+      @include respond('phone'){
+        margin: 7% 7% 7% 7%;
+      }
+    }
+    .characters--img {
+      .img--carouselCard {
+        object-fit: cover;
+        width: 100%;
+        max-height: 490px;
+        @include respond('Desktop') {
+          max-height: 518px;
+        }
+        @include respond('Little-Desktop') {
+          max-height: 475px;
+        }
+        @include respond('large') {
+          max-height: 350px;
+        }
+        @include respond('tab-land') {
+          max-height: 300px;
+        }
+        @include respond('tab') {
+          max-height: 250px;
+        }
+        @include respond('phone') {
+          width: 490px;
+          object-fit: cover;
+        }
+        @include respond('phone-inter'){
+          max-height: 180px;
+        }
+        @include respond('phone-500'){
+          max-height: 150px;
+        }
+        @include respond('phone-430'){
+          max-height: 138px;
+        }
+        @include respond('phone-315'){
+          max-height: 100px;
+        }
+      }
+    }
+
+    .lien--details {
+      text-align: center;
+      background-color: rgba(255, 249, 236, 0.42);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 7% 0 7% 0;
+      @include font(Mod_Exp, 35, $Primary);
+      @include respond('tab') {
+        font-size: 25px;
+      }
+      @include respond('phone-min'){
+        font-size: 19px;
+      }
+      @include respond('phone-430'){
+        font-size: 14px;
+      }
+      @include respond('phone-315'){
+        font-size: 10px;
+      }
+
+    }
+    .title--details {
+      text-align: center;
+      background-color: rgba(255, 249, 236, 0.42);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 7% 0 7% 0;
+      @include font(Mod_Exp, 34, $Primary);
+      @include respond('tab') {
+        font-size: 25px;
+      }
+      @include respond('phone') {
+        display: none;
+        position: static;
+        background-color: $Primary2;
+        padding: 0;
+      }
+    }
+  }
+}
