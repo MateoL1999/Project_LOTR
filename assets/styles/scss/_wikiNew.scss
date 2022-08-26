@@ -6,6 +6,13 @@
   }
 
   .conteneurN {
+    .new--wiki{
+      display: flex;
+      margin: auto;
+      max-width: 625px;
+      width: 95%;
+      padding-top: 5%;
+    }
     .new--title {
       @include flex(center, center);
       padding-right: 4.5%;
@@ -22,7 +29,7 @@
       @include font(Lat_Reg, 20, $Second);
     }
 
-    .new--url {
+    .new--content {
       @include flex(center, center);
       padding-right: 4.7%;
       width: 100%;

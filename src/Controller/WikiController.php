@@ -22,10 +22,6 @@ class WikiController extends AbstractController
     #[Route('/', name: 'listing')]
     public function wiki(WikiRepository $wikiRepository, Request $request)
     {
-        if(!$this->isGranted('ROLE_EDITEUR')){
-            $this->addFlash('warning', 'Vous n\'êtes pas un administrateur');
-            return $this->redirectToRoute('home');
-        }
         $wikis = $wikiRepository->findAll();
         return $this->render('wiki/wikiListing.html.twig',[
             'wikis' => $wikis

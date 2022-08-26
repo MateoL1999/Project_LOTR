@@ -1,40 +1,47 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<section class="section--new--wiki">
-    <div class="img--tree">
-        <div class="logo--connect">
-            <img class="tree" src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
+    <section class="section--new--wiki">
+        <div class="img--tree">
+            <div class="logo--connect">
+                <img class="tree"
+                     src={{ asset ("Image/NicePng_lord-of-the-rings_8443714.png") }} alt="lord-of-the-rings">
+            </div>
         </div>
-    </div>
-    <div class="title--new--wiki">
-        <h1 class="title--new">
-            Générer un article
-        </h1>
-    </div>
+        <div class="title--new--wiki">
+            <h1 class="title--new">
+                Générer un article
+            </h1>
+        </div>
 
-    {{ form_start(form) }}
-    <div class="conteneurN">
-        <div class="new--title">
-            {{ form_row(form.titre) }}
+        {{ form_start(form) }}
+        <div class="conteneurN">
+            <div class="new--wiki">
+                <div class="new--headerWiki">
+                    <div class="new--title">
+                        {{ form_row(form.title) }}
+                    </div>
+                    <div class="new--user">
+                        {{ form_row(form.user) }}
+                    </div>
+                </div>
+                <div class="new--content">
+                    {{ form_row(form.content) }}
+                </div>
+            </div>
+            <div class="new--wikiV2">
+                <div class="new--image_file">
+                    {{ form_row(form.imageFile) }}
+                </div>
+                <div class="new--category">
+                    {{ form_row(form.category) }}
+                </div>
+            </div>
         </div>
-        <div class="new--user">
-            {{ form_row(form.user) }}
+        <div class="save--new">
+            {{ form_row(form.save) }}
         </div>
-        <div class="new--url">
-            {{ form_row(form.url) }}
-        </div>
-        <div class="new--image_file">
-            {{ form_row(form.imageFile) }}
-        </div>
-        <div class="new--category">
-            {{ form_row(form.categories) }}
-        </div>
-    </div>
-    <div class="save--new">
-        {{ form_row(form.save) }}
-    </div>
 
-    {{ form_end(form) }}
-</section>
-    {% endblock body %}
+        {{ form_end(form) }}
+    </section>
+{% endblock body %}
