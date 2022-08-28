@@ -19,7 +19,7 @@ class CommentController extends AbstractController
             return $this->redirectToRoute('home');
         }
         $comments= $commentRepository->findAll();
-        return $this->render('Comment/commentAdmin.html.twig',[
+        return $this->render('comment/commentAdmin.html.twig',[
             'comments' => $comments
         ]);
     }

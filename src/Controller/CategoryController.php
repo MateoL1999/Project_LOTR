@@ -26,7 +26,7 @@ class CategoryController extends AbstractController
             return $this->redirectToRoute('wiki_listing');
         }
         $category = $categoryRepository->findAll();
-        return $this->render('Category/category.html.twig', [
+        return $this->render('category/category.html.twig', [
             'categorys' => $category
         ]);
     }
@@ -60,7 +60,7 @@ class CategoryController extends AbstractController
             return $this->redirectToRoute('category_listing');
         }
 
-        return $this->render('Category/categoryNew.html.twig', [
+        return $this->render('category/categoryNew.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -87,7 +87,7 @@ class CategoryController extends AbstractController
             return $this->redirectToRoute('category_listing');
         }
 
-        return $this->render('Category/categoryEdit.html.twig', [
+        return $this->render('category/categoryEdit.html.twig', [
             'categorys' => $category,
             'form' => $form->createView()
         ]);

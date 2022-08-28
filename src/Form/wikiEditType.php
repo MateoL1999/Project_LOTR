@@ -26,7 +26,7 @@ class wikiEditType extends AbstractType
             ])
             ->add('user', EntityType::class,[
                 'attr' => [
-                    'placeholder' => 'User',
+                    'placeholder' => 'user',
                     'class' => 'input--edit--user'
                 ],
                 'label' => false,

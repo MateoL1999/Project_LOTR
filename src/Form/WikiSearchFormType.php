@@ -26,7 +26,7 @@ class WikiSearchFormType extends AbstractType
                 'label' => false,
 
             ])
-            ->add('categories', EntityType::class, [
+            ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'placeholder' => '--Catégorie--',
                 'required' => false,

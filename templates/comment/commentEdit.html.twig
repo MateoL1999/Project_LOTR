@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="section__commentEdit">
+        <div class="comment__h1">
+            <h1 class="title__commentEdit">
+                Modification de commentaire
+            </h1>
+        </div>
+
+        {{ form_start(form) }}
+        <div class="container--comment">
+            <div class="edit--commentTitle">
+                {{ form_row(form.title) }}
+            </div>
+            <div class="edit--commentUser">
+                {{ form_row(form.user) }}
+            </div>
+            <div class="edit--commentContenu">
+                {{ form_row(form.content) }}
+            </div>
+        </div>
+        <div class="submit--insc">
+            {{ form_row(form.save) }}
+        </div>
+        {{ form_end(form) }}
+    </section>
+
+{% endblock body %}

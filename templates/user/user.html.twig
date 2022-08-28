@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="dashboard">
+        <div class="title--dash">
+            <h1>
+                Dashboard
+            </h1>
+        </div>
+        <table class="table table_striped">
+
+            <thead class="table">
+            <th> Id</th>
+            <th> Prénom</th>
+            <th> Nom</th>
+            <th> Pseudo </th>
+            <th> Email</th>
+            <th> Roles</th>
+            <th> Éditer/Supprimer</th>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr class="style--dash">
+                    <td>
+                        {{ user.id }}
+                    </td>
+                    <td>
+                        {{ user.firstName }}
+                    </td>
+                    <td>
+                        {{ user.lastName }}
+                    </td>
+                    <td>
+                        {{ user.pseudo }}
+                    </td>
+                    <td>
+                        {{ user.email }}
+                    </td>
+                    <td>
+                        {{ user.roles|join(', ') }}
+                    </td>
+                    <td class="crud">
+                        <a class="edit" href="{{ path('user_edit', {id: user.id }) }}">
+                            <i class="fa-solid fa-pen text-primary"></i>
+                        </a>
+                        <a class="delete" href="{{ path('user_delete', {id: user.id}) }}">
+                            <i class="fa fa-trash text-danger"></i>
+                        </a>
+                    </td>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

@@ -27,7 +27,7 @@ class WikiType extends AbstractType
             ])
             ->add('user', EntityType::class,[
                 'attr' => [
-                    'placeholder' => 'User',
+                    'placeholder' => 'user',
                     'class' => 'input--new--user'
                 ],
                 'label' => false,

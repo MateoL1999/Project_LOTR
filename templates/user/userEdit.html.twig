@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="section--edit">
+    <div class="con--title">
+        <h1 class="title--edit">
+            Édition d'Utilisateur
+        </h1>
+    </div>
+
+    {{ form_start(form) }}
+    <div class="containerE">
+        <div class="edit--name">
+            {{ form_row(form.firstName) }}
+            {{ form_row(form.lastName) }}
+        </div>
+        <div class="pseudo">
+            {{ form_row(form.pseudo) }}
+        </div>
+        <div class="edit--email">
+            {{ form_row(form.email) }}
+        </div>
+        <div class="edit--roles">
+            {{ form_row(form.roles, {
+                'label_attr': {'class': 'label--roles'}
+            }) }}
+        </div>
+    </div>
+    <div class="save--edit">
+        {{ form_row(form.save) }}
+    </div>
+    {{ form_end(form) }}
+    {% endblock %}
+
+    {% block title %}
+
+</section>
+
+{% endblock %}

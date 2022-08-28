@@ -43,7 +43,7 @@ class WikiController extends AbstractController
 
         // utilise une méthode custom crée par nos soins du repository
         $wikis = $wikiRepository->findWikisWithCategories($searchFormValues);
-        return $this->render('Recherche/Recherche.html.twig',[
+        return $this->render('recherche/recherche.html.twig',[
             'wikis'=>$wikis,
             'form'=>$form->createView()
         ]);

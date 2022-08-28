@@ -38,7 +38,7 @@
         @include respond('phone') {
         }
 
-        .img--carte {
+        .img--card {
           object-fit: cover;
           width: 100%;
           max-height: 585px;
@@ -54,15 +54,21 @@
           @include respond('tab-land') {
             max-height: 300px;
           }
-          @include respond('tab') {
+          @include respond('tab'){
             max-height: 250px;
           }
           @include respond('phone'){
-            width: 200px;
+            width: 190px;
+          }
+          @include respond('phone-min') {
+            width: 180px;
+          }
+          @include respond('phone-430'){
+            width: 165px;
           }
         }
 
-        .title {
+        .title  {
           text-align: center;
           background-color: rgba(255, 249, 236, 0.42);
           position: absolute;

@@ -56,12 +56,12 @@ class WikiRepository extends ServiceEntityRepository
             ->addSelect('category')
         ;
 
-        if (!empty($searchFormValues['titre'])) {
-            $qb->andWhere('wiki.titre LIKE :titre')
-                ->setParameter('titre', '%' . $searchFormValues['titre'] . '%');
+        if (!empty($searchFormValues['title'])) {
+            $qb->andWhere('wiki.title LIKE :title')
+                ->setParameter('title', '%' . $searchFormValues['title'] . '%');
         }
         if (!empty($searchFormValues['category'])) {
-            $qb->andWhere(':categories MEMBER OF wiki.category')
+            $qb->andWhere(':category MEMBER OF wiki.category')
                 ->setParameter('category', $searchFormValues['category']);
         }
 
@@ -70,7 +70,7 @@ class WikiRepository extends ServiceEntityRepository
 
     }
 
-    public function findOneWikiByIdAndCategories($id)
+    public function findOneWikiByIdAndCategories ($id)
     {
         $qb = $this->createQueryBuilder('wiki')
             ->select('wiki')
