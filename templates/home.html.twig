@@ -28,7 +28,7 @@
                 <div class="box">
                     <div class="characters--img">
                         <img src="{{ vich_uploader_asset(lastwiki, 'imageFile') }}" class="img--carouselCard"
-                             alt="image_name">
+                             alt=" {{ lastwiki.title }}">
                         <div class="conteneur--details">
                             <div class="lien--details display--card">
                                 <a href="{{ path('wiki_detail', {id: lastwiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ lastwiki.title }}</h5></a>
@@ -55,7 +55,7 @@
                 <div class="box">
                     <div class="characters--img">
                         <img src="{{ vich_uploader_asset(wiki, 'imageFile') }}" class="img--carouselCard"
-                             alt="image_name">
+                             alt=" {{ wiki.title }}">
                         <div class="conteneur--details">
                         <div class="lien--details display--card">
                             <a href="{{ path('wiki_detail', {id: wiki.id}) }}" class="title--carte" target="_blank"><h5 class="title--carte">{{ wiki.title }}</h5></a>

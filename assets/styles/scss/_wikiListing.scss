@@ -58,7 +58,16 @@
             max-height: 250px;
           }
           @include respond('phone'){
-            width: 200px;
+            width: 190px;
+          }
+          @include respond('phone-min') {
+            width: 180px;
+          }
+          @include respond('phone-430'){
+            width: 155px;
+          }
+          @include respond('phone-340'){
+            width: 100px;
           }
         }
 
@@ -107,7 +116,7 @@
           display: block;
           width: 100%;
           @include flex(space-evenly,center);
-          @include font(Mob_Post,35, $Second);
+          @include font(Mob_Post,25, $Second);
 
         }
         .disappear {
@@ -123,7 +132,7 @@
             }
 
             .details {
-              @include font(Mob_Post, 25, $Second);
+              @include font(Mob_Post, 18, $Second);
               margin-right: 25px;
             }
           }

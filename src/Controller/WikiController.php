@@ -149,11 +149,11 @@ class WikiController extends AbstractController
         $newComment= $this->createForm(CommentFormType::class, $comment);
         $newComment->handleRequest($request);
 
+
         if($newComment->isSubmitted() && $newComment->isValid())
         {
             $comment->setWiki($wiki);
             $comment->setUser($user);
-
             $entityManager->persist($comment);
             $entityManager->flush();
 

@@ -8,6 +8,9 @@ footer {
       background-color: $Second;
       p {
         padding: 30px 0;
+        @include respond('phone') {
+          margin-left: 10%;
+        }
 
         a {
           @include font(Lat_Bold, 25, $Primary);

@@ -33,11 +33,15 @@ body {
       @include respond ('phone') {
         margin: 15% auto 10px auto;
       }
+      @include respond ('phone') {
+        margin: 20% auto 10px 10%;
+      }
       .email{
         margin-bottom: 20px;
         .respond{
           @include respond('phone'){
-            width: 70%;
+            width: 85%;
+
         }
         }
       }
