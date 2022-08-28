@@ -29,11 +29,12 @@
             }) }}
         </div>
         <div class="agree--terms">
-            {{ form_row(registrationForm.agreeTerms, {
+                {{ form_row(registrationForm.agreeTerms, {
                 'label': 'Accepter les conditions',
                 'label_attr': {'class': 'label--Accep'
                 }
             }) }}
+            Détails <a href="{{ path('cgu') }}"> CGU </a> et <a href="{{ path('politique') }}"> politique de confidentialiés</a>
         </div>
     </div>
         <div class="submit--insc">

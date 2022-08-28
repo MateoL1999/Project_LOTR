@@ -74,7 +74,7 @@
   margin: 2.5% 0 0 0;
   @include font(Lat_Reg, 21, $Second);
   @include respond('phone'){
-    width: 70%;
+    width: 50%;
   }
   &::placeholder{
     color: $Second;
